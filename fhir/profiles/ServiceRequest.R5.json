@@ -1,0 +1,60 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "zarish-service-request",
+  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/ServiceRequest",
+  "name": "ZarrishServiceRequest",
+  "title": "Zarish Sphere Service Request Profile",
+  "status": "active",
+  "description": "Service request (referral, lab order, imaging) profile - FHIR R5",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ServiceRequest",
+  "baseDefinition": "http://hl7.org/fhir/R5/ServiceRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ServiceRequest",
+        "path": "ServiceRequest",
+        "definition": "Zarish Sphere service request (referral, lab, imaging)"
+      },
+      {
+        "id": "ServiceRequest.status",
+        "path": "ServiceRequest.status",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/request-status"
+        }
+      },
+      {
+        "id": "ServiceRequest.intent",
+        "path": "ServiceRequest.intent",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/request-intent"
+        }
+      },
+      {
+        "id": "ServiceRequest.code",
+        "path": "ServiceRequest.code",
+        "min": 1,
+        "definition": "Service code (LOINC, SNOMED CT)"
+      },
+      {
+        "id": "ServiceRequest.subject",
+        "path": "ServiceRequest.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Patient"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

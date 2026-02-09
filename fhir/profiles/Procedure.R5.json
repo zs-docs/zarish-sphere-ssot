@@ -1,0 +1,63 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "zarish-procedure",
+  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Procedure",
+  "name": "ZarrishProcedure",
+  "title": "Zarish Sphere Procedure Profile",
+  "status": "active",
+  "description": "Procedure/Intervention profile - FHIR R5",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/R5/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure",
+        "path": "Procedure",
+        "definition": "Zarish Sphere clinical procedure"
+      },
+      {
+        "id": "Procedure.status",
+        "path": "Procedure.status",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/event-status"
+        }
+      },
+      {
+        "id": "Procedure.code",
+        "path": "Procedure.code",
+        "min": 1,
+        "definition": "Procedure code (SNOMED CT, ICD-10-PCS)"
+      },
+      {
+        "id": "Procedure.subject",
+        "path": "Procedure.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Procedure.encounter",
+        "path": "Procedure.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Encounter"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

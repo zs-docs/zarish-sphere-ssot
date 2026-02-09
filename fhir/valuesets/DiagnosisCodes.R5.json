@@ -1,0 +1,113 @@
+{
+  "resourceType": "ValueSet",
+  "id": "zarish-diagnosis-codes",
+  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/valuesets/ZarrishDiagnosisCodes",
+  "name": "ZarrishDiagnosisCodes",
+  "title": "Zarish Sphere Diagnosis Codes",
+  "status": "active",
+  "description": "Value set containing diagnosis codes from ICD-10, ICD-11, and SNOMED CT for Zarish Sphere",
+  "copyright": "ICD codes are copyright WHO. SNOMED CT codes are copyright SNOMED International.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "concept": [
+          {
+            "code": "B20",
+            "display": "Human immunodeficiency virus [HIV] disease"
+          },
+          {
+            "code": "A15",
+            "display": "Respiratory tuberculosis"
+          },
+          {
+            "code": "E11",
+            "display": "Type 2 diabetes mellitus"
+          },
+          {
+            "code": "I10",
+            "display": "Essential (primary) hypertension"
+          },
+          {
+            "code": "C34",
+            "display": "Malignant neoplasm of unspecified part of unspecified bronchus or lung"
+          },
+          {
+            "code": "F32",
+            "display": "Depressive disorder, single episode"
+          },
+          {
+            "code": "Z3A",
+            "display": "Pregnancy weeks of gestation"
+          }
+        ]
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-11-mms",
+        "concept": [
+          {
+            "code": "QE84",
+            "display": "Human immunodeficiency virus disease [HIV] [ICD-11]"
+          },
+          {
+            "code": "CA90",
+            "display": "Tuberculosis - respiratory [ICD-11]"
+          },
+          {
+            "code": "5A11.0",
+            "display": "Type 2 diabetes mellitus [ICD-11]"
+          },
+          {
+            "code": "BA00",
+            "display": "Essential hypertension [ICD-11]"
+          },
+          {
+            "code": "CA93",
+            "display": "Lung cancer, unspecified [ICD-11]"
+          },
+          {
+            "code": "6A70.1",
+            "display": "Major depressive disorder, single episode [ICD-11]"
+          },
+          {
+            "code": "QH84.0",
+            "display": "Pregnancy related [ICD-11]"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "86406008",
+            "display": "Human immunodeficiency virus infection"
+          },
+          {
+            "code": "56717001",
+            "display": "Tuberculosis"
+          },
+          {
+            "code": "44054006",
+            "display": "Diabetes mellitus type 2"
+          },
+          {
+            "code": "59621000",
+            "display": "Essential hypertension"
+          },
+          {
+            "code": "93974002",
+            "display": "Primary malignant neoplasm of lung"
+          },
+          {
+            "code": "35489007",
+            "display": "Depressive disorder"
+          },
+          {
+            "code": "77386006",
+            "display": "Pregnant"
+          }
+        ]
+      }
+    ]
+  }
+}

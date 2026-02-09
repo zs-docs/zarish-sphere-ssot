@@ -1,0 +1,75 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "zarish-condition",
+  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Condition",
+  "name": "ZarrishCondition",
+  "title": "Zarish Sphere Condition Profile",
+  "status": "active",
+  "description": "Condition/Diagnosis profile supporting ICD-10 and ICD-11 coding - FHIR R5",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Condition",
+  "baseDefinition": "http://hl7.org/fhir/R5/Condition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Condition",
+        "path": "Condition",
+        "definition": "Zarish Sphere condition with ICD-10 and ICD-11 support"
+      },
+      {
+        "id": "Condition.code",
+        "path": "Condition.code",
+        "min": 1,
+        "definition": "Diagnosis code (ICD-10, ICD-11, or SNOMED CT)",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/valuesets/ZarrishDiagnosisCodes"
+        }
+      },
+      {
+        "id": "Condition.subject",
+        "path": "Condition.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Condition.encounter",
+        "path": "Condition.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Encounter"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Condition.clinicalStatus",
+        "path": "Condition.clinicalStatus",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/condition-clinical"
+        }
+      },
+      {
+        "id": "Condition.verificationStatus",
+        "path": "Condition.verificationStatus",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/condition-verification"
+        }
+      }
+    ]
+  }
+}

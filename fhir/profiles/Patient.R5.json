@@ -1,0 +1,64 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "zarish-patient",
+  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Patient",
+  "name": "ZarrishPatient",
+  "title": "Zarish Sphere Patient Profile",
+  "status": "active",
+  "description": "Patient profile for Zarish Sphere SSOT platform - FHIR R5",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.org/fhir/R5/Patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient",
+        "definition": "Zarish Sphere compliant patient resource"
+      },
+      {
+        "id": "Patient.identifier",
+        "path": "Patient.identifier",
+        "min": 1,
+        "max": "*",
+        "definition": "Patient unique identifiers (medical record, national ID, etc.)"
+      },
+      {
+        "id": "Patient.name",
+        "path": "Patient.name",
+        "min": 1,
+        "max": "*",
+        "definition": "Patient name details"
+      },
+      {
+        "id": "Patient.telecom",
+        "path": "Patient.telecom",
+        "min": 0,
+        "max": "*",
+        "definition": "Contact details including phone, email"
+      },
+      {
+        "id": "Patient.birthDate",
+        "path": "Patient.birthDate",
+        "min": 1,
+        "definition": "Date of birth (required for age calculation)"
+      },
+      {
+        "id": "Patient.address",
+        "path": "Patient.address",
+        "min": 0,
+        "max": "*",
+        "definition": "Patient residential address"
+      },
+      {
+        "id": "Patient.contact",
+        "path": "Patient.contact",
+        "min": 0,
+        "max": "*",
+        "definition": "Emergency contact or next of kin"
+      }
+    ]
+  }
+}

@@ -31,7 +31,7 @@ Zarish Sphere SSOT is a comprehensive healthcare documentation and module manage
 ### 📝 Standardized Forms
 - **33 Clinical & Operational Forms**
 - JSON schema-based definitions
-- FHIR R4 compatible
+- FHIR R5 compatible
 
 ### 🌍 Multi-Country Support
 - Active deployments: Bangladesh, India, Myanmar, Pakistan, Thailand
@@ -39,8 +39,9 @@ Zarish Sphere SSOT is a comprehensive healthcare documentation and module manage
 - Country-specific adaptations
 
 ### 🔧 Technical Excellence
-- FHIR R4 integration
-- ICD-10, SNOMED CT, LOINC standards
+- FHIR R5 integration (HL7 2024-04)
+- ICD-11 MMS primary with ICD-10 compatibility
+- SNOMED CT, LOINC, RxNorm standards
 - No-code platform with visual workflows
 - Automated deployment via GitHub Actions
 
@@ -128,13 +129,17 @@ zarish-sphere-ssot/
 
 ### For Contributors (Local Development)
 
+See **[SETUP.md](SETUP.md)** for comprehensive installation guide.
+
+Quick start (requires Ruby 3.2+):
+
 ```bash
-# Clone the repository
+# Clone and setup
 git clone https://github.com/zs-docs/zarish-sphere-ssot.git
 cd zarish-sphere-ssot
 
-# Install Jekyll (requires Ruby)
-gem install bundler jekyll
+# Pre-check system requirements
+bash scripts/pre-check.sh
 
 # Install dependencies
 bundle install
@@ -162,14 +167,21 @@ This repository uses automated deployment via GitHub Actions. Every push to `mai
 
 ## 🛠️ Technology Stack
 
-- **Platform:** GitHub + Jekyll + GitHub Pages
-- **Standards:**
-  - **FHIR R4** - Healthcare interoperability
-  - **ICD-10** - Disease classification
-  - **SNOMED CT** - Clinical terminology
-  - **LOINC** - Laboratory observations
-- **Automation:** GitHub Actions
-- **License:** MIT
+Full details: **[TECHNOLOGY-STACK.md](TECHNOLOGY-STACK.md)** | Setup Guide: **[SETUP.md](SETUP.md)**
+
+### Core Platform (February 2026 - Production Ready)
+- **Jekyll 4.3.3** - Static site generator
+- **Ruby 3.2.x LTS** - Server-side runtime (EOL 2027-03-31)
+- **GitHub Pages + Actions** - Hosting & CI/CD
+- **2-minute deployment** - From push to live
+
+### Healthcare Standards (Latest Stable)
+- **FHIR R5** - Healthcare interoperability (HL7 2024-04)
+- **ICD-11 MMS** - WHO disease classification (Master Edition)
+- **ICD-10 CM** - Legacy US compatibility
+- **SNOMED CT** - International Edition (March 2025) - 400,000+ concepts
+- **LOINC** - Version 2.77 - 110,000+ lab codes
+- **RxNorm** - January 2026 - 17,000+ medications
 
 ---
 

@@ -1,0 +1,62 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "zarish-encounter",
+  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Encounter",
+  "name": "ZarrishEncounter",
+  "title": "Zarish Sphere Encounter Profile",
+  "status": "active",
+  "description": "Clinical encounter profile for Zarish Sphere - FHIR R5",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Encounter",
+  "baseDefinition": "http://hl7.org/fhir/R5/Encounter",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Encounter",
+        "path": "Encounter",
+        "definition": "Zarish Sphere clinical encounter"
+      },
+      {
+        "id": "Encounter.status",
+        "path": "Encounter.status",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/encounter-status"
+        }
+      },
+      {
+        "id": "Encounter.class",
+        "path": "Encounter.class",
+        "min": 1,
+        "definition": "Encounter classification (inpatient, outpatient, etc.)"
+      },
+      {
+        "id": "Encounter.subject",
+        "path": "Encounter.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.period",
+        "path": "Encounter.period",
+        "min": 1,
+        "definition": "Encounter start and end times"
+      },
+      {
+        "id": "Encounter.reason",
+        "path": "Encounter.reason",
+        "definition": "Reason for encounter (chief complaint/diagnosis)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "resourceType": "ValueSet",
+  "id": "zarish-medication-codes",
+  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/valuesets/ZarrishMedicationCodes",
+  "name": "ZarrishMedicationCodes",
+  "title": "Zarish Sphere Medication Codes",
+  "status": "active",
+  "description": "Value set containing RxNorm medication codes for Zarish Sphere",
+  "copyright": "RxNorm codes are in the public domain from NLM/NIH",
+  "compose": {
+    "include": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "concept": [
+          {
+            "code": "6809",
+            "display": "Efavirenz"
+          },
+          {
+            "code": "834101",
+            "display": "Tenofovir / Emtricitabine"
+          },
+          {
+            "code": "105585",
+            "display": "Isoniazid"
+          },
+          {
+            "code": "1597568",
+            "display": "Rifampicin"
+          },
+          {
+            "code": "89905",
+            "display": "Metformin"
+          },
+          {
+            "code": "29046",
+            "display": "Lisinopril"
+          },
+          {
+            "code": "5640",
+            "display": "Amoxicillin"
+          },
+          {
+            "code": "6871",
+            "display": "Ibuprofen"
+          },
+          {
+            "code": "161",
+            "display": "Aspirin"
+          },
+          {
+            "code": "6134",
+            "display": "Chloroquine"
+          }
+        ]
+      }
+    ]
+  }
+}

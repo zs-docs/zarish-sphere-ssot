@@ -1,0 +1,65 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "zarish-medication-request",
+  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/MedicationRequest",
+  "name": "ZarrishMedicationRequest",
+  "title": "Zarish Sphere Medication Request Profile",
+  "status": "active",
+  "description": "Medication request/prescription profile - FHIR R5",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/R5/MedicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationRequest",
+        "path": "MedicationRequest",
+        "definition": "Zarish Sphere medication request/prescription"
+      },
+      {
+        "id": "MedicationRequest.status",
+        "path": "MedicationRequest.status",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicationrequest-status"
+        }
+      },
+      {
+        "id": "MedicationRequest.intent",
+        "path": "MedicationRequest.intent",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicationrequest-intent"
+        }
+      },
+      {
+        "id": "MedicationRequest.medication",
+        "path": "MedicationRequest.medication[x]",
+        "min": 1,
+        "definition": "Medication being requested (RxNorm code or reference)"
+      },
+      {
+        "id": "MedicationRequest.subject",
+        "path": "MedicationRequest.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction",
+        "path": "MedicationRequest.dosageInstruction",
+        "definition": "Dosage and administration instructions"
+      }
+    ]
+  }
+}

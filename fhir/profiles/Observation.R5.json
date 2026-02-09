@@ -1,0 +1,61 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "zarish-observation",
+  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Observation",
+  "name": "ZarrishObservation",
+  "title": "Zarish Sphere Observation Profile",
+  "status": "active",
+  "description": "Observation profile for vital signs, lab results, assessments - FHIR R5",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/R5/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "definition": "Zarish Sphere observation (vital signs, labs, assessments)"
+      },
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-status"
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "definition": "Type of observation (LOINC, SNOMED CT)"
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.value",
+        "path": "Observation.value[x]",
+        "definition": "Observation value (quantity, coded, string, etc.)"
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "definition": "Clinical interpretation of result"
+      }
+    ]
+  }
+}

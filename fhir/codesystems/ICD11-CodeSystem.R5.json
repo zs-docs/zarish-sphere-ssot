@@ -1,0 +1,97 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "zarish-icd11-context",
+  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/CodeSystem/ZarrishICD11",
+  "name": "ZarrishICD11",
+  "title": "Zarish Sphere ICD-11 Code System Context",
+  "status": "active",
+  "description": "ICD-11 WHO codes supported by Zarish Sphere SSOT platform with local context and clinical guidance",
+  "version": "1.0.0",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere Team",
+  "content": "not-present",
+  "concept": [
+    {
+      "code": "QE84",
+      "display": "Human immunodeficiency virus disease",
+      "definition": "HIV disease requiring antiretroviral treatment and monitoring",
+      "designation": [
+        {
+          "language": "en",
+          "use": {
+            "system": "http://terminology.hl7.org/CodeSystem/designation-usage",
+            "code": "900000000000003001",
+            "display": "Fully specified name"
+          },
+          "value": "HIV disease"
+        }
+      ]
+    },
+    {
+      "code": "CA90",
+      "display": "Respiratory tuberculosis",
+      "definition": "TB affecting the lungs requiring anti-TB treatment",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pulmonary TB"
+        }
+      ]
+    },
+    {
+      "code": "5A11.0",
+      "display": "Type 2 diabetes mellitus",
+      "definition": "Type 2 diabetes requiring dietary management and medications",
+      "designation": [
+        {
+          "language": "en",
+          "value": "DM2"
+        }
+      ]
+    },
+    {
+      "code": "BA00",
+      "display": "Essential hypertension",
+      "definition": "High blood pressure requiring antihypertensive therapy",
+      "designation": [
+        {
+          "language": "en",
+          "value": "HTN"
+        }
+      ]
+    },
+    {
+      "code": "CA93",
+      "display": "Malignant neoplasm of lung",
+      "definition": "Lung cancer requiring oncology consultation and treatment",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Lung cancer"
+        }
+      ]
+    },
+    {
+      "code": "6A70.1",
+      "display": "Major depressive disorder, single episode",
+      "definition": "Depression requiring psychiatric evaluation and treatment",
+      "designation": [
+        {
+          "language": "en",
+          "value": "MDD"
+        }
+      ]
+    },
+    {
+      "code": "QH84.0",
+      "display": "Pregnancy",
+      "definition": "Pregnancy requiring antenatal care and monitoring",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pregnancy"
+        }
+      ]
+    }
+  ]
+}

@@ -1,11 +1,13 @@
 {
   "name": "zarish-sphere-ssot",
   "version": "2.0.0",
-  "description": "Healthcare Documentation Platform - Single Source of Truth",
+  "description": "Healthcare Documentation Platform - Single Source of Truth for Clinical Modules, Forms, and Operations",
   "scripts": {
     "build": "bundle exec jekyll build",
     "serve": "bundle exec jekyll serve",
-    "clean": "bundle exec jekyll clean"
+    "clean": "bundle exec jekyll clean",
+    "validate": "bash scripts/validate.sh",
+    "precheck": "bash scripts/pre-check.sh"
   },
   "repository": {
     "type": "git",
@@ -15,9 +17,41 @@
     "healthcare",
     "documentation",
     "FHIR",
+    "ICD-11",
+    "ICD-10",
     "jekyll",
-    "github-pages"
+    "github-pages",
+    "clinical-documentation",
+    "SSOT"
   ],
   "author": "Zarish Sphere Team",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0",
+    "ruby": "~> 3.2"
+  },
+  "techStack": {
+    "staticSiteGenerator": {
+      "name": "Jekyll",
+      "version": "~> 4.3.3",
+      "stability": "Production Ready",
+      "released": "2023-05-02"
+    },
+    "ruby": {
+      "version": "~> 3.2 (LTS)",
+      "stability": "Production Ready",
+      "eol": "2027-03-31"
+    },
+    "healthcare": {
+      "fhir": "R5 (HL7 2024-04)",
+      "icd": ["ICD-11 MMS", "ICD-10 CM"],
+      "snomed": "International Edition (March 2025)",
+      "loinc": "Version 2.77",
+      "rxnorm": "January 2026 release"
+    },
+    "hosting": "GitHub Pages",
+    "ci-cd": "GitHub Actions"
+  },
+  "updatedDate": "2026-02-09"
 }
+

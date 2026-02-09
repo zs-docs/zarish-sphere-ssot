@@ -1,0 +1,168 @@
+{
+  "id": "icd-11-mapping",
+  "meta": {
+    "name": "ICD-11 to FHIR Mapping",
+    "version": "1.0.0",
+    "description": "Comprehensive ICD-11 to FHIR R5 code mappings for Zarish Sphere",
+    "lastUpdated": "2026-02-09",
+    "source": "WHO ICD-11 MMS Edition",
+    "fhirVersion": "R5"
+  },
+  "mappings": [
+    {
+      "icd11Code": "QE84",
+      "icd11Description": "Human immunodeficiency virus disease",
+      "icd11Chapter": "QE - Certain infectious or parasitic diseases",
+      "fhirCoding": {
+        "system": "http://hl7.org/fhir/sid/icd-11-mms",
+        "code": "QE84",
+        "display": "Human immunodeficiency virus disease"
+      },
+      "equivalentMappings": [
+        {
+          "system": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "B20",
+          "display": "HIV disease"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "86406008",
+          "display": "HIV infection"
+        }
+      ],
+      "clinicalNotes": "Use with specific HIV status codes (QE84.0 - AIDS, QE84.1 - HIV without AIDS, etc.)"
+    },
+    {
+      "icd11Code": "CA90",
+      "icd11Description": "Respiratory tuberculosis",
+      "icd11Chapter": "CA - Certain infectious or parasitic diseases",
+      "fhirCoding": {
+        "system": "http://hl7.org/fhir/sid/icd-11-mms",
+        "code": "CA90",
+        "display": "Respiratory tuberculosis"
+      },
+      "equivalentMappings": [
+        {
+          "system": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "A15",
+          "display": "Respiratory tuberculosis"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "56717001",
+          "display": "Tuberculosis"
+        }
+      ]
+    },
+    {
+      "icd11Code": "5A11.0",
+      "icd11Description": "Type 2 diabetes mellitus",
+      "icd11Chapter": "BA - Endocrine, nutritional or metabolic diseases",
+      "fhirCoding": {
+        "system": "http://hl7.org/fhir/sid/icd-11-mms",
+        "code": "5A11.0",
+        "display": "Type 2 diabetes mellitus"
+      },
+      "equivalentMappings": [
+        {
+          "system": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "E11",
+          "display": "Type 2 diabetes mellitus"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "44054006",
+          "display": "Diabetes mellitus type 2"
+        }
+      ]
+    },
+    {
+      "icd11Code": "BA00",
+      "icd11Description": "Essential hypertension",
+      "icd11Chapter": "BA - Diseases of the circulatory system",
+      "fhirCoding": {
+        "system": "http://hl7.org/fhir/sid/icd-11-mms",
+        "code": "BA00",
+        "display": "Essential hypertension"
+      },
+      "equivalentMappings": [
+        {
+          "system": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "I10",
+          "display": "Essential hypertension"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "59621000",
+          "display": "Essential hypertension"
+        }
+      ]
+    },
+    {
+      "icd11Code": "CA93",
+      "icd11Description": "Malignant neoplasm of lung",
+      "icd11Chapter": "CA - Neoplasms",
+      "fhirCoding": {
+        "system": "http://hl7.org/fhir/sid/icd-11-mms",
+        "code": "CA93",
+        "display": "Malignant neoplasm of lung"
+      },
+      "equivalentMappings": [
+        {
+          "system": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "C34",
+          "display": "Malignant neoplasm of unspecified part of unspecified bronchus or lung"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "93974002",
+          "display": "Primary malignant neoplasm of lung"
+        }
+      ]
+    },
+    {
+      "icd11Code": "6A70.1",
+      "icd11Description": "Major depressive disorder, single episode",
+      "icd11Chapter": "6A - Mental, behavioral or neurodevelopmental disorders",
+      "fhirCoding": {
+        "system": "http://hl7.org/fhir/sid/icd-11-mms",
+        "code": "6A70.1",
+        "display": "Major depressive disorder, single episode"
+      },
+      "equivalentMappings": [
+        {
+          "system": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "F32",
+          "display": "Depressive disorder, single episode"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "35489007",
+          "display": "Depressive disorder"
+        }
+      ]
+    },
+    {
+      "icd11Code": "QH84.0",
+      "icd11Description": "Pregnancy-related condition",
+      "icd11Chapter": "QH - Pregnancy, childbirth or the puerperium",
+      "fhirCoding": {
+        "system": "http://hl7.org/fhir/sid/icd-11-mms",
+        "code": "QH84.0",
+        "display": "Pregnancy"
+      },
+      "equivalentMappings": [
+        {
+          "system": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "Z3A",
+          "display": "Pregnancy weeks of gestation"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "77386006",
+          "display": "Pregnant"
+        }
+      ]
+    }
+  ]
+}
