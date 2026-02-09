@@ -66,16 +66,7 @@ jobs:
         run: |
           gem install bundler
           bundle config set --local path 'vendor/bundle'
-          cat > Gemfile << 'GEMEOF'
-          source 'https://rubygems.org'
-          gem 'jekyll', '~> 4.3'
-          gem 'jekyll-feed'
-          gem 'jekyll-seo-tag'
-          gem 'jekyll-sitemap'
-          gem 'minima', '~> 2.5'
-          gem 'webrick'
-          GEMEOF
-          bundle install
+          bundle install --gemfile Gemfile
       
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
