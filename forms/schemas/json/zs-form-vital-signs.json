@@ -1,30 +1,30 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-vital-signs",
-  "url": "https://zarish.org/Questionnaire/zs-form-vital-signs",
-  "version": "1.0.0",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-vital-signs",
+  "version": "2.0.0",
   "name": "zs-form-vital-signs",
   "title": "Vital Signs Assessment Form",
   "status": "active",
-  "date": "2026-02-07T11:41:19.838373",
+  "date": "2026-02-09",
   "publisher": "Zarish Sphere",
   "description": "Record patient vital signs and basic clinical measurements",
   "purpose": "Record patient vital signs and basic clinical measurements",
   "extension": [
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-clinical-domain",
       "valueString": "Cross-Domain"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-form-category",
       "valueString": "Assessment"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-service-levels",
       "valueString": "Level-1-CHC,Level-2-OPD,Level-3-IPD,Level-4-Tertiary"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-provider-type",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-provider-type",
       "valueString": "CHV,Nurse,Doctor,Lab Tech"
     }
   ],
@@ -45,7 +45,7 @@
           "prefix": "Body temperature in Celsius",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-validation",
               "valueString": "{\"min\": 35.0, \"max\": 42.0}"
             }
           ]
@@ -82,7 +82,7 @@
           "prefix": "Upper number",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-validation",
               "valueString": "{\"min\": 50, \"max\": 250}"
             }
           ]
@@ -97,7 +97,7 @@
           "prefix": "Lower number",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-validation",
               "valueString": "{\"min\": 30, \"max\": 150}"
             }
           ]
@@ -112,7 +112,7 @@
           "prefix": "Pulse rate",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-validation",
               "valueString": "{\"min\": 30, \"max\": 200}"
             }
           ]
@@ -127,7 +127,7 @@
           "prefix": "Breathing rate",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-validation",
               "valueString": "{\"min\": 6, \"max\": 60}"
             }
           ]
@@ -142,7 +142,7 @@
           "prefix": "Blood oxygen level",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-validation",
               "valueString": "{\"min\": 50.0, \"max\": 100.0}"
             }
           ]
@@ -157,7 +157,7 @@
           "prefix": "Patient weight in kilograms",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-validation",
               "valueString": "{\"min\": 2.0, \"max\": 300.0}"
             }
           ]
@@ -172,7 +172,7 @@
           "prefix": "Patient height in centimeters",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-validation",
               "valueString": "{\"min\": 30.0, \"max\": 250.0}"
             }
           ]

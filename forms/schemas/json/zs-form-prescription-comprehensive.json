@@ -1,26 +1,26 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-prescription",
-  "url": "https://zarish.org/Questionnaire/zs-form-prescription",
-  "version": "1.0.0",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-prescription",
+  "version": "2.0.0",
   "name": "zs-form-prescription",
   "title": "Prescription/Medication Order Form",
   "status": "active",
-  "date": "2026-02-07T11:41:19.871543",
+  "date": "2026-02-09",
   "publisher": "Zarish Sphere",
   "description": "Record and communicate medication prescriptions",
   "purpose": "Record and communicate medication prescriptions",
   "extension": [
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-clinical-domain",
       "valueString": "Cross-Domain"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-form-category",
       "valueString": "Prescription"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-service-levels",
       "valueString": "Level-1-CHC,Level-2-OPD,Level-3-IPD,Level-4-Tertiary"
     }
   ],

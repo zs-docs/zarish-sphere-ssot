@@ -1,26 +1,26 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-clinical-consultation",
-  "url": "https://zarish.org/Questionnaire/zs-form-clinical-consultation",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-clinical-consultation",
   "name": "ZarishClinicalConsultation",
   "title": "Zarish Clinical Consultation Form",
   "status": "active",
-  "date": "2026-02-05",
-  "publisher": "Zarish Sphere Platform",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
   "description": "Comprehensive clinical consultation form aligned with Gold Standard EMR requirements",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "subjectType": ["Patient"],
   "extension": [
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-clinical-domain",
       "valueString": "Cross-Domain"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-form-category",
       "valueString": "consultation"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-service-level",
       "valueString": "Level-2-OPD"
     }
   ],
@@ -32,7 +32,7 @@
       "required": true,
       "extension": [
         {
-          "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+          "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
           "valueString": "mandatory"
         }
       ]
@@ -44,7 +44,7 @@
       "required": true,
       "extension": [
         {
-          "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+          "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
           "valueString": "mandatory"
         }
       ]
@@ -60,14 +60,14 @@
           "text": "Primary Diagnosis",
           "type": "choice",
           "required": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-coding-system",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-coding-system",
               "valueString": "ICD-11"
             },
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "mandatory"
             }
           ]
@@ -77,10 +77,10 @@
           "text": "Secondary Diagnosis",
           "type": "choice",
           "repeats": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-coding-system",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-coding-system",
               "valueString": "ICD-11"
             }
           ]
@@ -97,10 +97,10 @@
           "text": "Laboratory Orders",
           "type": "choice",
           "repeats": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-lab-test",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-lab-test",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "link_to_lab_order_form"
             }
           ]
@@ -110,10 +110,10 @@
           "text": "Radiology Orders",
           "type": "choice",
           "repeats": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-required-services",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-required-services",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "link_to_radiology_order_form"
             }
           ]
@@ -124,7 +124,7 @@
           "type": "group",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "link_to_pharmacy_form"
             }
           ]
@@ -136,10 +136,10 @@
       "text": "Disposition",
       "type": "choice",
       "required": true,
-      "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-referral-needed",
+      "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-referral-needed",
       "extension": [
         {
-          "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+          "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
           "valueString": "if referral_needed then trigger_referral_form"
         }
       ]

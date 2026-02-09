@@ -1,26 +1,26 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-household-visit",
-  "url": "https://zarish.org/Questionnaire/zs-form-household-visit",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-household-visit",
   "name": "ZarishHouseholdVisit",
   "title": "Zarish Household Visit Form",
   "status": "active",
-  "date": "2026-02-05",
-  "publisher": "Zarish Sphere Platform",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
   "description": "Comprehensive household visit form for Community Health Outreach (Level 1)",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "subjectType": ["Patient"],
   "extension": [
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-clinical-domain",
       "valueString": "Cross-Domain"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-form-category",
       "valueString": "community-outreach"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-service-level",
       "valueString": "Level-1-Community"
     }
   ],
@@ -38,7 +38,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "mandatory"
             }
           ]
@@ -50,7 +50,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "mandatory"
             }
           ]
@@ -70,7 +70,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "mandatory"
             }
           ]
@@ -82,7 +82,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "0-120"
             }
           ]
@@ -92,7 +92,7 @@
           "text": "Gender",
           "type": "choice",
           "required": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-gender"
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-gender"
         }
       ]
     },
@@ -106,10 +106,10 @@
           "text": "Symptom Check",
           "type": "choice",
           "repeats": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "if symptoms_present then trigger_referral_slip"
             }
           ]
@@ -118,10 +118,10 @@
           "linkId": "referral-target",
           "text": "Referral Target",
           "type": "choice",
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-referral-type",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-referral-type",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "if danger_signs_found then mandatory"
             }
           ]

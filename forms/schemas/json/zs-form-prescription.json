@@ -1,26 +1,26 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-prescription",
-  "url": "https://zarish.org/Questionnaire/zs-form-prescription",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-prescription",
   "name": "ZarishPrescription",
   "title": "Zarish Prescription Form",
   "status": "active",
-  "date": "2026-02-05",
-  "publisher": "Zarish Sphere Platform",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
   "description": "Comprehensive prescription form aligned with Gold Standard EMR requirements",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "subjectType": ["Patient"],
   "extension": [
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-clinical-domain",
       "valueString": "Cross-Domain"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-form-category",
       "valueString": "prescription"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-service-level",
       "valueString": "Level-4-Pharmacy"
     }
   ],
@@ -37,10 +37,10 @@
           "text": "Drug Name",
           "type": "choice",
           "required": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "mandatory"
             }
           ]
@@ -52,7 +52,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "mandatory"
             }
           ]
@@ -64,7 +64,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "mandatory"
             }
           ]
@@ -76,7 +76,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "mandatory"
             }
           ]
@@ -95,7 +95,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "if interactions_found then alert_prescriber"
             }
           ]

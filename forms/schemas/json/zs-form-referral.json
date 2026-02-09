@@ -1,12 +1,12 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-referral",
-  "url": "https://zarish.org/Questionnaire/zs-form-referral",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-referral",
   "name": "Zarish Referral Form",
   "title": "Zarish Referral Form",
   "status": "active",
-  "date": "2026-02-05",
-  "publisher": "Zarish Sphere Platform",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
   "description": "Patient referral form for Zarish Sphere Platform",
   "subjectType": [
     {
@@ -49,7 +49,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/gender-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/gender-values"
           }
         }
       ]
@@ -71,7 +71,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/referral-type-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/referral-type-values"
           }
         },
         {
@@ -80,7 +80,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/referral-priority-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/referral-priority-values"
           }
         },
         {
@@ -168,7 +168,7 @@
           "type": "choice",
           "required": false,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/required-services-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/required-services-values"
           },
           "repeats": true
         }
@@ -185,7 +185,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/followup-required-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/followup-required-values"
           }
         },
         {

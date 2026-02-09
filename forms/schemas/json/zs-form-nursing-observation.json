@@ -1,26 +1,26 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-nursing-observation",
-  "url": "https://zarish.org/Questionnaire/zs-form-nursing-observation",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-nursing-observation",
   "name": "ZarishNursingObservation",
   "title": "Zarish Nursing Observation Form",
   "status": "active",
-  "date": "2026-02-05",
-  "publisher": "Zarish Sphere Platform",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
   "description": "Comprehensive nursing observation form for IPD patients",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "subjectType": ["Patient"],
   "extension": [
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-clinical-domain",
       "valueString": "Cross-Domain"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-form-category",
       "valueString": "nursing"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-service-level",
       "valueString": "Level-2-IPD"
     }
   ],
@@ -32,7 +32,7 @@
       "required": true,
       "extension": [
         {
-          "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+          "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
           "valueString": "mandatory"
         }
       ]
@@ -50,7 +50,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "30-45"
             }
           ]
@@ -68,7 +68,7 @@
               "required": true,
               "extension": [
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
                   "valueString": "40-300"
                 }
               ]
@@ -80,7 +80,7 @@
               "required": true,
               "extension": [
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
                   "valueString": "40-300"
                 }
               ]
@@ -94,7 +94,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "30-200"
             }
           ]
@@ -114,7 +114,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
               "valueString": "ml"
             }
           ]
@@ -126,7 +126,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
               "valueString": "ml"
             }
           ]
@@ -144,7 +144,7 @@
           "type": "boolean",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "if true then alert_doctor_immediately"
             }
           ]

@@ -1,12 +1,12 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-delivery",
-  "url": "https://zarish.org/Questionnaire/zs-form-delivery",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-delivery",
   "name": "Zarish Delivery Form",
   "title": "Zarish Delivery Form",
   "status": "active",
-  "date": "2026-02-05",
-  "publisher": "Zarish Sphere Platform",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
   "description": "Delivery form for Zarish Sphere Platform",
   "subjectType": [
     {
@@ -80,7 +80,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/membrane-rupture-time"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/membrane-rupture-time"
           }
         },
         {
@@ -89,7 +89,7 @@
           "type": "choice",
           "required": false,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/labor-augmentation"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/labor-augmentation"
           }
         }
       ]
@@ -105,33 +105,33 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/delivery-mode-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/delivery-mode-values"
           },
           "answerOption": [
             {
               "valueCoding": {
-                "system": "https://zarish.org/CodeSystem/delivery-mode",
+                "system": "https://docs.zarishsphere.com/fhir/CodeSystem/delivery-mode",
                 "code": "NORMAL_VAGINAL",
                 "display": "Normal Vaginal Delivery"
               }
             },
             {
               "valueCoding": {
-                "system": "https://zarish.org/CodeSystem/delivery-mode",
+                "system": "https://docs.zarishsphere.com/fhir/CodeSystem/delivery-mode",
                 "code": "ASSISTED_VAGINAL",
                 "display": "Assisted Vaginal Delivery"
               }
             },
             {
               "valueCoding": {
-                "system": "https://zarish.org/CodeSystem/delivery-mode",
+                "system": "https://docs.zarishsphere.com/fhir/CodeSystem/delivery-mode",
                 "code": "CESAREAN_SECTION",
                 "display": "Cesarean Section"
               }
             },
             {
               "valueCoding": {
-                "system": "https://zarish.org/CodeSystem/delivery-mode",
+                "system": "https://docs.zarishsphere.com/fhir/CodeSystem/delivery-mode",
                 "code": "VAGINAL_BREECH",
                 "display": "Vaginal Breech Delivery"
               }
@@ -156,7 +156,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/delivery-place-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/delivery-place-values"
           }
         }
       ]
@@ -178,7 +178,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/sex-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/sex-values"
           }
         },
         {
@@ -217,7 +217,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/birth-condition-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/birth-condition-values"
           }
         },
         {
@@ -226,7 +226,7 @@
           "type": "choice",
           "required": false,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/delivery-complications"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/delivery-complications"
           },
           "repeats": true
         }
@@ -243,7 +243,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/postpartum-hemorrhage-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/postpartum-hemorrhage-values"
           }
         },
         {
@@ -252,7 +252,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/postpartum-infection-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/postpartum-infection-values"
           }
         },
         {
@@ -261,7 +261,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/breastfeeding-initiation-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/breastfeeding-initiation-values"
           }
         },
         {
@@ -270,7 +270,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/contraception-counseling-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/contraception-counseling-values"
           }
         }
       ]

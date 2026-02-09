@@ -1,12 +1,12 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-lab-results",
-  "url": "https://zarish.org/Questionnaire/zs-form-lab-results",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-lab-results",
   "name": "Zarish Lab Results Form",
   "title": "Zarish Lab Results Form",
   "status": "active",
-  "date": "2026-02-05",
-  "publisher": "Zarish Sphere Platform",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
   "description": "Laboratory results recording form for Zarish Sphere Platform",
   "subjectType": [
     {
@@ -49,7 +49,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/gender-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/gender-values"
           }
         }
       ]
@@ -77,7 +77,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/specimen-type-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/specimen-type-values"
           }
         },
         {
@@ -123,7 +123,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/abnormal-flag-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/abnormal-flag-values"
           }
         },
         {
@@ -132,7 +132,7 @@
           "type": "choice",
           "required": false,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/clinical-interpretation-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/clinical-interpretation-values"
           }
         }
       ]
@@ -148,7 +148,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/qc-status-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/qc-status-values"
           }
         },
         {

@@ -1,30 +1,30 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-cvd-risk-assessment",
-  "url": "https://zarish.org/Questionnaire/zs-form-cvd-risk-assessment",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-cvd-risk-assessment",
   "name": "ZarishCVDRiskAssessment",
   "title": "Zarish CVD Risk Assessment Form (Tools 1-7)",
   "status": "active",
-  "date": "2026-02-05",
-  "publisher": "Zarish Sphere Platform",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
   "description": "Comprehensive CVD risk assessment form based on WHO/ISH risk prediction charts",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "subjectType": ["Patient"],
   "extension": [
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-clinical-domain",
       "valueString": "NCD"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-form-category",
       "valueString": "assessment"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-service-level",
       "valueString": "Level-3-Specialized"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-protocol-reference",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-protocol-reference",
       "valueString": "WHO-ISH-CVD-Risk-Assessment"
     }
   ],
@@ -44,79 +44,79 @@
               "linkId": "chest-pain-tightness",
               "text": "Chest pain/tightness?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "breathlessness",
               "text": "Breathlessness?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "irregular-heartbeat",
               "text": "Irregular heartbeat?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "headache-dizziness-vision",
               "text": "Headache, dizziness, vision problems?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "difficulty-talking",
               "text": "Difficulty talking?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "weakness-numbness",
               "text": "Weakness/numbness on one side?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "swelling-feet-legs",
               "text": "Swelling of feet/legs?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "increased-thirst-urination",
               "text": "Increased thirst/urination?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "unexplained-weight-loss",
               "text": "Unexplained weight loss?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "coughing",
               "text": "Coughing?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "fever",
               "text": "Fever?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "sexual-problems",
               "text": "Sexual problems?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "feeling-sad-unhappy",
               "text": "Feeling sad/unhappy, loss of interest?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-mh-conditions"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-mh-conditions"
             }
           ]
         },
@@ -137,7 +137,7 @@
           "text": "Has patient ever been told they have:",
           "type": "choice",
           "repeats": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-ncd-conditions",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-ncd-conditions",
           "item": [
             {
               "linkId": "heart-disease",
@@ -377,7 +377,7 @@
               "linkId": "premature-cvd-relation",
               "text": "Relation",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "premature-cvd-age",
@@ -400,7 +400,7 @@
               "linkId": "diabetes-relation",
               "text": "Relation",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "diabetes-age",
@@ -423,7 +423,7 @@
               "linkId": "ckd-relation",
               "text": "Relation",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "ckd-age",
@@ -480,7 +480,7 @@
               "linkId": "taking-exactly-as-prescribed",
               "text": "Are you taking medications exactly as prescribed?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "problems-taking-medicines",
@@ -491,7 +491,7 @@
               "linkId": "side-effects",
               "text": "Have you had any side effects?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "side-effects-details",
@@ -516,13 +516,13 @@
               "linkId": "used-tobacco-12-months",
               "text": "Have you used tobacco in past 12 months?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "tobacco-type",
               "text": "If yes, type",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "tobacco-frequency",
@@ -538,7 +538,7 @@
               "linkId": "secondhand-smoke",
               "text": "Regularly exposed to secondhand smoke?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             }
           ]
         },
@@ -551,7 +551,7 @@
               "linkId": "drank-alcohol-30-days",
               "text": "Did you drink alcohol in last 30 days?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "alcohol-frequency",
@@ -579,25 +579,25 @@
               "linkId": "fruits-vegetables-daily",
               "text": "Eat ≥5 portions fruits/vegetables daily?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "red-meat-fried-foods",
               "text": "Eat red meat/fried/processed foods most days?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "sugary-drinks",
               "text": "Have sugary drinks (soda, juice, sweetened milk) most days?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "extra-salt-meals",
               "text": "Add extra salt to meals?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             }
           ]
         },
@@ -610,13 +610,13 @@
               "linkId": "moderate-activity-5-days",
               "text": "Do ≥30 min moderate activity 5 days/week (150 min/week)?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "sitting-5-hours-daily",
               "text": "Spend >5 hours sitting daily?",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "activity-type",
@@ -654,10 +654,10 @@
           "text": "Next Step",
           "type": "choice",
           "required": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "proceed_to_tool_2_assess_or_tool_4_estimate"
             }
           ]

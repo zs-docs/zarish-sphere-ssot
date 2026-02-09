@@ -1,12 +1,12 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-lab-order",
-  "url": "https://zarish.org/Questionnaire/zs-form-lab-order",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-lab-order",
   "name": "Zarish Lab Order Form",
   "title": "Zarish Lab Order Form",
   "status": "active",
-  "date": "2026-02-05",
-  "publisher": "Zarish Sphere Platform",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
   "description": "Laboratory test ordering form for Zarish Sphere Platform",
   "subjectType": [
     {
@@ -49,7 +49,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/gender-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/gender-values"
           }
         }
       ]
@@ -71,7 +71,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/clinical-indication-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/clinical-indication-values"
           }
         },
         {
@@ -80,7 +80,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/lab-priority-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/lab-priority-values"
           }
         }
       ]
@@ -96,7 +96,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/lab-category-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/lab-category-values"
           }
         },
         {
@@ -105,7 +105,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/lab-test-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/lab-test-values"
           }
         },
         {
@@ -128,7 +128,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/specimen-type-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/specimen-type-values"
           }
         },
         {
@@ -176,7 +176,7 @@
           "type": "choice",
           "required": true,
           "answerValueSet": {
-            "reference": "https://zarish.org/ValueSet/lab-urgency-values"
+            "reference": "https://docs.zarishsphere.com/fhir/ValueSet/lab-urgency-values"
           }
         }
       ]

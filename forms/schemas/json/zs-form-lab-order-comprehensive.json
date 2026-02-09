@@ -1,26 +1,26 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-lab-order",
-  "url": "https://zarish.org/Questionnaire/zs-form-lab-order",
-  "version": "1.0.0",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-lab-order",
+  "version": "2.0.0",
   "name": "zs-form-lab-order",
   "title": "Laboratory Order Form",
   "status": "active",
-  "date": "2026-02-07T11:41:19.871491",
+  "date": "2026-02-09",
   "publisher": "Zarish Sphere",
   "description": "Request laboratory investigations and tests",
   "purpose": "Request laboratory investigations and tests",
   "extension": [
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-clinical-domain",
       "valueString": "Cross-Domain"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-form-category",
       "valueString": "Order"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-service-levels",
       "valueString": "Level-1-CHC,Level-2-OPD,Level-3-IPD"
     }
   ],

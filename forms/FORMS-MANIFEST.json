@@ -1,117 +1,29 @@
 {
   "manifestVersion": "2.0",
-  "totalForms": 33,
+  "totalForms": 41,
   "lastUpdated": "2026-02-09",
   "categories": {
-    "clinical": 22,
-    "laboratory": 6,
-    "operational": 5
+    "clinical": 31,
+    "operational": 7,
+    "laboratory": 3
   },
   "forms": [
     {
       "formId": "HIV-TC-001",
       "formName": "HIV Testing & Counseling",
+      "filename": "HIV-TC-001.json",
       "category": "clinical",
       "module": "HIV Care",
       "version": "2.0",
       "status": "active",
       "fhirProfile": "Observation"
-    },
-    {
-      "formId": "HIV-ART-001",
-      "formName": "ART Initiation",
-      "category": "clinical",
-      "module": "HIV Care",
-      "version": "2.0",
-      "status": "active",
-      "fhirProfile": "MedicationRequest"
-    },
-    {
-      "formId": "HIV-FU-001",
-      "formName": "ART Follow-up",
-      "category": "clinical",
-      "module": "HIV Care",
-      "version": "2.0",
-      "status": "active",
-      "fhirProfile": "Encounter"
-    },
-    {
-      "formId": "TB-SCR-001",
-      "formName": "TB Screening",
-      "category": "clinical",
-      "module": "TB Management",
-      "version": "2.0",
-      "status": "active",
-      "fhirProfile": "Observation"
-    },
-    {
-      "formId": "TB-TX-001",
-      "formName": "TB Treatment",
-      "category": "clinical",
-      "module": "TB Management",
-      "version": "2.0",
-      "status": "active",
-      "fhirProfile": "MedicationRequest"
     },
     {
       "formId": "ANC-FV-001",
       "formName": "ANC First Visit",
+      "filename": "anc-first-visit.json",
       "category": "clinical",
-      "module": "Antenatal Care",
-      "version": "2.0",
-      "status": "active",
-      "fhirProfile": "Encounter"
-    },
-    {
-      "formId": "ANC-FU-001",
-      "formName": "ANC Follow-up",
-      "category": "clinical",
-      "module": "Antenatal Care",
-      "version": "2.0",
-      "status": "active",
-      "fhirProfile": "Encounter"
-    },
-    {
-      "formId": "PNC-001",
-      "formName": "Postnatal Care",
-      "category": "clinical",
-      "module": "Postnatal Care",
-      "version": "2.0",
-      "status": "active",
-      "fhirProfile": "Encounter"
-    },
-    {
-      "formId": "CHILD-001",
-      "formName": "Child Health Assessment",
-      "category": "clinical",
-      "module": "Child Health",
-      "version": "2.0",
-      "status": "active",
-      "fhirProfile": "Encounter"
-    },
-    {
-      "formId": "GBV-001",
-      "formName": "GBV Clinical Management",
-      "category": "clinical",
-      "module": "GBV Services",
-      "version": "2.0",
-      "status": "active",
-      "fhirProfile": "Encounter"
-    },
-    {
-      "formId": "MAT-ENROLL-001",
-      "formName": "MAT Enrollment",
-      "category": "clinical",
-      "module": "MAT Services",
-      "version": "2.0",
-      "status": "active",
-      "fhirProfile": "Encounter"
-    },
-    {
-      "formId": "MAT-FU-001",
-      "formName": "MAT Follow-up",
-      "category": "clinical",
-      "module": "MAT Services",
+      "module": "Maternal Health",
       "version": "2.0",
       "status": "active",
       "fhirProfile": "Encounter"
@@ -119,6 +31,7 @@
     {
       "formId": "GEN-CONS-001",
       "formName": "General Consultation",
+      "filename": "general-consultation.json",
       "category": "clinical",
       "module": "General Outpatient",
       "version": "2.0",
@@ -126,8 +39,189 @@
       "fhirProfile": "Encounter"
     },
     {
-      "formId": "TRIAGE-001",
-      "formName": "Emergency Triage",
+      "formId": "HIV-TCL-001",
+      "formName": "HIV Testing & Counseling (Legacy)",
+      "filename": "hiv-testing-counseling.json",
+      "category": "clinical",
+      "module": "HIV Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Observation"
+    },
+    {
+      "formId": "ANC-ENROLL-001",
+      "formName": "ANC Enrollment",
+      "filename": "zs-form-anc-enrollment.json",
+      "category": "clinical",
+      "module": "Maternal Health",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "CLIN-CONS-001",
+      "formName": "Clinical Consultation",
+      "filename": "zs-form-clinical-consultation.json",
+      "category": "clinical",
+      "module": "Clinical Services",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "CVD-LIFE-001",
+      "formName": "CVD Lifestyle Counseling",
+      "filename": "zs-form-cvd-lifestyle-counseling.json",
+      "category": "clinical",
+      "module": "Cardiovascular Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "CVD-REF-001",
+      "formName": "CVD Referral Criteria",
+      "filename": "zs-form-cvd-referral-criteria.json",
+      "category": "clinical",
+      "module": "Cardiovascular Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "ServiceRequest"
+    },
+    {
+      "formId": "CVD-RISK-001",
+      "formName": "CVD Risk Assessment",
+      "filename": "zs-form-cvd-risk-assessment.json",
+      "category": "clinical",
+      "module": "Cardiovascular Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Observation"
+    },
+    {
+      "formId": "CVD-EST-001",
+      "formName": "CVD Risk Estimate",
+      "filename": "zs-form-cvd-risk-estimate.json",
+      "category": "clinical",
+      "module": "Cardiovascular Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Observation"
+    },
+    {
+      "formId": "CVD-TX-001",
+      "formName": "CVD Treatment Protocol",
+      "filename": "zs-form-cvd-treatment-protocol.json",
+      "category": "clinical",
+      "module": "Cardiovascular Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "MedicationRequest"
+    },
+    {
+      "formId": "DEL-001",
+      "formName": "Delivery Care",
+      "filename": "zs-form-delivery.json",
+      "category": "clinical",
+      "module": "Maternal Health",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "DIA-DX-001",
+      "formName": "Diabetes Diagnosis",
+      "filename": "zs-form-diabetes-diagnosis.json",
+      "category": "clinical",
+      "module": "NCD Services",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Condition"
+    },
+    {
+      "formId": "DIS-COMP-001",
+      "formName": "Discharge Summary (Comprehensive)",
+      "filename": "zs-form-discharge-summary-comprehensive.json",
+      "category": "operational",
+      "module": "Inpatient Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "DIS-001",
+      "formName": "Discharge Summary",
+      "filename": "zs-form-discharge-summary.json",
+      "category": "operational",
+      "module": "Inpatient Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "DISP-001",
+      "formName": "Dispensing",
+      "filename": "zs-form-dispensing.json",
+      "category": "operational",
+      "module": "Pharmacy",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "MedicationDispense"
+    },
+    {
+      "formId": "GBV-COMP-001",
+      "formName": "GBV Screening (Comprehensive)",
+      "filename": "zs-form-gbv-screening-comprehensive.json",
+      "category": "clinical",
+      "module": "GBV Services",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Observation"
+    },
+    {
+      "formId": "GBV-001",
+      "formName": "GBV Screening",
+      "filename": "zs-form-gbv-screening.json",
+      "category": "clinical",
+      "module": "GBV Services",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Observation"
+    },
+    {
+      "formId": "HIV-ENROLL-001",
+      "formName": "HIV Enrollment",
+      "filename": "zs-form-hiv-enrollment.json",
+      "category": "clinical",
+      "module": "HIV Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "HH-VISIT-001",
+      "formName": "Household Visit",
+      "filename": "zs-form-household-visit.json",
+      "category": "clinical",
+      "module": "Community Health",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "HTN-DX-001",
+      "formName": "Hypertension Diagnosis",
+      "filename": "zs-form-hypertension-diagnosis.json",
+      "category": "clinical",
+      "module": "NCD Services",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Condition"
+    },
+    {
+      "formId": "HTN-SEV-001",
+      "formName": "Severe Hypertension",
+      "filename": "zs-form-hypertension-severe.json",
       "category": "clinical",
       "module": "Emergency Care",
       "version": "2.0",
@@ -135,8 +229,9 @@
       "fhirProfile": "Encounter"
     },
     {
-      "formId": "ADMIT-001",
-      "formName": "Admission Form",
+      "formId": "IPD-ADM-001",
+      "formName": "IPD Admission",
+      "filename": "zs-form-ipd-admission.json",
       "category": "clinical",
       "module": "Inpatient Care",
       "version": "2.0",
@@ -144,17 +239,19 @@
       "fhirProfile": "Encounter"
     },
     {
-      "formId": "DISCHARGE-001",
-      "formName": "Discharge Summary",
-      "category": "clinical",
-      "module": "Inpatient Care",
+      "formId": "LAB-COMP-001",
+      "formName": "Lab Order (Comprehensive)",
+      "filename": "zs-form-lab-order-comprehensive.json",
+      "category": "laboratory",
+      "module": "Laboratory",
       "version": "2.0",
       "status": "active",
-      "fhirProfile": "Encounter"
+      "fhirProfile": "ServiceRequest"
     },
     {
-      "formId": "LAB-REQ-001",
-      "formName": "Laboratory Request",
+      "formId": "LAB-ORD-001",
+      "formName": "Lab Order",
+      "filename": "zs-form-lab-order.json",
       "category": "laboratory",
       "module": "Laboratory",
       "version": "2.0",
@@ -163,7 +260,8 @@
     },
     {
       "formId": "LAB-RES-001",
-      "formName": "Laboratory Results",
+      "formName": "Lab Results",
+      "filename": "zs-form-lab-results.json",
       "category": "laboratory",
       "module": "Laboratory",
       "version": "2.0",
@@ -171,35 +269,69 @@
       "fhirProfile": "DiagnosticReport"
     },
     {
-      "formId": "XRAY-REQ-001",
-      "formName": "X-Ray Request",
-      "category": "laboratory",
-      "module": "Radiology",
+      "formId": "MAT-DEL-001",
+      "formName": "MAT Delivery",
+      "filename": "zs-form-mat-delivery.json",
+      "category": "clinical",
+      "module": "MAT Services",
       "version": "2.0",
       "status": "active",
-      "fhirProfile": "ServiceRequest"
+      "fhirProfile": "Encounter"
     },
     {
-      "formId": "US-001",
-      "formName": "Ultrasound Report",
-      "category": "laboratory",
-      "module": "Radiology",
+      "formId": "MAT-INT-001",
+      "formName": "MAT Intake",
+      "filename": "zs-form-mat-intake.json",
+      "category": "clinical",
+      "module": "MAT Services",
       "version": "2.0",
       "status": "active",
-      "fhirProfile": "DiagnosticReport"
+      "fhirProfile": "Encounter"
     },
     {
-      "formId": "REF-001",
-      "formName": "Referral Form",
-      "category": "operational",
-      "module": "Referral System",
+      "formId": "MH-COMP-001",
+      "formName": "Mental Health Assessment (Comprehensive)",
+      "filename": "zs-form-mh-assessment-comprehensive.json",
+      "category": "clinical",
+      "module": "Mental Health",
       "version": "2.0",
       "status": "active",
-      "fhirProfile": "ServiceRequest"
+      "fhirProfile": "Observation"
+    },
+    {
+      "formId": "MH-001",
+      "formName": "Mental Health Assessment",
+      "filename": "zs-form-mh-assessment.json",
+      "category": "clinical",
+      "module": "Mental Health",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Observation"
+    },
+    {
+      "formId": "NCD-SCR-001",
+      "formName": "NCD Screening",
+      "filename": "zs-form-ncd-screening.json",
+      "category": "clinical",
+      "module": "NCD Services",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Observation"
+    },
+    {
+      "formId": "NURS-001",
+      "formName": "Nursing Observation",
+      "filename": "zs-form-nursing-observation.json",
+      "category": "clinical",
+      "module": "Nursing Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Observation"
     },
     {
       "formId": "REG-001",
       "formName": "Patient Registration",
+      "filename": "zs-form-patient-registration.json",
       "category": "operational",
       "module": "Registration",
       "version": "2.0",
@@ -207,13 +339,84 @@
       "fhirProfile": "Patient"
     },
     {
-      "formId": "CONSENT-001",
-      "formName": "Informed Consent",
+      "formId": "PRESC-COMP-001",
+      "formName": "Prescription (Comprehensive)",
+      "filename": "zs-form-prescription-comprehensive.json",
       "category": "operational",
-      "module": "General",
+      "module": "Pharmacy",
       "version": "2.0",
       "status": "active",
-      "fhirProfile": "Consent"
+      "fhirProfile": "MedicationRequest"
+    },
+    {
+      "formId": "PRESC-001",
+      "formName": "Prescription",
+      "filename": "zs-form-prescription.json",
+      "category": "operational",
+      "module": "Pharmacy",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "MedicationRequest"
+    },
+    {
+      "formId": "REF-001",
+      "formName": "Referral",
+      "filename": "zs-form-referral.json",
+      "category": "operational",
+      "module": "Referral System",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "ServiceRequest"
+    },
+    {
+      "formId": "TB-ENROLL-001",
+      "formName": "TB Enrollment",
+      "filename": "zs-form-tb-enrollment.json",
+      "category": "clinical",
+      "module": "TB Management",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "TRIAGE-COMP-001",
+      "formName": "Triage (Comprehensive)",
+      "filename": "zs-form-triage-comprehensive.json",
+      "category": "clinical",
+      "module": "Emergency Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "TRIAGE-VIT-001",
+      "formName": "Triage Vitals",
+      "filename": "zs-form-triage-vitals.json",
+      "category": "clinical",
+      "module": "Emergency Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Observation"
+    },
+    {
+      "formId": "TRIAGE-001",
+      "formName": "Triage",
+      "filename": "zs-form-triage.json",
+      "category": "clinical",
+      "module": "Emergency Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "VS-001",
+      "formName": "Vital Signs",
+      "filename": "zs-form-vital-signs.json",
+      "category": "clinical",
+      "module": "Clinical Monitoring",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Observation"
     }
   ]
 }

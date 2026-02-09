@@ -1,30 +1,30 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-cvd-lifestyle-counseling",
-  "url": "https://zarish.org/Questionnaire/zs-form-cvd-lifestyle-counseling",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-cvd-lifestyle-counseling",
   "name": "ZarishCVDLifestyleCounseling",
   "title": "Zarish CVD Risk Assessment: Tool 5 - COUNSEL Lifestyle",
   "status": "active",
-  "date": "2026-02-05",
-  "publisher": "Zarish Sphere Platform",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
   "description": "Comprehensive lifestyle counseling form for CVD risk management",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "subjectType": ["Patient"],
   "extension": [
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-clinical-domain",
       "valueString": "NCD"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-form-category",
       "valueString": "counseling"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-service-level",
       "valueString": "Level-3-Specialized"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-protocol-reference",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-protocol-reference",
       "valueString": "WHO-Lifestyle-Counseling-Guidelines"
     }
   ],
@@ -877,7 +877,7 @@
               "text": "Patient Understanding",
               "type": "choice",
               "required": true,
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "barriers-identified",
@@ -916,7 +916,7 @@
               "linkId": "materials-provided",
               "text": "Materials Provided",
               "type": "choice",
-              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+              "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
             },
             {
               "linkId": "next-lifestyle-review",
@@ -942,14 +942,14 @@
           "text": "Patient Response",
           "type": "choice",
           "required": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
         },
         {
           "linkId": "next-step",
           "text": "Next Step",
           "type": "choice",
           "required": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts"
         }
       ]
     }

@@ -1,26 +1,26 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-triage-vitals",
-  "url": "https://zarish.org/Questionnaire/zs-form-triage-vitals",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-triage-vitals",
   "name": "ZarishTriageVitals",
   "title": "Zarish Triage & Vitals Form",
   "status": "active",
-  "date": "2026-02-05",
-  "publisher": "Zarish Sphere Platform",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
   "description": "Comprehensive triage and vital signs form aligned with Gold Standard EMR requirements",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "subjectType": ["Patient"],
   "extension": [
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-clinical-domain",
       "valueString": "Cross-Domain"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-form-category",
       "valueString": "triage"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-service-level",
       "valueString": "Level-2-OPD"
     }
   ],
@@ -38,11 +38,11 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "30-45"
             },
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
               "valueString": "°C"
             }
           ]
@@ -60,11 +60,11 @@
               "required": true,
               "extension": [
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
                   "valueString": "40-300"
                 },
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
                   "valueString": "mmHg"
                 }
               ]
@@ -76,11 +76,11 @@
               "required": true,
               "extension": [
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
                   "valueString": "40-300"
                 },
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
                   "valueString": "mmHg"
                 }
               ]
@@ -94,11 +94,11 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "30-200"
             },
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
               "valueString": "bpm"
             }
           ]
@@ -110,11 +110,11 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "10-40"
             },
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
               "valueString": "breaths/min"
             }
           ]
@@ -126,11 +126,11 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "0-100"
             },
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
               "valueString": "%"
             }
           ]
@@ -142,11 +142,11 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "0.5-300"
             },
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
               "valueString": "kg"
             }
           ]
@@ -164,10 +164,10 @@
           "text": "Triage Category",
           "type": "choice",
           "required": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-triage-category",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-triage-category",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "if spo2 < 90 or hr > 120 then flag_red"
             }
           ]

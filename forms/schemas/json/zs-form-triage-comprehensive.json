@@ -1,26 +1,26 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-triage",
-  "url": "https://zarish.org/Questionnaire/zs-form-triage",
-  "version": "1.0.0",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-triage",
+  "version": "2.0.0",
   "name": "zs-form-triage",
   "title": "Triage Assessment Form",
   "status": "active",
-  "date": "2026-02-07T11:41:19.871471",
+  "date": "2026-02-09",
   "publisher": "Zarish Sphere",
   "description": "Rapid patient assessment and triage prioritization",
   "purpose": "Rapid patient assessment and triage prioritization",
   "extension": [
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-clinical-domain",
       "valueString": "Cross-Domain"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-form-category",
       "valueString": "Triage"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-service-levels",
       "valueString": "Level-1-CHC,Level-2-OPD"
     }
   ],

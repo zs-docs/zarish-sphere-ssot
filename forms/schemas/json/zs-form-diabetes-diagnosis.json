@@ -1,30 +1,30 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-diabetes-diagnosis",
-  "url": "https://zarish.org/Questionnaire/zs-form-diabetes-diagnosis",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-diabetes-diagnosis",
   "name": "ZarishDiabetesDiagnosis",
   "title": "Zarish Type 2 Diabetes Diagnosis & Management Form",
   "status": "active",
-  "date": "2026-02-05",
-  "publisher": "Zarish Sphere Platform",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
   "description": "Comprehensive diabetes diagnosis and management form based on WHO PEN protocol for primary care",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "subjectType": ["Patient"],
   "extension": [
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-clinical-domain",
       "valueString": "NCD"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-form-category",
       "valueString": "diagnosis"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-service-level",
       "valueString": "Level-3-Specialized"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-protocol-reference",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-protocol-reference",
       "valueString": "WHO-PEN-Diabetes-Protocol"
     }
   ],
@@ -48,7 +48,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "≥30 years screening recommended"
             }
           ]
@@ -58,7 +58,7 @@
           "text": "Sex",
           "type": "choice",
           "required": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-sex"
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-sex"
         },
         {
           "linkId": "patient-id",
@@ -78,7 +78,7 @@
           "text": "Whom to Test",
           "type": "choice",
           "repeats": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts",
           "item": [
             {
               "linkId": "age-40-plus",
@@ -134,7 +134,7 @@
           "text": "Select test performed:",
           "type": "choice",
           "required": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-lab-test",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-lab-test",
           "item": [
             {
               "linkId": "fasting-glucose",
@@ -142,11 +142,11 @@
               "type": "decimal",
               "extension": [
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
                   "valueString": "mmol/L"
                 },
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
                   "valueString": "≥7.0 mmol/L"
                 }
               ]
@@ -157,11 +157,11 @@
               "type": "decimal",
               "extension": [
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
                   "valueString": "mmol/L"
                 },
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
                   "valueString": "≥11.1 mmol/L"
                 }
               ]
@@ -172,11 +172,11 @@
               "type": "decimal",
               "extension": [
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
                   "valueString": "mmol/L"
                 },
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
                   "valueString": "≥11.1 mmol/L (with symptoms)"
                 }
               ]
@@ -187,11 +187,11 @@
               "type": "decimal",
               "extension": [
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
                   "valueString": "%"
                 },
                 {
-                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
                   "valueString": "≥6.5%"
                 }
               ]
@@ -331,10 +331,10 @@
           "text": "First-line Medication",
           "type": "choice",
           "required": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-medications",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-medications",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "start_metformin_500_mg_daily_after_meal"
             }
           ]

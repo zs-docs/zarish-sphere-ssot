@@ -1,30 +1,30 @@
 {
   "resourceType": "Questionnaire",
   "id": "zs-form-hypertension-severe",
-  "url": "https://zarish.org/Questionnaire/zs-form-hypertension-severe",
+  "url": "https://docs.zarishsphere.com/fhir/Questionnaire/zs-form-hypertension-severe",
   "name": "ZarishHypertensionSevere",
   "title": "Zarish Hypertension Protocol II (Severe) Form",
   "status": "active",
-  "date": "2026-02-05",
-  "publisher": "Zarish Sphere Platform",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
   "description": "Comprehensive severe hypertension management form based on Bangladesh National Protocol",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "subjectType": ["Patient"],
   "extension": [
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-clinical-domain",
       "valueString": "NCD"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-form-category",
       "valueString": "diagnosis"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-service-level",
       "valueString": "Level-3-Specialized"
     },
     {
-      "url": "https://zarish.org/StructureDefinition/zs-ext-protocol-reference",
+      "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-protocol-reference",
       "valueString": "Bangladesh-National-HTN-Protocol-II"
     }
   ],
@@ -62,11 +62,11 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "≥160"
             },
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
               "valueString": "mmHg"
             }
           ]
@@ -78,11 +78,11 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-field-validation",
               "valueString": "≥100"
             },
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-unit",
               "valueString": "mmHg"
             }
           ]
@@ -94,10 +94,10 @@
       "text": "Pregnancy Status",
       "type": "choice",
       "required": true,
-      "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+      "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-concepts",
       "extension": [
         {
-          "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+          "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
           "valueString": "if pregnant then refer_to_specialist"
         }
       ]
@@ -113,10 +113,10 @@
           "text": "Amlodipine Dose",
           "type": "choice",
           "required": true,
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-medications",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-medications",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "start_amlodipine_2.5-5_mg_daily"
             }
           ]
@@ -125,10 +125,10 @@
           "linkId": "losartan-dose",
           "text": "Losartan Dose",
           "type": "choice",
-          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-medications",
+          "answerValueSet": "https://docs.zarishsphere.com/fhir/ValueSet/zs-valueset-medications",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "if non-pregnant then add_losartan_50_mg"
             }
           ]
@@ -147,7 +147,7 @@
           "required": true,
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "schedule_review_1_month"
             }
           ]
@@ -158,7 +158,7 @@
           "type": "text",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "increase_losartan_to_100_mg"
             }
           ]
@@ -169,7 +169,7 @@
           "type": "text",
           "extension": [
             {
-              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/zs-ext-workflow-logic",
               "valueString": "add_hctz_12.5-25_mg_and_refer"
             }
           ]
