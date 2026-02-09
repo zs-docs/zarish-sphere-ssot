@@ -4,8 +4,8 @@
 # Site settings
 title: "Zarish Sphere SSOT"
 description: "Healthcare Documentation Platform - Single Source of Truth for Clinical Modules, Forms, and Operations"
-baseurl: "/zarish-sphere-ssot"
-url: "https://zs-docs.github.io"
+baseurl: ""
+url: "https://docs.zarishsphere.com"
 
 # Repository information
 repository: zs-docs/zarish-sphere-ssot

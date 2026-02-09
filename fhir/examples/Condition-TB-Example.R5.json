@@ -1,0 +1,92 @@
+{
+  "resourceType": "Condition",
+  "id": "condition-tb-example-01",
+  "meta": {
+    "profile": ["https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishCondition"],
+    "lastUpdated": "2026-02-09T10:40:00Z"
+  },
+  "identifier": [
+    {
+      "system": "http://zarish-sphere.example.com/condition-id",
+      "value": "COND-TB-2024002"
+    }
+  ],
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed",
+        "display": "Confirmed"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "problem-list-item",
+          "display": "Problem List Item"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "CA90.0",
+        "display": "Pulmonary tuberculosis, not confirmed bacteriologically"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "A16.9",
+        "display": "Respiratory tuberculosis, unspecified"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "371569009",
+        "display": "Tuberculosis of lung confirmed by microscopy"
+      }
+    ],
+    "text": "Pulmonary tuberculosis"
+  },
+  "subject": {
+    "reference": "Patient/patient-tb-example-01",
+    "display": "Mohammed Khan"
+  },
+  "onsetDateTime": "2026-01-20",
+  "recordedDate": "2026-01-25T14:30:00Z",
+  "recorder": {
+    "reference": "Practitioner/practitioner-doc-002",
+    "display": "Dr. Aisha Patel"
+  },
+  "severity": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "252418005",
+        "display": "Pulmonary TB with cavitation"
+      }
+    ]
+  },
+  "note": [
+    {
+      "authorReference": {
+        "reference": "Practitioner/practitioner-doc-002",
+        "display": "Dr. Aisha Patel"
+      },
+      "time": "2026-02-09T10:40:00Z",
+      "text": "Pulmonary TB confirmed by sputum AFB smear microscopy (2+). Drug-sensitive TB. On standard DOTS regimen (HRZE). Cavity on CXR in RUL. TB contact: wife (needs screening). Good nutritional status. No comorbidities. Follow-up monthly."
+    }
+  ]
+}

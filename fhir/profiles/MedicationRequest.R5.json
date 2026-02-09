@@ -1,15 +1,19 @@
 {
   "resourceType": "StructureDefinition",
   "id": "zarish-medication-request",
-  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/MedicationRequest",
+  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishMedicationRequest",
   "name": "ZarrishMedicationRequest",
   "title": "Zarish Sphere Medication Request Profile",
   "status": "active",
-  "description": "Medication request/prescription profile - FHIR R5",
+  "version": "2.0.0",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
+  "contact": [{"name": "Zarish Sphere Support", "telecom": [{"system": "email", "value": "zarishsphere@gmail.com"}]}],
+  "description": "Medication request/prescription profile with RxNorm drug coding and dosage instructions - FHIR R5",
   "kind": "resource",
   "abstract": false,
   "type": "MedicationRequest",
-  "baseDefinition": "http://hl7.org/fhir/R5/MedicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
   "derivation": "constraint",
   "differential": {
     "element": [

@@ -31,13 +31,13 @@ fhir/
 
 ## Key Profiles (FHIR R5)
 
-- **Patient**: Patient demographics and registration
-- **Encounter**: Clinical encounters and visits
-- **Observation**: Vital signs, lab results, assessments
-- **Condition**: Diagnoses with ICD-11 and ICD-10 support
-- **MedicationRequest**: Prescriptions and medication orders
-- **Procedure**: Clinical procedures and interventions
-- **ServiceRequest**: Service orders and referrals
+- **Patient**: Patient demographics and registration ([https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishPatient](https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishPatient))
+- **Encounter**: Clinical encounters and visits ([https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishEncounter](https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishEncounter))
+- **Observation**: Vital signs, lab results, assessments ([https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishObservation](https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishObservation))
+- **Condition**: Diagnoses with ICD-11 and ICD-10 support ([https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishCondition](https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishCondition))
+- **MedicationRequest**: Prescriptions and medication orders ([https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishMedicationRequest](https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishMedicationRequest))
+- **Procedure**: Clinical procedures and interventions ([https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishProcedure](https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishProcedure))
+- **ServiceRequest**: Service orders and referrals ([https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishServiceRequest](https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishServiceRequest))
 
 ## Standards & Coding Systems (February 2026)
 

@@ -1,0 +1,116 @@
+{
+  "country": "India",
+  "countryCode": "IN",
+  "region": "South Asia",
+  "deploymentStatus": "active",
+  "lastUpdated": "2026-02-09",
+  "healthSystem": {
+    "systemType": "Mixed (Federal + State + Private)",
+    "primaryLanguage": "Hindi, English",
+    "secondaryLanguages": ["Regional languages"],
+    "healthFacilities": {
+      "primary": "Sub-centers (ASHAs/ANMs)",
+      "secondary": "Community Health Centers (CHCs)",
+      "tertiary": "Medical Colleges & Tertiary Centers"
+    },
+    "currency": "INR",
+    "populationServed": "1.4B",
+    "keyPrograms": ["National TB Elimination Program (NTEP)", "National AIDS Control Program (NACP)", "RMNCH+A"]
+  },
+  "epidemiology": {
+    "majorDiseases": [
+      {"disease": "TB", "prevalence": "313 per 100k", "priority": "Very High", "note": "TB capital of world"},
+      {"disease": "HIV", "prevalence": "0.2%", "priority": "High"},
+      {"disease": "Malaria", "prevalence": "Varies by region", "priority": "High"},
+      {"disease": "Dengue", "prevalence": "Seasonal/endemic", "priority": "Medium"},
+      {"disease": "Maternal mortality", "mmr": "97 per 100k", "priority": "High"}
+    ],
+    "populationVulnerabilities": [
+      "Rural India (70% population)",
+      "Tribal populations",
+      "Migrants",
+      "Sex workers",
+      "People who inject drugs (PWID)"
+    ]
+  },
+  "healthModules enabled": {
+    "communicable_diseases": {
+      "tb_management": {"enabled": true, "status": "Active", "coverage": "National", "program": "NTEP"},
+      "hiv_care": {"enabled": true, "status": "Active", "coverage": "Selected states", "program": "NACP-IV"},
+      "malaria": {"enabled": true, "status": "Active", "coverage": "Endemic states"},
+      "dengue": {"enabled": true, "status": "Piloting"},
+      "leprosy": {"enabled": true, "status": "Active", "coverage": "National"}
+    },
+    "maternal_child_health": {
+      "antenatal_care": {"enabled": true, "status": "Active", "contact_model": "4+ contacts"},
+      "immunization": {"enabled": true, "status": "Active", "program": "IAP"},
+      "family_planning": {"enabled": true, "status": "Active"}
+    },
+    "ncd": {
+      "diabetes": {"enabled": true, "status": "Active", "program": "NPCDCS"},
+      "hypertension": {"enabled": true, "status": "Active"},
+      "cancer": {"enabled": true, "status": "Piloting"}
+    }
+  },
+  "facility_network": [
+    {
+      "facilityType": "Sub-center (Village level)",
+      "coverage": "1000 population",
+      "staffing": {"ASHA": 1, "ANM": 1},
+      "services": ["ANC", "Immunization", "Family planning", "Basic health education"]
+    },
+    {
+      "facilityType": "Primary Health Center (PHC)",
+      "coverage": "3000-5000 population",
+      "staffing": {"ANM": 2, "Male Health Worker": 1},
+      "services": ["Basic maternal/child health", "TB screening", "Immunization"]
+    },
+    {
+      "facilityType": "Community Health Center (CHC)",
+      "coverage": "80k-120k population",
+      "staffing": {"Doctors": 3, "Nurses": 5},
+      "services": ["Delivery care", "TB diagnosis", "HIV testing", "Basic surgery"]
+    },
+    {
+      "facilityType": "District Hospital",
+      "coverage": "District-wide",
+      "staffing": {"Doctors": 20+", "Specialists": "Variable"},
+      "services": ["All services", "Tertiary care", "ART initiation", "TB treatment"]
+    }
+  ],
+  "standards_configuration": {
+    "disease_classification": "ICD-11 (adopting nationally)",
+    "fhir_version": "R5",
+    "coding_systems": {
+      "primary": "ICD-11 MMS",
+      "secondary": ["ICD-10 India", "SNOMED CT"],
+      "drugs": "RxNorm (mapped to India DCI/generic names)"
+    },
+    "vital_signs_units": {
+      "bp": "mmHg",
+      "temperature": "Celsius",
+      "weight": "kg"
+    }
+  },
+  "national_programs": {
+    "NTEP": {
+      "name": "National TB Elimination Program",
+      "ministry": "NTEP/WHO",
+      "coverage": "National",
+      "focus": ["Drug-sensitive TB", "MDR-TB", "TB-HIV"]
+    },
+    "NACP": {
+      "name": "National AIDS Control Program",
+      "ministry": "NACO",
+      "coverage": "Selected high burden districts",
+      "focus": ["ART scale-up", "TB-HIV integration", "KP programs"]
+    }
+  },
+  "contact_information": {
+    "focal_person": "Dr. Rajesh Kumar",
+    "title": "India Programme Head",
+    "email": "zarishsphere@gmail.com",
+    "phone": "+91-1100-000001",
+    "office_address": "New Delhi, India"
+  }
+}

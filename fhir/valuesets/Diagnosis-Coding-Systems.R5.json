@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "id": "diagnosis-coding-systems",
+  "url": "https://docs.zarishsphere.com/fhir/ValueSet/diagnosis-coding-systems",
+  "name": "ZarishDiagnosisCodingSystems",
+  "title": "Zarish Sphere Diagnosis Coding Systems",
+  "status": "active",
+  "version": "2.0.0",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
+  "description": "Allowed coding systems for diagnoses in Zarish Sphere: ICD-11 MMS (primary), ICD-10 CM, SNOMED CT International",
+  "purpose": "To standardize allowed diagnosis coding systems while maintaining ICD-11 as primary standard",
+  "compose": {
+    "include": [
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "display": "ICD-11 Master Edition (WHO)"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "display": "ICD-10 Clinical Modification (NCHS/CDC)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "display": "SNOMED CT International Edition"
+      }
+    ]
+  }
+}

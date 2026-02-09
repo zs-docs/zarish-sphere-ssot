@@ -1,15 +1,19 @@
 {
   "resourceType": "StructureDefinition",
   "id": "zarish-service-request",
-  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/ServiceRequest",
+  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishServiceRequest",
   "name": "ZarrishServiceRequest",
   "title": "Zarish Sphere Service Request Profile",
   "status": "active",
-  "description": "Service request (referral, lab order, imaging) profile - FHIR R5",
+  "version": "2.0.0",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
+  "contact": [{"name": "Zarish Sphere Support", "telecom": [{"system": "email", "value": "zarishsphere@gmail.com"}]}],
+  "description": "Service request profile for referrals, lab orders, imaging requests, and diagnostic services - FHIR R5",
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
-  "baseDefinition": "http://hl7.org/fhir/R5/ServiceRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
   "derivation": "constraint",
   "differential": {
     "element": [

@@ -1,63 +1,107 @@
 {
   "resourceType": "StructureDefinition",
   "id": "zarish-patient",
-  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Patient",
+  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishPatient",
   "name": "ZarrishPatient",
   "title": "Zarish Sphere Patient Profile",
   "status": "active",
-  "description": "Patient profile for Zarish Sphere SSOT platform - FHIR R5",
+  "version": "2.0.0",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
+  "contact": [
+    {
+      "name": "Zarish Sphere Support",
+      "telecom": [{"system": "email", "value": "zarishsphere@gmail.com"}]
+    }
+  ],
+  "description": "Patient profile for Zarish Sphere SSOT platform with multi-country identifier support - FHIR R5",
+  "purpose": "To standardize patient demographic and administrative information across Zarish Sphere deployments in Bangladesh, India, Myanmar, Pakistan, and Thailand",
   "kind": "resource",
   "abstract": false,
   "type": "Patient",
-  "baseDefinition": "http://hl7.org/fhir/R5/Patient",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
   "derivation": "constraint",
   "differential": {
     "element": [
       {
         "id": "Patient",
         "path": "Patient",
-        "definition": "Zarish Sphere compliant patient resource"
+        "short": "Zarish Sphere Patient",
+        "definition": "Patient demographic and clinical information within Zarish Sphere SSOT"
       },
       {
         "id": "Patient.identifier",
         "path": "Patient.identifier",
         "min": 1,
         "max": "*",
-        "definition": "Patient unique identifiers (medical record, national ID, etc.)"
+        "definition": "Patient unique identifiers: medical record number, national ID, passport number, biometric ID"
+      },
+      {
+        "id": "Patient.identifier.system",
+        "path": "Patient.identifier.system",
+        "definition": "The namespace for the identifier (e.g., http://example.com/patient-id)",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://docs.zarishsphere.com/fhir/ValueSet/patient-identifier-systems"
+        }
+      },
+      {
+        "id": "Patient.identifier.value",
+        "path": "Patient.identifier.value",
+        "min": 1,
+        "definition": "The identifier value assigned by the issuing system"
+      },
+      {
+        "id": "Patient.active",
+        "path": "Patient.active",
+        "definition": "Whether this patient record is in active use (true) or archived (false)"
       },
       {
         "id": "Patient.name",
         "path": "Patient.name",
         "min": 1,
         "max": "*",
-        "definition": "Patient name details"
+        "definition": "Patient name in local or Latin script; may include given, family, and middle names"
       },
       {
         "id": "Patient.telecom",
         "path": "Patient.telecom",
-        "min": 0,
-        "max": "*",
-        "definition": "Contact details including phone, email"
+        "definition": "Contact details: phone numbers, email addresses"
+      },
+      {
+        "id": "Patient.gender",
+        "path": "Patient.gender",
+        "definition": "Patient biological sex: male, female, other, unknown",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/administrative-gender"
+        }
       },
       {
         "id": "Patient.birthDate",
         "path": "Patient.birthDate",
         "min": 1,
-        "definition": "Date of birth (required for age calculation)"
+        "definition": "Date of birth (required for age-based clinical protocols and eligibility)"
       },
       {
         "id": "Patient.address",
         "path": "Patient.address",
-        "min": 0,
-        "max": "*",
-        "definition": "Patient residential address"
+        "definition": "Residential address: street, city, district, province, country, postal code"
+      },
+      {
+        "id": "Patient.maritalStatus",
+        "path": "Patient.maritalStatus",
+        "definition": "Marital status relevant for social and reproductive health programs"
       },
       {
         "id": "Patient.contact",
         "path": "Patient.contact",
-        "min": 0,
-        "max": "*",
-        "definition": "Emergency contact or next of kin"
+        "definition": "Emergency contact or next of kin with relationship and contact details"
+      },
+      {
+        "id": "Patient.communication",
+        "path": "Patient.communication",
+        "definition": "Languages spoken by the patient"
       }
     ]
   }

@@ -1,31 +1,63 @@
 {
   "resourceType": "StructureDefinition",
   "id": "zarish-condition",
-  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Condition",
+  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishCondition",
   "name": "ZarrishCondition",
   "title": "Zarish Sphere Condition Profile",
   "status": "active",
-  "description": "Condition/Diagnosis profile supporting ICD-10 and ICD-11 coding - FHIR R5",
+  "version": "2.0.0",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
+  "contact": [
+    {
+      "name": "Zarish Sphere Support",
+      "telecom": [{"system": "email", "value": "zarishsphere@gmail.com"}]
+    }
+  ],
+  "description": "Clinical condition profile supporting ICD-11 MMS (primary), ICD-10 CM, and SNOMED CT coding - FHIR R5 compliant",
+  "purpose": "To standardize condition/diagnosis recording across Zarish Sphere deployments with multi-country support",
   "kind": "resource",
   "abstract": false,
   "type": "Condition",
-  "baseDefinition": "http://hl7.org/fhir/R5/Condition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Condition",
   "derivation": "constraint",
   "differential": {
     "element": [
       {
         "id": "Condition",
         "path": "Condition",
-        "definition": "Zarish Sphere condition with ICD-10 and ICD-11 support"
+        "definition": "Zarish Sphere condition with ICD-11 MMS, ICD-10 CM, and SNOMED CT support"
+      },
+      {
+        "id": "Condition.identifier",
+        "path": "Condition.identifier",
+        "min": 1,
+        "max": "*",
+        "definition": "Unique identifier for this condition record within the Zarish Sphere system"
       },
       {
         "id": "Condition.code",
         "path": "Condition.code",
         "min": 1,
-        "definition": "Diagnosis code (ICD-10, ICD-11, or SNOMED CT)",
+        "definition": "Diagnosis code - ICD-11 MMS preferred, with ICD-10 CM and SNOMED CT support",
         "binding": {
           "strength": "extensible",
-          "valueSet": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/valuesets/ZarrishDiagnosisCodes"
+          "valueSet": "https://docs.zarishsphere.com/fhir/ValueSet/condition-codes-icd11"
+        }
+      },
+      {
+        "id": "Condition.code.coding",
+        "path": "Condition.code.coding",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Condition.code.coding.system",
+        "path": "Condition.code.coding.system",
+        "definition": "The coding system: http://id.who.int/icd/release/11/mms (ICD-11), http://hl7.org/fhir/sid/icd-10-cm, or http://snomed.info/sct",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://docs.zarishsphere.com/fhir/ValueSet/diagnosis-coding-systems"
         }
       },
       {
@@ -36,7 +68,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Patient"
+              "https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishPatient"
             ]
           }
         ]
@@ -48,7 +80,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Encounter"
+              "https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishEncounter"
             ]
           }
         ]
@@ -65,10 +97,42 @@
       {
         "id": "Condition.verificationStatus",
         "path": "Condition.verificationStatus",
+        "min": 1,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/condition-verification"
+          "valueSet": "http://hl7.org/fhir/ValueSet/condition-ver-status"
         }
+      },
+      {
+        "id": "Condition.category",
+        "path": "Condition.category",
+        "definition": "Category of the condition - clinical, encounter diagnosis, problem list item, health concern"
+      },
+      {
+        "id": "Condition.severity",
+        "path": "Condition.severity",
+        "definition": "Severity assessment: mild, moderate, severe"
+      },
+      {
+        "id": "Condition.onsetDateTime",
+        "path": "Condition.onsetDateTime",
+        "definition": "Date/time when the condition was first observed or diagnosed"
+      },
+      {
+        "id": "Condition.abatementDateTime",
+        "path": "Condition.abatementDateTime",
+        "definition": "Date/time when the condition was resolved or went into remission"
+      },
+      {
+        "id": "Condition.recordedDate",
+        "path": "Condition.recordedDate",
+        "min": 1,
+        "definition": "Date when the condition was recorded in the system (required)"
+      },
+      {
+        "id": "Condition.recorder",
+        "path": "Condition.recorder",
+        "definition": "Technology provider (system) or person who recorded the condition"
       }
     ]
   }

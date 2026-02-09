@@ -1,0 +1,179 @@
+{
+  "country": "Bangladesh",
+  "countryCode": "BD",
+  "region": "South Asia",
+  "deploymentStatus": "active",
+  "lastUpdated": "2026-02-09",
+  "healthSystem": {
+    "systemType": "Mixed (Public + NGO)",
+    "primaryLanguage": "Bengali",
+    "secondaryLanguages": ["English"],
+    "healthFacilities": {
+      "primary": "Union Health Centers (UHC)",
+      "secondary": "Upazila Health Complexes (UHC)",
+      "tertiary": "Medical Colleges & National Institutes"
+    },
+    "currency": "BDT",
+    "populationServed": "170M",
+    "keyChallenges": ["Infrastructure gaps", "Human resource shortages", "Equipment access", "Supply chain issues"]
+  },
+  "epidemiology": {
+    "majorDiseases": [
+      {"disease": "HIV", "prevalence": "0.2%", "priority": "High"},
+      {"disease": "TB", "prevalence": "221 per 100k", "priority": "High"},
+      {"disease": "Malaria", "prevalence": "0.1% (endemic in CHT)", "priority": "Medium"},
+      {"disease": "Maternal mortality", "mmr": "173 per 100k live births", "priority": "High"},
+      {"disease": "Undernutrition", "prevalence": "28% stunting in children <5", "priority": "High"}
+    ],
+    "populationVulnerabilities": [
+      "Rohingya refugees in Cox's Bazar (900k+)",
+      "Rural underserved populations",
+      "Urban slum dwellers",
+      "Migrant workers"
+    ]
+  },
+  "healthModulesEnabled": {
+    "communicable_diseases": {
+      "hiv_care": {"enabled": true, "status": "Active", "facilities": "All tertiary/secondary"},
+      "tb_management": {"enabled": true, "status": "Active", "facilities": "All UHCs + private"},
+      "malaria": {"enabled": true, "status": "Active", "facilities": "CHT & endemic areas"},
+      "hepatitis": {"enabled": true, "status": "Piloting"},
+      "leprosy": {"enabled": true, "status": "Active"}
+    },
+    "maternal_child_health": {
+      "antenatal_care": {"enabled": true, "status": "Active", "contact_model": "WHO 8-contact"},
+      "postnatal_care": {"enabled": true, "status": "Active"},
+      "immunization": {"enabled": true, "status": "Active"},
+      "cmam": {"enabled": true, "status": "Active", "target_population": "MAM/SAM <5"}
+    },
+    "ncd": {
+      "diabetes": {"enabled": true, "status": "Emerging"},
+      "hypertension": {"enabled": true, "status": "Piloting"},
+      "mental_health": {"enabled": true, "status": "Piloting"}
+    }
+  },
+  "healthFacilitySettings": [
+    {
+      "facilityType": "UHC (Union Health Center)",
+      "capacity": "Low",
+      "staffing": {"doctors": 0, "nurses": 1, "healthWorkers": 2},
+      "availability": "6am-2pm",
+      "services": ["ANC", "Immunization", "Family Planning", "TB screening", "Basic wound care"]
+    },
+    {
+      "facilityType": "Upazila Health Complex",
+      "capacity": "Medium",
+      "staffing": {"doctors": 3, "nurses": 5, "healthWorkers": 10},
+      "availability": "24/7",
+      "services": ["All maternal/child health", "HIV testing", "TB diagnosis", "Delivery"]
+    },
+    {
+      "facilityType": "Medical College Hospital",
+      "capacity": "High",
+      "staffing": {"doctors": 20, "nurses": 40, "healthWorkers": 50},
+      "availability": "24/7",
+      "services": ["All services", "Specialized care", "Advanced diagnostics", "ART dispensing"]
+    },
+    {
+      "facilityType": "NGO Clinic",
+      "capacity": "Variable",
+      "staffing": {"doctors": "Variable", "nurses": "Variable"},
+      "services": ["HIV care & ART", "TB treatment", "Maternal health", "Community health"]
+    }
+  ],
+  "criticalProcurements": [
+    {
+      "item": "Rapid HIV tests (4th gen Ag/Ab)",
+      "supplier": "WHO prequalified",
+      "quantity_annual": "500k",
+      "unit_cost_usd": "0.30"
+    },
+    {
+      "item": "CD4 reagents",
+      "supplier": "FACSCount/Alere",
+      "quantity_annual": "20k",
+      "unit_cost_usd": "5.00"
+    },
+    {
+      "item": "ART medications",
+      "supplier": "Global Fund/NASP",
+      "quantity_annual": "5000 patients",
+      "unit_cost_usd": "1.50/month"
+    },
+    {
+      "item": "TB drugs (4-drug combinations)",
+      "supplier": "Global Fund",
+      "quantity_annual": "50k patients",
+      "unit_cost_usd": "0.50/month"
+    }
+  ],
+  "standards_configuration": {
+    "disease_classification": "ICD-11 adapted",
+    "fhir_version": "R5",
+    "coding_systems": {
+      "primary": "ICD-11 MMS",
+      "secondary": ["ICD-10 CM", "SNOMED CT"],
+      "medications": "RxNorm (with GL mapped alternatives)"
+    },
+    "vital_signs_units": {
+      "bp": "mmHg",
+      "temperature": "Celsius",
+      "weight": "kg",
+      "height": "cm"
+    }
+  },
+  "training_requirements": [
+    {
+      "role": "HCW (Health Center Worker)",
+      "modules": ["Basic HIV testing", "TB screening", "Maternal health basics", "Data recording"],
+      "duration_hours": 40,
+      "refresh_years": 2
+    },
+    {
+      "role": "Nurse",
+      "modules": ["HIV care", "TB treatment", "ANC/PNC", "Counseling", "FHIR data mapping"],
+      "duration_hours": 80,
+      "refresh_years": 2
+    },
+    {
+      "role": "Doctor",
+      "modules": ["HIV treatment algorithms", "TB management", "Obstetrics", "System administration"],
+      "duration_hours": 120,
+      "refresh_years": 2
+    }
+  ],
+  "unique_configurations": {
+    "rohingya_response": {
+      "status": "Active program",
+      "coverage": "Cox's Bazar camps + host communities",
+      "key_services": ["HIV testing/treatment", "TB diagnosis/treatment", "Maternal health", "Mental health"],
+      "considerations": ["Language barriers", "Limited infrastructure", "Movement restrictions", "Trauma-informed care"]
+    },
+    "private_sector_engagement": {
+      "status": "Ongoing",
+      "providers": "Private clinics, medical colleges, standalone labs",
+      "approach": "Licensing, training, referral linkages",
+      "data_sharing": "Voluntary reporting to surveillance"
+    }
+  },
+  "contact_information": {
+    "focal_person": "Dr. AB Rahman",
+    "title": "Country Coordinator",
+    "email": "zarishsphere@gmail.com",
+    "phone": "+880-1700-000001",
+    "office_address": "Dhaka, Bangladesh"
+  },
+  "references": {
+    "national_guidelines": [
+      "National HIV Guidelines (NASP 2024)",
+      "National TB Control Program Guidelines",
+      "Maternal Health Standards (DGFP)",
+      "Essential Medicines List (Bangladesh)"
+    ],
+    "disease_codes": [
+      "HIV: QE84 (ICD-11), B20 (ICD-10)",
+      "TB: CA90.0 (ICD-11), A16.9 (ICD-10)",
+      "Pregnancy: QH84 (ICD-11), Z33.1 (ICD-10)"
+    ]
+  }
+}

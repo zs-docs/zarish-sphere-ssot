@@ -1,15 +1,19 @@
 {
   "resourceType": "StructureDefinition",
   "id": "zarish-observation",
-  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Observation",
+  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishObservation",
   "name": "ZarrishObservation",
   "title": "Zarish Sphere Observation Profile",
   "status": "active",
-  "description": "Observation profile for vital signs, lab results, assessments - FHIR R5",
+  "version": "2.0.0",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
+  "contact": [{"name": "Zarish Sphere Support", "telecom": [{"system": "email", "value": "zarishsphere@gmail.com"}]}],
+  "description": "Observation profile for vital signs, lab results, assessments, and clinical observations - FHIR R5",
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
-  "baseDefinition": "http://hl7.org/fhir/R5/Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
   "derivation": "constraint",
   "differential": {
     "element": [

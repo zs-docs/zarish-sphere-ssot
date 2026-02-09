@@ -1,0 +1,90 @@
+{
+  "resourceType": "Patient",
+  "id": "patient-hiv-example-01",
+  "meta": {
+    "profile": ["https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishPatient"],
+    "lastUpdated": "2026-02-09T10:30:00Z"
+  },
+  "identifier": [
+    {
+      "system": "http://zarish-sphere.example.com/patient-id",
+      "value": "ZS-BD-2024001",
+      "type": {"coding": [{"code": "MR", "display": "Medical Record Number"}]}
+    },
+    {
+      "system": "http://example.com/national-id",
+      "value": "19800315001234",
+      "type": {"coding": [{"code": "NIDNBR", "display": "National ID Number"}]}
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "official",
+      "given": ["Fatima"],
+      "family": "Rahman"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1980-03-15",
+  "address": [
+    {
+      "use": "home",
+      "line": ["Mohakhali", "Dhaka"],
+      "city": "Dhaka",
+      "district": "Dhaka",
+      "country": "BD",
+      "postalCode": "1213"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+880-1700-000123",
+      "use": "mobile"
+    }
+  ],
+  "maritalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+        "code": "M",
+        "display": "Married"
+      }
+    ]
+  },
+  "contact": [
+    {
+      "relationship": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+              "code": "N",
+              "display": "Next-of-kin"
+            }
+          ]
+        }
+      ],
+      "name": {
+        "given": ["Ahmed"],
+        "family": "Rahman"
+      },
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "+880-1700-000124"
+        }
+      ]
+    }
+  ],
+  "meta":{
+    "tag": [
+      {
+        "system": "http://zarish-sphere.example.com/country",
+        "code": "BD",
+        "display": "Bangladesh"
+      }
+    ]
+  }
+}

@@ -1,15 +1,19 @@
 {
   "resourceType": "StructureDefinition",
   "id": "zarish-procedure",
-  "url": "https://zs-docs.github.io/zarish-sphere-ssot/fhir/profiles/Procedure",
+  "url": "https://docs.zarishsphere.com/fhir/StructureDefinition/ZarrishProcedure",
   "name": "ZarrishProcedure",
   "title": "Zarish Sphere Procedure Profile",
   "status": "active",
-  "description": "Procedure/Intervention profile - FHIR R5",
+  "version": "2.0.0",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
+  "contact": [{"name": "Zarish Sphere Support", "telecom": [{"system": "email", "value": "zarishsphere@gmail.com"}]}],
+  "description": "Procedure/Intervention profile for surgical and clinical procedures - FHIR R5",
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
-  "baseDefinition": "http://hl7.org/fhir/R5/Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
   "derivation": "constraint",
   "differential": {
     "element": [

@@ -5,7 +5,7 @@
 [![Deploy to GitHub Pages](https://github.com/zs-docs/zarish-sphere-ssot/actions/workflows/deploy.yml/badge.svg)](https://github.com/zs-docs/zarish-sphere-ssot/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Live Documentation:** [https://zs-docs.github.io/zarish-sphere-ssot](https://zs-docs.github.io/zarish-sphere-ssot)
+**Live Documentation:** [https://docs.zarishsphere.com](https://docs.zarishsphere.com)
 
 ---
 
@@ -243,12 +243,12 @@ Special thanks to all contributors and healthcare workers using this platform.
 
 ---
 
-## 📞 Support
+## 📞 Support & Contact
 
-- **Documentation:** [https://zs-docs.github.io/zarish-sphere-ssot](https://zs-docs.github.io/zarish-sphere-ssot)
+- **Documentation:** [https://docs.zarishsphere.com](https://docs.zarishsphere.com)
 - **Issues:** [GitHub Issues](https://github.com/zs-docs/zarish-sphere-ssot/issues)
 - **Discussions:** [GitHub Discussions](https://github.com/zs-docs/zarish-sphere-ssot/discussions)
-- **Email:** support@zarish-sphere.org
+- **Email:** zarishsphere@gmail.com
 
 ---
 

@@ -1,0 +1,78 @@
+{
+  "resourceType": "ValueSet",
+  "id": "medication-codes",
+  "url": "https://docs.zarishsphere.com/fhir/ValueSet/medication-codes",
+  "name": "ZarishMedicationCodes",
+  "title": "Zarish Sphere Medication Codes (RxNorm)",
+  "status": "active",
+  "version": "2.0.0",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
+  "description": "Common medication codes using RxNorm for Zarish Sphere deployments",
+  "purpose": "To standardize medication coding across Zarish Sphere with focus on essential medicines list",
+  "compose": {
+    "include": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "concept": [
+          {
+            "code": "1144173",
+            "display": "tenofovir disoproxil fumarate 300 MG / lamivudine 300 MG / dolutegravir 50 MG [TDF/3TC/DTG]"
+          },
+          {
+            "code": "1242904",
+            "display": "dolutegravir 50 MG Oral Tablet"
+          },
+          {
+            "code": "1144173",
+            "display": "Efavirenz 600 MG / emtricitabine 200 MG / tenofovir disoproxil fumarate 300 MG [EFV/3TC/TDF]"
+          },
+          {
+            "code": "1170591",
+            "display": "rifampicin 600 MG Oral Capsule"
+          },
+          {
+            "code": "1100184",
+            "display": "isoniazid 300 MG Oral Tablet"
+          },
+          {
+            "code": "1187575",
+            "display": "pyrazinamide 500 MG Oral Tablet"
+          },
+          {
+            "code": "1100055",
+            "display": "ethambutol 400 MG Oral Tablet"
+          },
+          {
+            "code": "1191192",
+            "display": "metformin 500 MG Oral Tablet"
+          },
+          {
+            "code": "1191192",
+            "display": "enalapril 5 MG Oral Tablet"
+          },
+          {
+            "code": "834060",
+            "display": "amlodipine 5 MG Oral Tablet"
+          },
+          {
+            "code": "198418",
+            "display": "oxytocin 10 unit/mL Injectable Solution"
+          },
+          {
+            "code": "1191534",
+            "display": "misoprostol 200 UG Oral Tablet"
+          },
+          {
+            "code": "1250420",
+            "display": "artemether 80 MG/mL Intramuscular Injection"
+          },
+          {
+            "code": "1087968",
+            "display": "artesunate 60 MG Intravenous Injection"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "resourceType": "ValueSet",
+  "id": "condition-codes-icd11",
+  "url": "https://docs.zarishsphere.com/fhir/ValueSet/condition-codes-icd11",
+  "name": "ZarishConditionCodesICD11",
+  "title": "Zarish Sphere Condition Codes (ICD-11, ICD-10, SNOMED CT)",
+  "status": "active",
+  "version": "2.0.0",
+  "date": "2026-02-09",
+  "publisher": "Zarish Sphere",
+  "description": "Comprehensive value set of diagnoses mapped across ICD-11 MMS, ICD-10 CM, and SNOMED CT for Zarish Sphere",
+  "purpose": "To standardize diagnosis coding across Zarish Sphere deployments with support for multiple coding systems",
+  "compose": {
+    "include": [
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "concept": [
+          {
+            "code": "QE84",
+            "display": "Human immunodeficiency virus disease"
+          },
+          {
+            "code": "QE84.0",
+            "display": "HIV disease without mention of AIDS"
+          },
+          {
+            "code": "QE84.1",
+            "display": "AIDS"
+          },
+          {
+            "code": "CA90.0",
+            "display": "Tuberculosis of lung, confirmed by microscopy with or without culture (bacteriologically positive)"
+          },
+          {
+            "code": "CA90.1",
+            "display": "Tuberculosis of lung, not confirmed bacteriologically (clinically diagnosed)"
+          },
+          {
+            "code": "4A3Z.Z",
+            "display": "Type 1 diabetes mellitus"
+          },
+          {
+            "code": "5A11.0",
+            "display": "Type 2 diabetes mellitus"
+          },
+          {
+            "code": "BA00",
+            "display": "Essential hypertension"
+          },
+          {
+            "code": "CA93",
+            "display": "Malignant neoplasm"
+          },
+          {
+            "code": "6A70.1",
+            "display": "Major depressive disorder, single episode"
+          },
+          {
+            "code": "QH84.0",
+            "display": "Pregnancy - normal"
+          },
+          {
+            "code": "QH85",
+            "display": "Pre-eclampsia or eclampsia"
+          },
+          {
+            "code": "QC5",
+            "display": "Malaria"
+          },
+          {
+            "code": "BA4E.2",
+            "display": "Acute myocardial infarction"
+          }
+        ]
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "concept": [
+          {
+            "code": "B20",
+            "display": "Human immunodeficiency virus (HIV) disease"
+          },
+          {
+            "code": "B20.9",
+            "display": "HIV disease, unspecified"
+          },
+          {
+            "code": "A16.9",
+            "display": "Respiratory tuberculosis, unspecified"
+          },
+          {
+            "code": "A19.9",
+            "display": "Miliary tuberculosis, unspecified"
+          },
+          {
+            "code": "E10.9",
+            "display": "Type 1 diabetes mellitus with unspecified complications"
+          },
+          {
+            "code": "E11.9",
+            "display": "Type 2 diabetes mellitus with unspecified complications"
+          },
+          {
+            "code": "I10",
+            "display": "Essential (primary) hypertension"
+          },
+          {
+            "code": "C80.1",
+            "display": "Malignant (primary) neoplasm, unspecified"
+          },
+          {
+            "code": "F32.9",
+            "display": "Major depressive disorder, single episode, unspecified"
+          },
+          {
+            "code": "Z33.1",
+            "display": "Pregnant state, incidental"
+          },
+          {
+            "code": "O14.9",
+            "display": "Unspecified pre-eclampsia"
+          },
+          {
+            "code": "B54",
+            "display": "Unspecified malaria"
+          },
+          {
+            "code": "I21.9",
+            "display": "ST elevation (STEMI) and non-ST elevation (NSTEMI) myocardial infarction of unspecified site"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "86406008",
+            "display": "Human immunodeficiency virus infection"
+          },
+          {
+            "code": "19030005",
+            "display": "Disease caused by human immunodeficiency virus 1"
+          },
+          {
+            "code": "368821009",
+            "display": "Human immunodeficiency virus 1 with opportunistic infection"
+          },
+          {
+            "code": "66071002",
+            "display": "Tuberculosis"
+          },
+          {
+            "code": "371569009",
+            "display": "Tuberculosis of lung confirmed by microscopy"
+          },
+          {
+            "code": "371572006",
+            "display": "Tuberculosis of lung not confirmed bacteriologically"
+          },
+          {
+            "code": "44054006",
+            "display": "Diabetes mellitus, type 1"
+          },
+          {
+            "code": "44054006",
+            "display": "Diabetes mellitus, type 2"
+          },
+          {
+            "code": "59621000",
+            "display": "Essential hypertension"
+          },
+          {
+            "code": "73211009",
+            "display": "Diabetes mellitus"
+          },
+          {
+            "code": "128639003",
+            "display": "Pregnancy, normal"
+          },
+          {
+            "code": "42399005",
+            "display": "Eclampsia"
+          },
+          {
+            "code": "111816002",
+            "display": "Malaria"
+          }
+        ]
+      }
+    ]
+  }
+}

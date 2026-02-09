@@ -1,0 +1,530 @@
+{
+  "formId": "HIV-TC-001",
+  "formName": "HIV Testing & Counseling",
+  "formTitle": "HIV Test, Counseling & Results Documentation",
+  "version": "2.0",
+  "status": "active",
+  "category": "clinical",
+  "module": "HIV Care & Treatment",
+  "description": "Standardized form for HIV testing services, pre-test counseling, test execution, and results disclosure",
+  "created": "2024-01-15",
+  "lastUpdated": "2026-02-09",
+  "author": "Zarish Sphere Clinical Team",
+  "fhirProfile": "Observation",
+  "icdCodes": {
+    "procedure": "Z11.4",
+    "diagnosis": "Z01.7"
+  },
+  "sections": [
+    {
+      "sectionId": "demographic",
+      "sectionName": "Patient Demographic Information",
+      "required": true,
+      "fields": [
+        {
+          "fieldId": "mrn",
+          "fieldName": "Medical Record Number (MRN)",
+          "fieldType": "text",
+          "required": true,
+          "validation": {
+            "pattern": "^ZS-[A-Z]{2}-[0-9]{6}$",
+            "errorMessage": "Format: ZS-XX-######"
+          },
+          "fhirMapping": "Patient.identifier.value",
+          "example": "ZS-BD-202400001"
+        },
+        {
+          "fieldId": "firstName",
+          "fieldName": "First Name(s)",
+          "fieldType": "text",
+          "required": true,
+          "fhirMapping": "Patient.name.given"
+        },
+        {
+          "fieldId": "lastName",
+          "fieldName": "Last/Family Name",
+          "fieldType": "text",
+          "required": true,
+          "fhirMapping": "Patient.name.family"
+        },
+        {
+          "fieldId": "dob",
+          "fieldName": "Date of Birth",
+          "fieldType": "date",
+          "required": true,
+          "fhirMapping": "Patient.birthDate",
+          "validation": {
+            "minAge": 0,
+            "maxAge": 120
+          }
+        },
+        {
+          "fieldId": "age",
+          "fieldName": "Age (years)",
+          "fieldType": "number",
+          "required": false,
+          "readOnly": true,
+          "calculation": "calculateAge(dob)",
+          "validation": {
+            "min": 0,
+            "max": 120
+          }
+        },
+        {
+          "fieldId": "gender",
+          "fieldName": "Biological Sex",
+          "fieldType": "select",
+          "required": true,
+          "options": [
+            {"value": "M", "label": "Male"},
+            {"value": "F", "label": "Female"},
+            {"value": "O", "label": "Other"},
+            {"value": "U", "label": "Unknown"}
+          ],
+          "fhirMapping": "Patient.gender"
+        },
+        {
+          "fieldId": "phone",
+          "fieldName": "Contact Phone Number",
+          "fieldType": "tel",
+          "required": false,
+          "validation": {
+            "pattern": "^[+][0-9]{10,15}$"
+          },
+          "fhirMapping": "Patient.telecom.value",
+          "help": "Include country code, e.g., +880-1700-123456"
+        }
+      ]
+    },
+    {
+      "sectionId": "clinicalInfo",
+      "sectionName": "Clinical Information & Indication",
+      "required": true,
+      "fields": [
+        {
+          "fieldId": "visitDate",
+          "fieldName": "Date of Test",
+          "fieldType": "date",
+          "required": true,
+          "fhirMapping": "Observation.effectiveDateTime",
+          "validation": {
+            "maxDate": "today"
+          }
+        },
+        {
+          "fieldId": "facility",
+          "fieldName": "Testing Facility",
+          "fieldType": "select",
+          "required": true,
+          "fhirMapping": "Observation.performer.reference",
+          "options": [
+            {"value": "HCT", "label": "HCT Clinic"},
+            {"value": "ANC", "label": "Antenatal Clinic"},
+            {"value": "TB", "label": "TB Clinic"},
+            {"value": "STI", "label": "STI Clinic"},
+            {"value": "OP", "label": "Outpatient"},
+            {"value": "IP", "label": "Inpatient"},
+            {"value": "COMM", "label": "Community"}
+          ]
+        },
+        {
+          "fieldId": "indication",
+          "fieldName": "Testing Indication (check all that apply)",
+          "fieldType": "checkbox",
+          "required": true,
+          "options": [
+            {"value": "SYMP", "label": "Symptomatic (fever, weight loss, diarrhea >2 weeks)"},
+            {"value": "TB", "label": "TB suspected/confirmed (TB contact)"},
+            {"value": "PREG", "label": "Pregnant (PMTCT)"},
+            {"value": "ANC", "label": "Routine antenatal screening"},
+            {"value": "STI", "label": "STI symptoms"},
+            {"value": "SEXW", "label": "Sexual health risk"},
+            {"value": "MSM", "label": "Men who have sex with men"},
+            {"value": "PART", "label": "Partner of known HIV+ person"},
+            {"value": "RRTN", "label": "Return for result (previous test)"},
+            {"value": "ROUT", "label": "Routine screening"},
+            {"value": "DATA", "label": "Not documented"}
+          ],
+          "help": "Multiple indications acceptable"
+        },
+        {
+          "fieldId": "symptoms",
+          "fieldName": "If symptomatic, describe symptoms",
+          "fieldType": "textarea",
+          "required": false,
+          "showIf": "indication.includes('SYMP')",
+          "fhirMapping": "Observation.note.text",
+          "maxLength": 500
+        }
+      ]
+    },
+    {
+      "sectionId": "preTest",
+      "sectionName": "Pre-Test Counseling",
+      "required": true,
+      "fields": [
+        {
+          "fieldId": "counsel Date",
+          "fieldName": "Pre-Test Counseling Provided",
+          "fieldType": "date",
+          "required": true,
+          "fhirMapping": "Procedure.performedDateTime",
+          "validation": {
+            "maxDate": "visitDate"
+          }
+        },
+        {
+          "fieldId": "counselor",
+          "fieldName": "Counselor Name/ID",
+          "fieldType": "text",
+          "required": true,
+          "fhirMapping": "Procedure.performer.display"
+        },
+        {
+          "fieldId": "counselingTopics",
+          "fieldName": "Counseling Topics Discussed",
+          "fieldType": "checkbox",
+          "required": true,
+          "options": [
+            {"value": "TEST", "label": "Test purpose, process, accuracy"},
+            {"value": "RESULTS", "label": "Possible results and meanings"},
+            {"value": "WINDOW", "label": "Window period (need repeat testing)"},
+            {"value": "CONF", "label": "Confidentiality and privacy"},
+            {"value": "CONSENT", "label": "Informed consent obtained"},
+            {"value": "SUPPORT", "label": "Psychosocial support available"},
+            {"value": "LINKAGE", "label": "Linkage to care if positive"}
+          ]
+        },
+        {
+          "fieldId": "consentObtained",
+          "fieldName": "Written/Verbal Informed Consent Obtained",
+          "fieldType": "select",
+          "required": true,
+          "options": [
+            {"value": "YES", "label": "Yes - Verbal"},
+            {"value": "YES_WRITTEN", "label": "Yes - Written"},
+            {"value": "NO", "label": "No - Declined testing"}
+          ],
+          "fhirMapping": "Consent.status",
+          "validation": {
+            "requiredIf": "status != 'DECLINED'"
+          }
+        }
+      ]
+    },
+    {
+      "sectionId": "testing",
+      "sectionName": "Testing Process",
+      "required": true,
+      "fields": [
+        {
+          "fieldId": "testDate",
+          "fieldName": "Date of Test Performed",
+          "fieldType": "date",
+          "required": true,
+          "fhirMapping": "Observation.effectiveDateTime"
+        },
+        {
+          "fieldId": "testType",
+          "fieldName": "Test Type",
+          "fieldType": "select",
+          "required": true,
+          "options": [
+            {"value": "RAPID", "label": "Rapid Test Kit (4th Gen Ag/Ab)"},
+            {"value": "SEROLOGY", "label": "Serology (3rd Gen Ab only)"},
+            {"value": "VL", "label": "Viral Load Test"},
+            {"value": "WB", "label": "Western Blot"},
+            {"value": "DUO", "label": "Duo (Ag/Ab)"}
+          ],
+          "fhirMapping": "ServiceRequest.code"
+        },
+        {
+          "fieldId": "testKit",
+          "fieldName": "Test Kit/Assay Used",
+          "fieldType": "text",
+          "required": true,
+          "example": "SD Bioline HIV 1/2 3.0",
+          "fhirMapping": "Observation.method"
+        },
+        {
+          "fieldId": "kitLot",
+          "fieldName": "Kit Lot Number",
+          "fieldType": "text",
+          "required": true,
+          "validation": {
+            "pattern": "^[A-Z0-9]{5,20}$"
+          }
+        },
+        {
+          "fieldId": "kitExpiry",
+          "fieldName": "Kit Expiry Date",
+          "fieldType": "date",
+          "required": true,
+          "validation": {
+            "minDate": "testDate"
+          }
+        },
+        {
+          "fieldId": "specType",
+          "fieldName": "Specimen Type",
+          "fieldType": "select",
+          "required": true,
+          "options": [
+            {"value": "SERUM", "label": "Serum (blood)"},
+            {"value": "PLASMA", "label": "Plasma"},
+            {"value": "ORAL", "label": "Oral fluid"},
+            {"value": "URINE", "label": "Urine"}
+          ],
+          "fhirMapping": "Observation.specimen.type"
+        },
+        {
+          "fieldId": "technician",
+          "fieldName": "Technician/Tester Name",
+          "fieldType": "text",
+          "required": true,
+          "fhirMapping": "Observation.performer.display"
+        }
+      ]
+    },
+    {
+      "sectionId": "results",
+      "sectionName": "Test Results",
+      "required": true,
+      "fields": [
+        {
+          "fieldId": "result",
+          "fieldName": "Initial Test Result",
+          "fieldType": "select",
+          "required": true,
+          "options": [
+            {"value": "NEG", "label": "NEGATIVE"},
+            {"value": "POS", "label": "POSITIVE"},
+            {"value": "IND", "label": "INDETERMINATE"},
+            {"value": "INV", "label": "INVALID"}
+          ],
+          "fhirMapping": "Observation.value",
+          "validation": {
+            "dependency": "ifPOS_thenConfirmatoryRequired"
+          }
+        },
+        {
+          "fieldId": "confirmatory",
+          "fieldName": "Confirmatory Test (if initial test positive)",
+          "fieldType": "select",
+          "required": false,
+          "showIf": "result == 'POS'",
+          "options": [
+            {"value": "PEND", "label": "Pending (test kit used for confirmation)"},
+            {"value": "POS", "label": "POSITIVE (confirmatory)"},
+            {"value": "NEG", "label": "NEGATIVE (discordant)"}
+          ],
+          "fhirMapping": "Observation.related[0].value"
+        },
+        {
+          "fieldId": "finalStatus",
+          "fieldName": "Final Status",
+          "fieldType": "select",
+          "required": true,
+          "readOnly": true,
+          "options": [
+            {"value": "NEG", "label": "HIV NEGATIVE"},
+            {"value": "POS_CONF", "label": "HIV POSITIVE (Confirmed)"},
+            {"value": "POS_PROV", "label": "HIV POSITIVE (Provisional)"},
+            {"value": "IND", "label": "INDETERMINATE"},
+            {"value": "INV", "label": "INVALID"}
+          ],
+          "calculation": "determineStatus(result, confirmatory, testType)"
+        },
+        {
+          "fieldId": "resultNotes",
+          "fieldName": "Test Result Notes/Interpretation",
+          "fieldType": "textarea",
+          "required": false,
+          "example": "Window period possible. Repeat test recommended in 4 weeks.",
+          "fhirMapping": "Observation.note.text"
+        }
+      ]
+    },
+    {
+      "sectionId": "disclosure",
+      "sectionName": "Results Disclosure",
+      "required": true,
+      "fields": [
+        {
+          "fieldId": "disclosureDate",
+          "fieldName": "Date of Results Disclosure",
+          "fieldType": "date",
+          "required": true,
+          "fhirMapping": "Observation.issuedDate"
+        },
+        {
+          "fieldId": "counselorDisc",
+          "fieldName": "Counselor Providing Results",
+          "fieldType": "text",
+          "required": true,
+          "fhirMapping": "Observation.performer.display"
+        },
+        {
+          "fieldId": "resultUnderstand",
+          "fieldName": "Patient Understands Results",
+          "fieldType": "select",
+          "required": true,
+          "options": [
+            {"value": "YES", "label": "Yes - patient demonstrates understanding"},
+            {"value": "PARTIAL", "label": "Partial - required clarification"},
+            {"value": "NO", "label": "No - requires additional counseling"}
+          ]
+        },
+        {
+          "fieldId": "psychSupport",
+          "fieldName": "Psychosocial Support Offered",
+          "fieldType": "select",
+          "required": true,
+          "options": [
+            {"value": "YES", "label": "Yes - offered and accepted"},
+            {"value": "YES_DECLINED", "label": "Yes - offered but declined"},
+            {"value": "NO", "label": "No - not offered"}
+          ]
+        }
+      ]
+    },
+    {
+      "sectionId": "followUp",
+      "sectionName": "Follow-up Actions",
+      "required": true,
+      "fields": [
+        {
+          "fieldId": "followUpAction",
+          "fieldName": "Follow-up Actions (check all that apply)",
+          "fieldType": "checkbox",
+          "required": true,
+          "options": [
+            {"value": "REPEAT", "label": "Repeat test after window period (date:______)"},
+            {"value": "CLINIC", "label": "Referral to HIV clinic (if positive)"},
+            {"value": "PARTNER", "label": "Partner testing offered"},
+            {"value": "FAMILY", "label": "Family counseling offered"},
+            {"value": "PrEP", "label": "PrEP offered (if negative, at risk)"},
+            {"value": "FP", "label": "Family planning offered"},
+            {"value": "MENTOR", "label": "Peer mentor introduced"},
+            {"value": "NONE", "label": "No further action needed"}
+          ],
+          "fhirMapping": "ServiceRequest.code"
+        },
+        {
+          "fieldId": "referralDate",
+          "fieldName": "Referral/Appointment Date (if applicable)",
+          "fieldType": "date",
+          "required": false,
+          "showIf": "followUpAction.includes('CLINIC')",
+          "help": "Must be within 2 weeks of positive test"
+        }
+      ]
+    },
+    {
+      "sectionId": "summary",
+      "sectionName": "Summary & Provider Sign-off",
+      "required": true,
+      "fields": [
+        {
+          "fieldId": "finalNotes",
+          "fieldName": "Additional Clinical Notes",
+          "fieldType": "textarea",
+          "required": false,
+          "fhirMapping": "Observation.note.text",
+          "maxLength": 1000
+        },
+        {
+          "fieldId": "providerName",
+          "fieldName": "Provider Name (print)",
+          "fieldType": "text",
+          "required": true,
+          "fhirMapping": "Practitioner.name"
+        },
+        {
+          "fieldId": "providerId",
+          "fieldName": "Provider ID/Badge Number",
+          "fieldType": "text",
+          "required": true,
+          "fhirMapping": "Practitioner.identifier.value"
+        },
+        {
+          "fieldId": "signature",
+          "fieldName": "Provider Signature/Digital Sign",
+          "fieldType": "signature",
+          "required": true,
+          "fhirMapping": "Signature"
+        },
+        {
+          "fieldId": "signDate",
+          "fieldName": "Date Signed",
+          "fieldType": "date",
+          "required": true,
+          "readOnly": true,
+          "value": "today"
+        }
+      ]
+    }
+  ],
+  "validations": [
+    {
+      "rule": "ifResult_Positive_thenConfirmatory_Required",
+      "description": "If initial test is positive, confirmatory test result is required",
+      "fields": ["result", "confirmatory"],
+      "condition": "result == 'POS' AND (confirmatory == null OR confirmatory == '')",
+      "errorMessage": "Confirmatory test result required for positive initial test"
+    },
+    {
+      "rule": "testDate_BeforeDisclsoure",
+      "description": "Test date must be before disclosure date",
+      "fields": ["testDate", "disclosureDate"],
+      "condition": "testDate > disclosureDate",
+      "errorMessage": "Test date cannot be after disclosure date"
+    }
+  ],
+  "calculations": [
+    {
+      "name": "calculateAge",
+      "formula": "floor((today - dob) / 365.25)",
+      "description": "Calculates age from date of birth"
+    },
+    {
+      "name": "determineStatus",
+      "formula": "ifelse(testType IN ('RAPID', 'SEROLOGY'), ifelse(result == 'NEG', 'NEG', ifelse(confirmatory == 'POS', 'POS_CONF', 'POS_PROV')), result)",
+      "description": "Determines final HIV status based on algorithm"
+    }
+  ],
+  "reportingIndicators": [
+    {
+      "indicator": "test_positivity_rate",
+      "numerator": "All positive tests",
+      "denominator": "All tests performed",
+      "calculation": "(positive_tests / total_tests) * 100",
+      "target": ">3% (varies by setting)"
+    },
+    {
+      "indicator": "linkage_to_care",
+      "numerator": "Positive cases linked to care within 2 weeks",
+      "denominator": "All positive cases",
+      "calculation": "(linked_to_care / total_positive) * 100",
+      "target": ">90%"
+    }
+  ],
+  "dataElements": {
+    "hl7v2": {
+      "message": "ORU/ADT",
+      "fields": [
+        "PID (Patient ID)",
+        "OBR (Observation Request)",
+        "OBX (Observation/Result)"
+      ]
+    },
+    "fhir": {
+      "resources": [
+        "Patient",
+        "Observation",
+        "ServiceRequest",
+        "Procedure"
+      ]
+    }
+  }
+}

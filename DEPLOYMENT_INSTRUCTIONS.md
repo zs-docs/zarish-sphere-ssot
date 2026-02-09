@@ -328,7 +328,7 @@ Key files to customize:
 ### Get Help
 - **Issues**: https://github.com/zs-docs/zarish-sphere-ssot/issues
 - **Discussions**: https://github.com/zs-docs/zarish-sphere-ssot/discussions
-- **Email**: support@zarishsphere.org
+- **Email**: zarishsphere@gmail.com
 
 ### Community
 - GitHub Discussions for questions

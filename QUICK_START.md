@@ -293,7 +293,7 @@ Key files to customize:
 ### Support
 - Open an issue: https://github.com/zs-docs/zarish-sphere-ssot/issues
 - Discussions: https://github.com/zs-docs/zarish-sphere-ssot/discussions
-- Email: support@zarishsphere.org
+- Email: zarishsphere@gmail.com
 
 ### Community
 - GitHub Discussions for Q&A
