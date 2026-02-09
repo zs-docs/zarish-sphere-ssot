@@ -1,0 +1,126 @@
+{
+  "formId": "HIV-TC-001",
+  "formName": "HIV Testing & Counseling Form",
+  "version": "2.0",
+  "status": "active",
+  "category": "clinical",
+  "module": "HIV Care & Treatment",
+  "lastUpdated": "2026-02-09",
+  "sections": [
+    {
+      "sectionId": "demographics",
+      "sectionName": "Patient Demographics",
+      "fields": [
+        {
+          "fieldId": "patient_id",
+          "fieldName": "Patient ID",
+          "fieldType": "text",
+          "required": true,
+          "fhirMapping": "Patient.identifier"
+        },
+        {
+          "fieldId": "age",
+          "fieldName": "Age",
+          "fieldType": "number",
+          "required": true,
+          "validation": {"min": 0, "max": 120},
+          "fhirMapping": "Patient.birthDate"
+        },
+        {
+          "fieldId": "sex",
+          "fieldName": "Sex",
+          "fieldType": "select",
+          "required": true,
+          "options": ["Male", "Female", "Other"],
+          "fhirMapping": "Patient.gender"
+        }
+      ]
+    },
+    {
+      "sectionId": "testing",
+      "sectionName": "HIV Testing",
+      "fields": [
+        {
+          "fieldId": "test_date",
+          "fieldName": "Test Date",
+          "fieldType": "date",
+          "required": true,
+          "fhirMapping": "Observation.effectiveDateTime"
+        },
+        {
+          "fieldId": "test_type",
+          "fieldName": "Test Type",
+          "fieldType": "select",
+          "required": true,
+          "options": ["Rapid Test", "ELISA", "Viral Load", "CD4 Count"],
+          "fhirMapping": "Observation.method"
+        },
+        {
+          "fieldId": "test_result",
+          "fieldName": "Test Result",
+          "fieldType": "select",
+          "required": true,
+          "options": ["Positive", "Negative", "Indeterminate"],
+          "fhirMapping": "Observation.valueCodeableConcept",
+          "loincCode": "75622-1"
+        },
+        {
+          "fieldId": "confirmatory_test",
+          "fieldName": "Confirmatory Test Done",
+          "fieldType": "checkbox",
+          "required": false,
+          "fhirMapping": "Observation.component"
+        }
+      ]
+    },
+    {
+      "sectionId": "counseling",
+      "sectionName": "Pre/Post-Test Counseling",
+      "fields": [
+        {
+          "fieldId": "pre_test_counseling",
+          "fieldName": "Pre-test Counseling Provided",
+          "fieldType": "checkbox",
+          "required": true,
+          "fhirMapping": "Procedure.performed"
+        },
+        {
+          "fieldId": "post_test_counseling",
+          "fieldName": "Post-test Counseling Provided",
+          "fieldType": "checkbox",
+          "required": true,
+          "fhirMapping": "Procedure.performed"
+        },
+        {
+          "fieldId": "disclosure_support",
+          "fieldName": "Disclosure Support Provided",
+          "fieldType": "checkbox",
+          "required": false,
+          "fhirMapping": "Procedure.performed"
+        }
+      ]
+    },
+    {
+      "sectionId": "referral",
+      "sectionName": "Referral & Follow-up",
+      "fields": [
+        {
+          "fieldId": "referred_to_care",
+          "fieldName": "Referred to HIV Care",
+          "fieldType": "checkbox",
+          "required": false,
+          "fhirMapping": "ServiceRequest.status"
+        },
+        {
+          "fieldId": "art_eligibility",
+          "fieldName": "Eligible for ART",
+          "fieldType": "select",
+          "required": false,
+          "options": ["Yes", "No", "Pending CD4"],
+          "fhirMapping": "CarePlan.status"
+        }
+      ]
+    }
+  ],
+  "fhirProfile": "http://hl7.org/fhir/StructureDefinition/Observation"
+}

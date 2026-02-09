@@ -1,0 +1,141 @@
+{
+  "formId": "ANC-FV-001",
+  "formName": "ANC First Visit Form",
+  "version": "2.0",
+  "status": "active",
+  "category": "clinical",
+  "module": "Antenatal Care",
+  "lastUpdated": "2026-02-09",
+  "sections": [
+    {
+      "sectionId": "obstetric_history",
+      "sectionName": "Obstetric History",
+      "fields": [
+        {
+          "fieldId": "gravida",
+          "fieldName": "Gravida",
+          "fieldType": "number",
+          "required": true,
+          "validation": {"min": 1},
+          "fhirMapping": "Observation.valueInteger",
+          "loincCode": "11996-6"
+        },
+        {
+          "fieldId": "para",
+          "fieldName": "Para",
+          "fieldType": "number",
+          "required": true,
+          "validation": {"min": 0},
+          "fhirMapping": "Observation.valueInteger",
+          "loincCode": "11977-6"
+        },
+        {
+          "fieldId": "lmp",
+          "fieldName": "Last Menstrual Period",
+          "fieldType": "date",
+          "required": true,
+          "fhirMapping": "Observation.valueDateTime",
+          "loincCode": "8665-2"
+        },
+        {
+          "fieldId": "edd",
+          "fieldName": "Estimated Delivery Date",
+          "fieldType": "date",
+          "required": true,
+          "fhirMapping": "Observation.valueDateTime",
+          "loincCode": "11778-8"
+        }
+      ]
+    },
+    {
+      "sectionId": "vital_signs",
+      "sectionName": "Vital Signs",
+      "fields": [
+        {
+          "fieldId": "bp_systolic",
+          "fieldName": "Blood Pressure Systolic",
+          "fieldType": "number",
+          "required": true,
+          "validation": {"min": 60, "max": 250},
+          "unit": "mmHg",
+          "fhirMapping": "Observation.component.valueQuantity",
+          "loincCode": "8480-6"
+        },
+        {
+          "fieldId": "bp_diastolic",
+          "fieldName": "Blood Pressure Diastolic",
+          "fieldType": "number",
+          "required": true,
+          "validation": {"min": 40, "max": 150},
+          "unit": "mmHg",
+          "fhirMapping": "Observation.component.valueQuantity",
+          "loincCode": "8462-4"
+        },
+        {
+          "fieldId": "weight",
+          "fieldName": "Weight",
+          "fieldType": "number",
+          "required": true,
+          "validation": {"min": 30, "max": 200},
+          "unit": "kg",
+          "fhirMapping": "Observation.valueQuantity",
+          "loincCode": "29463-7"
+        },
+        {
+          "fieldId": "height",
+          "fieldName": "Height",
+          "fieldType": "number",
+          "required": true,
+          "validation": {"min": 100, "max": 220},
+          "unit": "cm",
+          "fhirMapping": "Observation.valueQuantity",
+          "loincCode": "8302-2"
+        }
+      ]
+    },
+    {
+      "sectionId": "investigations",
+      "sectionName": "Laboratory Investigations",
+      "fields": [
+        {
+          "fieldId": "hemoglobin",
+          "fieldName": "Hemoglobin",
+          "fieldType": "number",
+          "required": true,
+          "validation": {"min": 4, "max": 20},
+          "unit": "g/dL",
+          "fhirMapping": "Observation.valueQuantity",
+          "loincCode": "718-7"
+        },
+        {
+          "fieldId": "blood_group",
+          "fieldName": "Blood Group",
+          "fieldType": "select",
+          "required": true,
+          "options": ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"],
+          "fhirMapping": "Observation.valueCodeableConcept",
+          "loincCode": "882-1"
+        },
+        {
+          "fieldId": "hiv_test",
+          "fieldName": "HIV Test Result",
+          "fieldType": "select",
+          "required": true,
+          "options": ["Positive", "Negative", "Unknown", "Declined"],
+          "fhirMapping": "Observation.valueCodeableConcept",
+          "loincCode": "75622-1"
+        },
+        {
+          "fieldId": "syphilis_test",
+          "fieldName": "Syphilis Test Result",
+          "fieldType": "select",
+          "required": true,
+          "options": ["Positive", "Negative", "Unknown"],
+          "fhirMapping": "Observation.valueCodeableConcept",
+          "loincCode": "31147-2"
+        }
+      ]
+    }
+  ],
+  "fhirProfile": "http://hl7.org/fhir/StructureDefinition/Encounter"
+}

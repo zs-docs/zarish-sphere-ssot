@@ -1,0 +1,219 @@
+{
+  "manifestVersion": "2.0",
+  "totalForms": 33,
+  "lastUpdated": "2026-02-09",
+  "categories": {
+    "clinical": 22,
+    "laboratory": 6,
+    "operational": 5
+  },
+  "forms": [
+    {
+      "formId": "HIV-TC-001",
+      "formName": "HIV Testing & Counseling",
+      "category": "clinical",
+      "module": "HIV Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Observation"
+    },
+    {
+      "formId": "HIV-ART-001",
+      "formName": "ART Initiation",
+      "category": "clinical",
+      "module": "HIV Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "MedicationRequest"
+    },
+    {
+      "formId": "HIV-FU-001",
+      "formName": "ART Follow-up",
+      "category": "clinical",
+      "module": "HIV Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "TB-SCR-001",
+      "formName": "TB Screening",
+      "category": "clinical",
+      "module": "TB Management",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Observation"
+    },
+    {
+      "formId": "TB-TX-001",
+      "formName": "TB Treatment",
+      "category": "clinical",
+      "module": "TB Management",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "MedicationRequest"
+    },
+    {
+      "formId": "ANC-FV-001",
+      "formName": "ANC First Visit",
+      "category": "clinical",
+      "module": "Antenatal Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "ANC-FU-001",
+      "formName": "ANC Follow-up",
+      "category": "clinical",
+      "module": "Antenatal Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "PNC-001",
+      "formName": "Postnatal Care",
+      "category": "clinical",
+      "module": "Postnatal Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "CHILD-001",
+      "formName": "Child Health Assessment",
+      "category": "clinical",
+      "module": "Child Health",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "GBV-001",
+      "formName": "GBV Clinical Management",
+      "category": "clinical",
+      "module": "GBV Services",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "MAT-ENROLL-001",
+      "formName": "MAT Enrollment",
+      "category": "clinical",
+      "module": "MAT Services",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "MAT-FU-001",
+      "formName": "MAT Follow-up",
+      "category": "clinical",
+      "module": "MAT Services",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "GEN-CONS-001",
+      "formName": "General Consultation",
+      "category": "clinical",
+      "module": "General Outpatient",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "TRIAGE-001",
+      "formName": "Emergency Triage",
+      "category": "clinical",
+      "module": "Emergency Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "ADMIT-001",
+      "formName": "Admission Form",
+      "category": "clinical",
+      "module": "Inpatient Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "DISCHARGE-001",
+      "formName": "Discharge Summary",
+      "category": "clinical",
+      "module": "Inpatient Care",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Encounter"
+    },
+    {
+      "formId": "LAB-REQ-001",
+      "formName": "Laboratory Request",
+      "category": "laboratory",
+      "module": "Laboratory",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "ServiceRequest"
+    },
+    {
+      "formId": "LAB-RES-001",
+      "formName": "Laboratory Results",
+      "category": "laboratory",
+      "module": "Laboratory",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "DiagnosticReport"
+    },
+    {
+      "formId": "XRAY-REQ-001",
+      "formName": "X-Ray Request",
+      "category": "laboratory",
+      "module": "Radiology",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "ServiceRequest"
+    },
+    {
+      "formId": "US-001",
+      "formName": "Ultrasound Report",
+      "category": "laboratory",
+      "module": "Radiology",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "DiagnosticReport"
+    },
+    {
+      "formId": "REF-001",
+      "formName": "Referral Form",
+      "category": "operational",
+      "module": "Referral System",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "ServiceRequest"
+    },
+    {
+      "formId": "REG-001",
+      "formName": "Patient Registration",
+      "category": "operational",
+      "module": "Registration",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Patient"
+    },
+    {
+      "formId": "CONSENT-001",
+      "formName": "Informed Consent",
+      "category": "operational",
+      "module": "General",
+      "version": "2.0",
+      "status": "active",
+      "fhirProfile": "Consent"
+    }
+  ]
+}

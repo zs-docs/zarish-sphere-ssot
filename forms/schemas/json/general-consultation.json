@@ -1,0 +1,76 @@
+{
+  "formId": "GEN-CONS-001",
+  "formName": "General Consultation Form",
+  "version": "2.0",
+  "status": "active",
+  "category": "clinical",
+  "module": "General Outpatient",
+  "lastUpdated": "2026-02-09",
+  "sections": [
+    {
+      "sectionId": "presenting_complaint",
+      "sectionName": "Presenting Complaint",
+      "fields": [
+        {
+          "fieldId": "chief_complaint",
+          "fieldName": "Chief Complaint",
+          "fieldType": "textarea",
+          "required": true,
+          "fhirMapping": "Encounter.reasonCode"
+        },
+        {
+          "fieldId": "duration",
+          "fieldName": "Duration of Symptoms",
+          "fieldType": "text",
+          "required": true,
+          "fhirMapping": "Condition.onsetDateTime"
+        }
+      ]
+    },
+    {
+      "sectionId": "examination",
+      "sectionName": "Physical Examination",
+      "fields": [
+        {
+          "fieldId": "general_appearance",
+          "fieldName": "General Appearance",
+          "fieldType": "textarea",
+          "required": true,
+          "fhirMapping": "Observation.valueString"
+        },
+        {
+          "fieldId": "temperature",
+          "fieldName": "Temperature",
+          "fieldType": "number",
+          "required": false,
+          "unit": "°C",
+          "validation": {"min": 35, "max": 42},
+          "fhirMapping": "Observation.valueQuantity",
+          "loincCode": "8310-5"
+        }
+      ]
+    },
+    {
+      "sectionId": "diagnosis",
+      "sectionName": "Diagnosis & Management",
+      "fields": [
+        {
+          "fieldId": "diagnosis",
+          "fieldName": "Diagnosis (ICD-10)",
+          "fieldType": "text",
+          "required": true,
+          "fhirMapping": "Condition.code",
+          "codingSystem": "ICD-10"
+        },
+        {
+          "fieldId": "treatment",
+          "fieldName": "Treatment Plan",
+          "fieldType": "textarea",
+          "required": true,
+          "fhirMapping": "CarePlan.activity"
+        }
+      ]
+    }
+  ],
+  "fhirProfile": "http://hl7.org/fhir/StructureDefinition/Encounter"
+}

@@ -1,0 +1,74 @@
+# Zarish Sphere SSOT - Single Source of Truth
+# Healthcare Documentation & Module Management Platform
+
+# Site settings
+title: "Zarish Sphere SSOT"
+description: "Healthcare Documentation Platform - Single Source of Truth for Clinical Modules, Forms, and Operations"
+baseurl: "/zarish-sphere-ssot"
+url: "https://zs-docs.github.io"
+
+# Repository information
+repository: zs-docs/zarish-sphere-ssot
+github_username: zs-docs
+
+# Build settings
+theme: minima
+markdown: kramdown
+highlighter: rouge
+
+# Kramdown settings
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  health_modules:
+    output: true
+    permalink: /health/:path/
+  operations:
+    output: true
+    permalink: /operations/:path/
+  countries:
+    output: true
+    permalink: /countries/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclusions
+exclude:
+  - vendor/
+  - .bundle/
+  - .git/
+  - .github/
+  - node_modules/
+  - package*.json
+  - Gemfile*
+  - "*.sh"
+  - "*.py"
+  - scripts/
+  - _archive/
+  - "*-backup/"
+  - tmp/
+  - temp/
+  - README-*.md
+  - CONTRIBUTING.md
+  - LICENSE
+  - .gitignore
+
+# Sass settings
+sass:
+  sass_dir: assets/css
+  style: compressed

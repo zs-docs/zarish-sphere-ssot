@@ -1,0 +1,34 @@
+{
+  "country": "Bangladesh",
+  "countryCode": "BD",
+  "timezone": "Asia/Dhaka",
+  "currency": "BDT",
+  "languages": ["bn", "en"],
+  "defaultLanguage": "bn",
+  "dateFormat": "DD/MM/YYYY",
+  "timeFormat": "24h",
+  "measurementSystem": "metric",
+  "clinicalSettings": {
+    "ageOfMajority": 18,
+    "pregnancyDuration": 280,
+    "immunizationSchedule": "EPI-Bangladesh",
+    "formularyVersion": "BEML-2024"
+  },
+  "reporting": {
+    "nationalSystem": "DHIS2",
+    "reportingPeriod": "monthly",
+    "fiscalYearStart": "07-01",
+    "indicators": "Bangladesh-HMIS"
+  },
+  "integration": {
+    "dhis2": {
+      "enabled": true,
+      "url": "https://dhis2.gov.bd",
+      "orgUnit": "Bangladesh"
+    },
+    "emr": {
+      "system": "OpenMRS",
+      "version": "3.0"
+    }
+  }
+}

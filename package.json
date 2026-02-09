@@ -1,0 +1,23 @@
+{
+  "name": "zarish-sphere-ssot",
+  "version": "2.0.0",
+  "description": "Healthcare Documentation Platform - Single Source of Truth",
+  "scripts": {
+    "build": "bundle exec jekyll build",
+    "serve": "bundle exec jekyll serve",
+    "clean": "bundle exec jekyll clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zs-docs/zarish-sphere-ssot.git"
+  },
+  "keywords": [
+    "healthcare",
+    "documentation",
+    "FHIR",
+    "jekyll",
+    "github-pages"
+  ],
+  "author": "Zarish Sphere Team",
+  "license": "MIT"
+}

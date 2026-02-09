@@ -1,0 +1,65 @@
+{
+  "country": "Bangladesh",
+  "deploymentDate": "2024-01-15",
+  "enabledModules": [
+    {
+      "moduleId": "HIV-001",
+      "moduleName": "HIV Care & Treatment",
+      "status": "active",
+      "facilities": 45,
+      "patients": 12500
+    },
+    {
+      "moduleId": "TB-001",
+      "moduleName": "TB Management",
+      "status": "active",
+      "facilities": 95,
+      "patients": 35000
+    },
+    {
+      "moduleId": "ANC-001",
+      "moduleName": "Antenatal Care",
+      "status": "active",
+      "facilities": 95,
+      "patients": 125000
+    },
+    {
+      "moduleId": "PNC-001",
+      "moduleName": "Postnatal Care",
+      "status": "active",
+      "facilities": 95,
+      "patients": 98000
+    },
+    {
+      "moduleId": "CHILD-001",
+      "moduleName": "Child Health",
+      "status": "active",
+      "facilities": 95,
+      "patients": 450000
+    },
+    {
+      "moduleId": "DIABETES-001",
+      "moduleName": "Diabetes Management",
+      "status": "active",
+      "facilities": 35,
+      "patients": 18000
+    },
+    {
+      "moduleId": "GBV-001",
+      "moduleName": "GBV Services",
+      "status": "active",
+      "facilities": 25,
+      "patients": 2500
+    },
+    {
+      "moduleId": "EMERGENCY-001",
+      "moduleName": "Emergency Care",
+      "status": "active",
+      "facilities": 18,
+      "patients": 75000
+    }
+  ],
+  "totalFacilities": 95,
+  "totalPatients": 816000,
+  "lastUpdated": "2026-02-09"
+}
