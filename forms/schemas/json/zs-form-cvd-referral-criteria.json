@@ -1,0 +1,695 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-cvd-referral-criteria",
+  "url": "https://zarish.org/Questionnaire/zs-form-cvd-referral-criteria",
+  "name": "ZarishCVDReferralCriteria",
+  "title": "Zarish CVD Risk Assessment: Tool 3 - REFER Criteria",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive referral criteria form for urgent and routine CVD referrals",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "NCD"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "referral"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-3-Specialized"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-protocol-reference",
+      "valueString": "WHO-CVD-Referral-Criteria"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "urgent-referral",
+      "text": "URGENT REFERRAL (Immediate Action Required)",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "stabilize-and-refer",
+          "text": "Stabilize patient and refer URGENTLY if ANY of the following:",
+          "type": "display"
+        },
+        {
+          "linkId": "acute-cardiac-symptoms",
+          "text": "Acute Cardiac Symptoms",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "new-chest-pain",
+              "text": "New chest pain or change in severity of chest pain",
+              "type": "boolean"
+            },
+            {
+              "linkId": "possible-heart-attack",
+              "text": "Symptoms/signs of possible heart attack",
+              "type": "boolean"
+            },
+            {
+              "linkId": "heart-failure-symptoms",
+              "text": "Symptoms/signs of heart failure",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "shortness-breath",
+                  "text": "Shortness of breath",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "difficulty-breathing",
+                  "text": "Difficulty breathing",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "leg-swelling",
+                  "text": "Leg swelling",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "heaving-cardiac-apex",
+                  "text": "Heaving cardiac apex",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "acute-neurological-symptoms",
+          "text": "Acute Neurological Symptoms",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "tia-stroke-symptoms",
+              "text": "Symptoms/signs of TIA or stroke",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "sudden-weakness-numbness",
+                  "text": "Sudden weakness/numbness face/arm/leg (one side)",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "confusion-difficulty-speaking",
+                  "text": "Confusion, difficulty speaking/understanding",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "difficulty-seeing",
+                  "text": "Difficulty seeing with one/both eyes",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "difficulty-walking-dizziness",
+                  "text": "Difficulty walking, dizziness, loss of coordination",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "hypertensive-emergency",
+          "text": "Hypertensive Emergency",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "bp-200-120",
+              "text": "BP >200/120 mmHg",
+              "type": "boolean"
+            },
+            {
+              "linkId": "bp-180-110-with-symptoms",
+              "text": "BP >180/110 mmHg WITH symptoms",
+              "type": "boolean"
+            },
+            {
+              "linkId": "emergency-symptoms",
+              "text": "Symptoms/signs of heart failure",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "severe-headache",
+                  "text": "Severe headache",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "chest-pain",
+                  "text": "Chest pain",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "shortness-breath",
+                  "text": "Shortness of breath",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "blurred-vision",
+                  "text": "Blurred vision",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "mental-status-changes",
+                  "text": "Mental status changes",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "reduced-urine-output",
+                  "text": "Reduced urine output",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "nausea-vomiting",
+                  "text": "Nausea/vomiting",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "lethargy-seizures",
+                  "text": "Lethargy, seizures",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "papilledema",
+                  "text": "Papilledema",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "focal-neurologic-signs",
+                  "text": "Focal neurologic signs",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "severe-hyperglycemia",
+          "text": "Severe Hyperglycemia",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "plasma-glucose-18",
+              "text": "Plasma glucose ≥18 mmol/L (≥325 mg/dL)",
+              "type": "boolean"
+            },
+            {
+              "linkId": "diabetes-foot-ulcer",
+              "text": "Diabetes with foot ulcer/infection",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "severe-leg-pain",
+          "text": "Severe Leg Pain",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "claudication-symptoms",
+              "text": "Severe leg pain with symptoms of claudication",
+              "type": "boolean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "routine-referral",
+      "text": "ROUTINE REFERRAL (Schedule within 1-4 weeks)",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "refer-for-specialist-evaluation",
+          "text": "Refer for specialist evaluation if ANY of the following:",
+          "type": "display"
+        },
+        {
+          "linkId": "cardiac-findings",
+          "text": "Cardiac Findings",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "cardiac-murmurs",
+              "text": "Cardiac murmurs (new or significant)",
+              "type": "boolean"
+            },
+            {
+              "linkId": "irregular-pulse",
+              "text": "Irregular pulse (new finding)",
+              "type": "boolean"
+            },
+            {
+              "linkId": "known-heart-disease",
+              "text": "Known prior heart disease needing initial assessment",
+              "type": "boolean"
+            },
+            {
+              "linkId": "persistent-angina",
+              "text": "Persistent angina despite treatment",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "blood-pressure-issues",
+          "text": "Blood Pressure Issues",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "age-40-htn",
+              "text": "Age <40 years with BP ≥140/90 mmHg (to exclude secondary causes)",
+              "type": "boolean"
+            },
+            {
+              "linkId": "persistent-bp",
+              "text": "Persistent BP ≥140/90 mmHg (in diabetes ≥130/80) despite 3 antihypertensives",
+              "type": "boolean"
+            },
+            {
+              "linkId": "treatment-resistant-htn",
+              "text": "Treatment-resistant hypertension",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "diabetes-management-issues",
+          "text": "Diabetes Management Issues",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "newly-diagnosed-diabetes",
+              "text": "Newly diagnosed diabetes with urine ketones positive",
+              "type": "boolean"
+            },
+            {
+              "linkId": "lean-persons-diabetes",
+              "text": "Lean persons <30 years with new diabetes",
+              "type": "boolean"
+            },
+            {
+              "linkId": "poor-control-metformin",
+              "text": "Diabetes with poor control despite maximal metformin ± sulfonylurea",
+              "type": "boolean"
+            },
+            {
+              "linkId": "recent-deterioration-vision",
+              "text": "Diabetes with recent deterioration of vision",
+              "type": "boolean"
+            },
+            {
+              "linkId": "no-eye-examination-2-years",
+              "text": "No eye examination in past 2 years (Diabetic Patients)",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "pregnancy-concerns",
+          "text": "Pregnancy Concerns",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "pregnant-women-diabetes",
+              "text": "Pregnant women with diabetes",
+              "type": "boolean"
+            },
+            {
+              "linkId": "pregnant-women-hypertension",
+              "text": "Pregnant women with high blood pressure",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "laboratory-abnormalities",
+          "text": "Laboratory Abnormalities",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "total-cholesterol-8",
+              "text": "Total cholesterol >8 mmol/L (310 mg/dL)",
+              "type": "boolean"
+            },
+            {
+              "linkId": "proteinuria",
+              "text": "Proteinuria",
+              "type": "boolean"
+            },
+            {
+              "linkId": "symptoms-kidney-disease",
+              "text": "Symptoms/signs of kidney disease",
+              "type": "boolean"
+            },
+            {
+              "linkId": "egfr-60",
+              "text": "eGFR <60 mL/min/1.73m²",
+              "type": "boolean"
+            },
+            {
+              "linkId": "albumin-creatinine-ratio",
+              "text": "Albumin-creatinine ratio ≥30 mg/mmol",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "vascular-issues",
+          "text": "Vascular Issues",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "peripheral-vascular-disease",
+              "text": "Signs of peripheral vascular disease",
+              "type": "boolean"
+            },
+            {
+              "linkId": "non-healing-foot-ulcers",
+              "text": "Non-healing foot ulcers",
+              "type": "boolean"
+            },
+            {
+              "linkId": "gangrene-critical-limb-ischemia",
+              "text": "Gangrene or critical limb ischemia",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "risk-management",
+          "text": "Risk Management",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "high-cvd-risk-no-reduction",
+              "text": "High cardiovascular Risk with no reduction after 6 months follow-up",
+              "type": "boolean"
+            },
+            {
+              "linkId": "need-specialized-testing",
+              "text": "Need for specialized testing not available at PHC",
+              "type": "boolean"
+            },
+            {
+              "linkId": "diagnostic-uncertainty",
+              "text": "Diagnostic uncertainty",
+              "type": "boolean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "referral-process-checklist",
+      "text": "Referral Process Checklist",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "before-referring",
+          "text": "Before Referring",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "provide-acute-care",
+              "text": "Provide acute care if needed (stabilize)",
+              "type": "boolean"
+            },
+            {
+              "linkId": "complete-referral-form",
+              "text": "Complete referral form",
+              "type": "boolean"
+            },
+            {
+              "linkId": "explain-reason-patient",
+              "text": "Explain reason for referral to patient",
+              "type": "boolean"
+            },
+            {
+              "linkId": "provide-documents-test-results",
+              "text": "Provide necessary documents/test results",
+              "type": "boolean"
+            },
+            {
+              "linkId": "schedule-follow-up",
+              "text": "Schedule follow-up after specialist evaluation",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "referral-form-completion",
+          "text": "Referral Form Completion",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "patient-details",
+              "text": "Patient Details",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "referral-patient-name",
+                  "text": "Name",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "linkId": "referral-patient-age",
+                  "text": "Age",
+                  "type": "integer",
+                  "required": true
+                },
+                {
+                  "linkId": "referral-patient-id",
+                  "text": "Patient ID",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "linkId": "referral-patient-contact",
+                  "text": "Contact",
+                  "type": "string",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "linkId": "referring-facility",
+              "text": "Referring Facility",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "referring-facility-name",
+                  "text": "Name",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "linkId": "referring-clinician",
+                  "text": "Clinician",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "linkId": "referring-date",
+                  "text": "Date",
+                  "type": "date",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "linkId": "reason-for-referral",
+              "text": "Reason for Referral (check all that apply)",
+              "type": "choice",
+              "repeats": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+              "item": [
+                {
+                  "linkId": "urgent-acute-cardiac-neuro",
+                  "text": "Urgent: Acute cardiac/neuro symptoms",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "urgent-hypertensive-emergency",
+                  "text": "Urgent: Hypertensive emergency",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "urgent-severe-hyperglycemia",
+                  "text": "Urgent: Severe hyperglycemia/infection",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "routine-diagnostic-uncertainty",
+                  "text": "Routine: Diagnostic uncertainty",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "routine-treatment-failure",
+                  "text": "Routine: Treatment failure",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "routine-specialized-testing",
+                  "text": "Routine: Specialized testing/treatment",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "routine-pregnancy-complications",
+                  "text": "Routine: Pregnancy complications",
+                  "type": "boolean"
+                }
+              ]
+            },
+            {
+              "linkId": "clinical-summary",
+              "text": "Clinical Summary",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "current-medications",
+                  "text": "Current medications",
+                  "type": "string"
+                },
+                {
+                  "linkId": "recent-test-results",
+                  "text": "Recent test results",
+                  "type": "string"
+                },
+                {
+                  "linkId": "symptoms-duration",
+                  "text": "Symptoms duration",
+                  "type": "string"
+                },
+                {
+                  "linkId": "treatment-attempted",
+                  "text": "Treatment attempted",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "instructions-for-patient",
+              "text": "Instructions for Patient",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "take-referral-letter",
+                  "text": "Take referral letter to",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "linkId": "appointment-date-time",
+                  "text": "Appointment date/time",
+                  "type": "dateTime",
+                  "required": true
+                },
+                {
+                  "linkId": "return-to-phc",
+                  "text": "Return to PHC for follow-up after",
+                  "type": "string"
+                },
+                {
+                  "linkId": "emergency-contact",
+                  "text": "Emergency contact if symptoms worsen",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "follow-up-after-referral",
+          "text": "Follow-up After Referral",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "patient-return-phc",
+              "text": "Patient to return to PHC",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "return-within-1-week",
+                  "text": "Within 1 week of specialist visit",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "bring-specialist-report",
+                  "text": "Bring specialist report and recommendations",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "continuation-care",
+                  "text": "For continuation of care and monitoring",
+                  "type": "boolean"
+                }
+              ]
+            },
+            {
+              "linkId": "phc-responsibilities",
+              "text": "PHC Responsibilities",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "document-referral-record",
+                  "text": "Document referral in patient record",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "follow-up-if-not-return",
+                  "text": "Follow up if patient doesn't return as scheduled",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "integrate-specialist-recommendations",
+                  "text": "Integrate specialist recommendations into care plan",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "continue-regular-monitoring",
+                  "text": "Continue regular monitoring per protocol",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "referring-clinician",
+          "text": "Referring Clinician",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "referral-date-time",
+          "text": "Date/Time",
+          "type": "dateTime",
+          "required": true
+        },
+        {
+          "linkId": "urgency-level",
+          "text": "Urgency Level",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-referral-priority"
+        },
+        {
+          "linkId": "facility-referred-to",
+          "text": "Facility Referred To",
+          "type": "string",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

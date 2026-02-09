@@ -1,0 +1,106 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-discharge-summary",
+  "url": "https://zarish.org/Questionnaire/zs-form-discharge-summary",
+  "name": "ZarishDischargeSummary",
+  "title": "Zarish Discharge Summary Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive discharge summary form aligned with Gold Standard EMR requirements",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Cross-Domain"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "discharge"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-2-IPD"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "discharge-info",
+      "text": "Discharge Information",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "discharge-date",
+          "text": "Discharge Date",
+          "type": "dateTime",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        },
+        {
+          "linkId": "outcome",
+          "text": "Discharge Outcome",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        },
+        {
+          "linkId": "follow-up",
+          "text": "Follow-up Required",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-followup-required",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "discharge-actions",
+      "text": "Discharge Actions",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "generate-slip",
+          "text": "Generate Discharge Slip",
+          "type": "boolean",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if true then generate_discharge_slip"
+            }
+          ]
+        },
+        {
+          "linkId": "update-ehr",
+          "text": "Update EHR",
+          "type": "boolean",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "sync_to_ehr_immediately"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

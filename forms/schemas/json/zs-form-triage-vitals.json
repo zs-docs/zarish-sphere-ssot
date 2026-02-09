@@ -1,0 +1,178 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-triage-vitals",
+  "url": "https://zarish.org/Questionnaire/zs-form-triage-vitals",
+  "name": "ZarishTriageVitals",
+  "title": "Zarish Triage & Vitals Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive triage and vital signs form aligned with Gold Standard EMR requirements",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Cross-Domain"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "triage"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-2-OPD"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "vital-signs",
+      "text": "Vital Signs",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "temperature",
+          "text": "Temperature (°C)",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "30-45"
+            },
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "valueString": "°C"
+            }
+          ]
+        },
+        {
+          "linkId": "blood-pressure",
+          "text": "Blood Pressure",
+          "type": "group",
+          "required": true,
+          "item": [
+            {
+              "linkId": "systolic",
+              "text": "Systolic (mmHg)",
+              "type": "decimal",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "valueString": "40-300"
+                },
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "mmHg"
+                }
+              ]
+            },
+            {
+              "linkId": "diastolic",
+              "text": "Diastolic (mmHg)",
+              "type": "decimal",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "valueString": "40-300"
+                },
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "mmHg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "heart-rate",
+          "text": "Heart Rate (bpm)",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "30-200"
+            },
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "valueString": "bpm"
+            }
+          ]
+        },
+        {
+          "linkId": "respiratory-rate",
+          "text": "Respiratory Rate (breaths/min)",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "10-40"
+            },
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "valueString": "breaths/min"
+            }
+          ]
+        },
+        {
+          "linkId": "spo2",
+          "text": "SpO2 (%)",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "0-100"
+            },
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "valueString": "%"
+            }
+          ]
+        },
+        {
+          "linkId": "weight",
+          "text": "Weight (kg)",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "0.5-300"
+            },
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "valueString": "kg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "triage-assessment",
+      "text": "Triage Assessment",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "triage-category",
+          "text": "Triage Category",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-triage-category",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if spo2 < 90 or hr > 120 then flag_red"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

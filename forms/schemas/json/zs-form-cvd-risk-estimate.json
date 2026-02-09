@@ -1,0 +1,463 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-cvd-risk-estimate",
+  "url": "https://zarish.org/Questionnaire/zs-form-cvd-risk-estimate",
+  "name": "ZarishCVDRiskEstimate",
+  "title": "Zarish CVD Risk Assessment: Tool 4 - ESTIMATE Risk Charts",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive CVD risk estimation form using WHO/ISH risk prediction charts",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "NCD"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "assessment"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-3-Specialized"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-protocol-reference",
+      "valueString": "WHO-ISH-CVD-Risk-Charts"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "risk-estimation-protocol",
+      "text": "Risk Estimation Protocol",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "step-1-gather-required-information",
+          "text": "Step 1: Gather Required Information",
+          "type": "display"
+        },
+        {
+          "linkId": "required-data-points",
+          "text": "Collect these 6 data points:",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "diabetes-status",
+              "text": "Diabetes Status",
+              "type": "choice",
+              "required": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+                  "valueString": "history_or_tests"
+                }
+              ]
+            },
+            {
+              "linkId": "sex",
+              "text": "Sex",
+              "type": "choice",
+              "required": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-sex",
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+                  "valueString": "demographics"
+                }
+              ]
+            },
+            {
+              "linkId": "age",
+              "text": "Age",
+              "type": "integer",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+                  "valueString": "demographics"
+                }
+              ]
+            },
+            {
+              "linkId": "smoking-status",
+              "text": "Smoking Status",
+              "type": "choice",
+              "required": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+                  "valueString": "history"
+                }
+              ]
+            },
+            {
+              "linkId": "systolic-blood-pressure",
+              "text": "Systolic Blood Pressure",
+              "type": "decimal",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+                  "valueString": "measurement"
+                }
+              ]
+            },
+            {
+              "linkId": "total-cholesterol",
+              "text": "Total Cholesterol",
+              "type": "decimal",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+                  "valueString": "lab_test"
+                }
+              ]
+            },
+            {
+              "linkId": "bmi-if-no-cholesterol",
+              "text": "BMI (if no cholesterol)",
+              "type": "decimal",
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+                  "valueString": "calculated"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "cholesterol-conversion-note",
+          "text": "Note: If cholesterol in mg/dL, divide by 38 to convert to mmol/L",
+          "type": "display"
+        },
+        {
+          "linkId": "step-2-select-appropriate-chart",
+          "text": "Step 2: Select Appropriate Chart",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "chart-selection-logic",
+              "text": "Based on available data:",
+              "type": "display",
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+                  "valueString": "if cholesterol_available then use_chart_a else use_chart_b"
+                }
+              ]
+            },
+            {
+              "linkId": "chart-a-with-cholesterol",
+              "text": "Chart A: WHO/ISH risk prediction chart for SEAR D (with cholesterol)",
+              "type": "boolean"
+            },
+            {
+              "linkId": "chart-b-with-bmi",
+              "text": "Chart B: WHO/ISH risk prediction chart for SEAR D (without cholesterol)",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "chart-descriptions",
+          "text": "Chart Descriptions",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "age-groups",
+              "text": "Age Groups: 40-49, 50-59, 60-69, 70-79",
+              "type": "display"
+            },
+            {
+              "linkId": "sbp-ranges",
+              "text": "SBP Ranges: <120, 120-139, 140-159, 160-179, ≥180",
+              "type": "display"
+            },
+            {
+              "linkId": "cholesterol-ranges",
+              "text": "Cholesterol Ranges: <4.0, 4.0-4.9, 5.0-5.9, 6.0-6.9, ≥7.0 mmol/L",
+              "type": "display"
+            },
+            {
+              "linkId": "bmi-ranges",
+              "text": "BMI Ranges: <20, 20-24, 25-29, ≥30 kg/m²",
+              "type": "display"
+            }
+          ]
+        },
+        {
+          "linkId": "special-populations",
+          "text": "Special Populations NOT for Chart Use",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "established-cvd",
+              "text": "Patients with established CVD (heart Attack, Stroke, Angina)",
+              "type": "boolean"
+            },
+            {
+              "linkId": "diabetes-overt-nephropathy",
+              "text": "Diabetes with overt nephropathy",
+              "type": "boolean"
+            },
+            {
+              "linkId": "chronic-kidney-disease",
+              "text": "Chronic kidney disease (eGFR <60)",
+              "type": "boolean"
+            },
+            {
+              "linkId": "auto-high-risk",
+              "text": "These patients are automatically HIGH RISK and managed per secondary prevention protocol",
+              "type": "display"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "risk-calculation",
+      "text": "Risk Calculation",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "risk-level-output",
+          "text": "10-Year CVD Risk",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-severity-values",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "determine_risk_level_from_chart"
+            }
+          ]
+        },
+        {
+          "linkId": "risk-level-interpretation",
+          "text": "Risk Level Interpretation",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "interpret_risk_for_management"
+            }
+          ]
+        },
+        {
+          "linkId": "factors-increasing-risk",
+          "text": "Factors Increasing Risk Beyond Chart Estimate",
+          "type": "group",
+          "repeats": true,
+          "item": [
+            {
+              "linkId": "risk-factor",
+              "text": "Risk Factor",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "adjustment-consideration",
+              "text": "Adjustment Consideration",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "risk-explanation-patient",
+      "text": "Explaining Risk to Patient",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "sample-explanation",
+          "text": "Sample explanation for 20% risk:",
+          "type": "display",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "provide_patient_friendly_risk_explanation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "documentation-template",
+      "text": "Documentation Template",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "cvd-risk-assessment-record",
+          "text": "CVD Risk Assessment Record",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "assessment-date",
+              "text": "Date",
+              "type": "date",
+              "required": true
+            },
+            {
+              "linkId": "assessment-age",
+              "text": "Age",
+              "type": "integer",
+              "required": true
+            },
+            {
+              "linkId": "assessment-sex",
+              "text": "Sex",
+              "type": "choice",
+              "required": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-sex"
+            },
+            {
+              "linkId": "assessment-diabetes",
+              "text": "Diabetes",
+              "type": "choice",
+              "required": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "assessment-smoker",
+              "text": "Smoker",
+              "type": "choice",
+              "required": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "assessment-sbp",
+              "text": "SBP",
+              "type": "decimal",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "mmHg"
+                }
+              ]
+            },
+            {
+              "linkId": "assessment-total-cholesterol",
+              "text": "Total Cholesterol",
+              "type": "decimal",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "mmol/L"
+                }
+              ]
+            },
+            {
+              "linkId": "assessment-bmi",
+              "text": "BMI",
+              "type": "decimal",
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "kg/m²"
+                }
+              ]
+            },
+            {
+              "linkId": "chart-used",
+              "text": "Chart Used",
+              "type": "choice",
+              "required": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "ten-year-cvd-risk",
+              "text": "10-Year CVD Risk",
+              "type": "decimal",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "%"
+                }
+              ]
+            },
+            {
+              "linkId": "risk-level",
+              "text": "Risk Level",
+              "type": "choice",
+              "required": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-severity-values"
+            },
+            {
+              "linkId": "factors-increasing-risk-1",
+              "text": "Factors increasing risk beyond chart:",
+              "type": "string"
+            },
+            {
+              "linkId": "factors-increasing-risk-2",
+              "text": "Factors increasing risk beyond chart:",
+              "type": "string"
+            },
+            {
+              "linkId": "factors-increasing-risk-3",
+              "text": "Factors increasing risk beyond chart:",
+              "type": "string"
+            },
+            {
+              "linkId": "adjusted-clinical-risk-level",
+              "text": "Adjusted Clinical Risk Level",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-severity-values"
+            },
+            {
+              "linkId": "plan",
+              "text": "Plan",
+              "type": "choice",
+              "required": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+                  "valueString": "proceed_to_tool_5_counsel_and_tool_6_treat"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "assessment-signature",
+      "text": "Assessment Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "assessed-by",
+          "text": "Assessed by",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "assessment-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "next-step",
+          "text": "Next Step",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+        }
+      ]
+    }
+  ]
+}

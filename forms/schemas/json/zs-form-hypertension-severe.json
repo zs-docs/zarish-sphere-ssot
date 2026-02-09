@@ -1,0 +1,180 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-hypertension-severe",
+  "url": "https://zarish.org/Questionnaire/zs-form-hypertension-severe",
+  "name": "ZarishHypertensionSevere",
+  "title": "Zarish Hypertension Protocol II (Severe) Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive severe hypertension management form based on Bangladesh National Protocol",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "NCD"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "diagnosis"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-3-Specialized"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-protocol-reference",
+      "valueString": "Bangladesh-National-HTN-Protocol-II"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "patient-info",
+      "text": "Patient Information",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "patient-id",
+          "text": "Patient ID",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    {
+      "linkId": "bp-measurements",
+      "text": "Blood Pressure Measurements",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "systolic",
+          "text": "SBP (mmHg)",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "≥160"
+            },
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "valueString": "mmHg"
+            }
+          ]
+        },
+        {
+          "linkId": "diastolic",
+          "text": "DBP (mmHg)",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "≥100"
+            },
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "valueString": "mmHg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "pregnancy-check",
+      "text": "Pregnancy Status",
+      "type": "choice",
+      "required": true,
+      "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+      "extension": [
+        {
+          "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+          "valueString": "if pregnant then refer_to_specialist"
+        }
+      ]
+    },
+    {
+      "linkId": "medication-start",
+      "text": "Medication Start",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "amlodipine-dose",
+          "text": "Amlodipine Dose",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-medications",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "start_amlodipine_2.5-5_mg_daily"
+            }
+          ]
+        },
+        {
+          "linkId": "losartan-dose",
+          "text": "Losartan Dose",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-medications",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if non-pregnant then add_losartan_50_mg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "review-schedule",
+      "text": "Review Schedule",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "review-date",
+          "text": "Review Date",
+          "type": "date",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "schedule_review_1_month"
+            }
+          ]
+        },
+        {
+          "linkId": "if-target-not-met",
+          "text": "If Target Not Met",
+          "type": "text",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "increase_losartan_to_100_mg"
+            }
+          ]
+        },
+        {
+          "linkId": "if-still-not-met",
+          "text": "If Still Not Met",
+          "type": "text",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "add_hctz_12.5-25_mg_and_refer"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

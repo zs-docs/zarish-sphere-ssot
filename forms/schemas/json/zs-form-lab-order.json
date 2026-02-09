@@ -1,0 +1,185 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-lab-order",
+  "url": "https://zarish.org/Questionnaire/zs-form-lab-order",
+  "name": "Zarish Lab Order Form",
+  "title": "Zarish Lab Order Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Laboratory test ordering form for Zarish Sphere Platform",
+  "subjectType": [
+    {
+      "code": "Patient"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "zs-form-lab-order-1",
+      "text": "Patient Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-lab-order-1.1",
+          "text": "Patient Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-order-1.2",
+          "text": "Patient ID",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-order-1.3",
+          "text": "Date of Birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-order-1.4",
+          "text": "Age",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-order-1.5",
+          "text": "Gender",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/gender-values"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-lab-order-2",
+      "text": "Clinical Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-lab-order-2.1",
+          "text": "Diagnosis",
+          "type": "string",
+          "required": false
+        },
+        {
+          "linkId": "zs-form-lab-order-2.2",
+          "text": "Clinical Indication",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/clinical-indication-values"
+          }
+        },
+        {
+          "linkId": "zs-form-lab-order-2.3",
+          "text": "Priority",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/lab-priority-values"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-lab-order-3",
+      "text": "Laboratory Tests",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-lab-order-3.1",
+          "text": "Test Category",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/lab-category-values"
+          }
+        },
+        {
+          "linkId": "zs-form-lab-order-3.2",
+          "text": "Specific Test",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/lab-test-values"
+          }
+        },
+        {
+          "linkId": "zs-form-lab-order-3.3",
+          "text": "Test Description",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "repeats": true
+    },
+    {
+      "linkId": "zs-form-lab-order-4",
+      "text": "Specimen Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-lab-order-4.1",
+          "text": "Specimen Type",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/specimen-type-values"
+          }
+        },
+        {
+          "linkId": "zs-form-lab-order-4.2",
+          "text": "Collection Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-order-4.3",
+          "text": "Collection Time",
+          "type": "time",
+          "required": false
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-lab-order-5",
+      "text": "Order Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-lab-order-5.1",
+          "text": "Ordering Provider",
+          "type": "reference",
+          "required": true,
+          "targetType": "Practitioner"
+        },
+        {
+          "linkId": "zs-form-lab-order-5.2",
+          "text": "Ordering Facility",
+          "type": "reference",
+          "required": true,
+          "targetType": "Location"
+        },
+        {
+          "linkId": "zs-form-lab-order-5.3",
+          "text": "Order Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-order-5.4",
+          "text": "Urgency",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/lab-urgency-values"
+          }
+        }
+      ]
+    }
+  ]
+}

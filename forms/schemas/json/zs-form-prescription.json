@@ -1,0 +1,106 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-prescription",
+  "url": "https://zarish.org/Questionnaire/zs-form-prescription",
+  "name": "ZarishPrescription",
+  "title": "Zarish Prescription Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive prescription form aligned with Gold Standard EMR requirements",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Cross-Domain"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "prescription"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-4-Pharmacy"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "medication-details",
+      "text": "Medication Details",
+      "type": "group",
+      "repeats": true,
+      "required": true,
+      "item": [
+        {
+          "linkId": "drug-name",
+          "text": "Drug Name",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        },
+        {
+          "linkId": "dose",
+          "text": "Dose",
+          "type": "string",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        },
+        {
+          "linkId": "frequency",
+          "text": "Frequency",
+          "type": "string",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        },
+        {
+          "linkId": "duration",
+          "text": "Duration",
+          "type": "string",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "safety-checks",
+      "text": "Safety Checks",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "drug-interactions",
+          "text": "Check for Drug-Drug Interactions",
+          "type": "boolean",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if interactions_found then alert_prescriber"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

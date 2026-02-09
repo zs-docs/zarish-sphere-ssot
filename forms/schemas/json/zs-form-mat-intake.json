@@ -1,0 +1,284 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-mat-intake",
+  "url": "https://zarish.org/Questionnaire/zs-form-mat-intake",
+  "version": "1.0.0",
+  "name": "zs-form-mat-intake",
+  "title": "Medication-Assisted Treatment (MAT) Intake Form",
+  "status": "active",
+  "date": "2026-02-07T11:41:19.871514",
+  "publisher": "Zarish Sphere",
+  "description": "Assessment and enrollment for substance use disorder treatment",
+  "purpose": "Assessment and enrollment for substance use disorder treatment",
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Substance-Use-Disorders"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "Intake"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "valueString": "Level-3-IPD,Level-4-Tertiary"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "mat-substance-use",
+      "text": "Current Substance Use",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "primary-substance",
+          "text": "Primary substance of use",
+          "type": "choice",
+          "required": true,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Alcohol"
+            },
+            {
+              "valueString": "Opioids"
+            },
+            {
+              "valueString": "Cannabis"
+            },
+            {
+              "valueString": "Stimulants"
+            },
+            {
+              "valueString": "Benzodiazepines"
+            },
+            {
+              "valueString": "Polysubstance"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "route-of-admin",
+          "text": "Route of Administration",
+          "type": "choice",
+          "required": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Injection"
+            },
+            {
+              "valueString": "Smoking"
+            },
+            {
+              "valueString": "Inhaling"
+            },
+            {
+              "valueString": "Oral"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "frequency",
+          "text": "Frequency of Use",
+          "type": "choice",
+          "required": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Daily"
+            },
+            {
+              "valueString": "4-6 times/week"
+            },
+            {
+              "valueString": "2-3 times/week"
+            },
+            {
+              "valueString": "Weekly"
+            },
+            {
+              "valueString": "Less frequent"
+            }
+          ]
+        },
+        {
+          "linkId": "daily-amount",
+          "text": "Estimated Daily Amount",
+          "type": "text",
+          "required": false,
+          "readOnly": false,
+          "prefix": "Dose/amount used per day"
+        },
+        {
+          "linkId": "duration-of-use",
+          "text": "Duration of Use (years)",
+          "type": "decimal",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "mat-withdrawal-symptoms",
+      "text": "Withdrawal Symptoms",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "withdrawal-timeline",
+          "text": "Timeline of last use",
+          "type": "string",
+          "required": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "0-6 hours"
+            },
+            {
+              "valueString": "6-24 hours"
+            },
+            {
+              "valueString": "1-3 days"
+            },
+            {
+              "valueString": "> 3 days"
+            }
+          ]
+        },
+        {
+          "linkId": "withdrawal-fever",
+          "text": "Fever?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "withdrawal-pain",
+          "text": "Body/muscle pain?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "withdrawal-nausea",
+          "text": "Nausea/vomiting?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "withdrawal-anxiety",
+          "text": "Anxiety/irritability?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "withdrawal-sleep",
+          "text": "Sleep issues?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "mat-eligibility",
+      "text": "MAT Eligibility Criteria",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "diagnosed-oud",
+          "text": "Diagnosed with opioid use disorder?",
+          "type": "boolean",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "hepatitis-status",
+          "text": "Hepatitis B/C status known?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "pregnancy",
+          "text": "Currently pregnant?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "mental-health",
+          "text": "Mental health comorbidities?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "hiv-status",
+          "text": "HIV status known?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "mat-treatment-plan",
+      "text": "Treatment Plan",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "maat-medication",
+          "text": "MAT Medication Choice",
+          "type": "choice",
+          "required": true,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Methadone"
+            },
+            {
+              "valueString": "Buprenorphine"
+            },
+            {
+              "valueString": "Naltrexone"
+            }
+          ]
+        },
+        {
+          "linkId": "dosing-schedule",
+          "text": "Initial Dosing Schedule",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "counseling-frequency",
+          "text": "Counseling Frequency",
+          "type": "choice",
+          "required": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Weekly"
+            },
+            {
+              "valueString": "Bi-weekly"
+            },
+            {
+              "valueString": "Monthly"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

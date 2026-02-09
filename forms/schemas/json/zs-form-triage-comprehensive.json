@@ -1,0 +1,192 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-triage",
+  "url": "https://zarish.org/Questionnaire/zs-form-triage",
+  "version": "1.0.0",
+  "name": "zs-form-triage",
+  "title": "Triage Assessment Form",
+  "status": "active",
+  "date": "2026-02-07T11:41:19.871471",
+  "publisher": "Zarish Sphere",
+  "description": "Rapid patient assessment and triage prioritization",
+  "purpose": "Rapid patient assessment and triage prioritization",
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Cross-Domain"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "Triage"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "valueString": "Level-1-CHC,Level-2-OPD"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "vital-assessment",
+      "text": "Vital Signs Assessment",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "temp",
+          "text": "Temperature (°C)",
+          "type": "decimal",
+          "required": true,
+          "readOnly": false,
+          "prefix": "Axillary temperature"
+        },
+        {
+          "linkId": "hr",
+          "text": "Heart Rate (bpm)",
+          "type": "integer",
+          "required": true,
+          "readOnly": false,
+          "prefix": "Pulse rate"
+        },
+        {
+          "linkId": "rr",
+          "text": "Respiratory Rate",
+          "type": "integer",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "sbp",
+          "text": "Systolic BP (mmHg)",
+          "type": "integer",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "dbp",
+          "text": "Diastolic BP (mmHg)",
+          "type": "integer",
+          "required": true,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "chief-complaint",
+      "text": "Chief Complaint",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "complaint",
+          "text": "Chief Complaint/Reason for Visit",
+          "type": "text",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "duration",
+          "text": "Duration of Symptoms",
+          "type": "string",
+          "required": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "< 1 day"
+            },
+            {
+              "valueString": "1-7 days"
+            },
+            {
+              "valueString": "1-4 weeks"
+            },
+            {
+              "valueString": "> 1 month"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "danger-signs",
+      "text": "Assess for Danger Signs",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "severe-pallor",
+          "text": "Severe Pallor?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "severe-malnutrition",
+          "text": "Severe Malnutrition?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "lethargy",
+          "text": "Lethargy/Loss of Consciousness?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "convulsions",
+          "text": "Convulsions?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "chest-indrawing",
+          "text": "Chest Indrawing?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "stridor",
+          "text": "Stridor in Calm Child?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "severe-dehydration",
+          "text": "Signs of Severe Dehydration?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "triage-category",
+      "text": "Triage Priority",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "priority",
+          "text": "Priority Category",
+          "type": "choice",
+          "required": true,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Immediate (Red)"
+            },
+            {
+              "valueString": "Urgent (Yellow)"
+            },
+            {
+              "valueString": "Non-urgent (Green)"
+            },
+            {
+              "valueString": "Delayed (Gray)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

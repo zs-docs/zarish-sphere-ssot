@@ -1,0 +1,277 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-gbv-screening",
+  "url": "https://zarish.org/Questionnaire/zs-form-gbv-screening",
+  "name": "ZarishGBVScreeningForm",
+  "title": "Zarish GBV Screening Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Gender-based violence screening form for the Zarish Sphere Platform",
+  "subjectType": [
+    {
+      "code": "Patient"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "zs-form-gbv-screening-1",
+      "text": "Client Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-gbv-screening-1.1",
+          "text": "Client Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-gbv-screening-1.2",
+          "text": "Date of Birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-gbv-screening-1.3",
+          "text": "Age",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-gbv-screening-1.4",
+          "text": "Gender",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/gender-values"
+          }
+        },
+        {
+          "linkId": "zs-form-gbv-screening-1.5",
+          "text": "Marital Status",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/marital-status-values"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-gbv-screening-2",
+      "text": "Consent Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-gbv-screening-2.1",
+          "text": "Consent for Screening",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/consent-values"
+          },
+          "answerOption": [
+            {
+              "valueCoding": {
+                "system": "https://zarish.org/CodeSystem/consent-values",
+                "code": "CONSENTED",
+                "display": "Consented"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "https://zarish.org/CodeSystem/consent-values",
+                "code": "DECLINED",
+                "display": "Declined"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "zs-form-gbv-screening-2.2",
+          "text": "Consent for Services",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/consent-values"
+          }
+        },
+        {
+          "linkId": "zs-form-gbv-screening-2.3",
+          "text": "Privacy Preference",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/privacy-preference-values"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-gbv-screening-3",
+      "text": "Violence Screening",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-gbv-screening-3.1",
+          "text": "Physical Violence",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/violence-types"
+          },
+          "repeats": true
+        },
+        {
+          "linkId": "zs-form-gbv-screening-3.2",
+          "text": "Sexual Violence",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/violence-types"
+          },
+          "repeats": true
+        },
+        {
+          "linkId": "zs-form-gbv-screening-3.3",
+          "text": "Emotional Violence",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/violence-types"
+          },
+          "repeats": true
+        },
+        {
+          "linkId": "zs-form-gbv-screening-3.4",
+          "text": "Economic Violence",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/violence-types"
+          },
+          "repeats": true
+        },
+        {
+          "linkId": "zs-form-gbv-screening-3.5",
+          "text": "Time Since Last Incident",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/time-since-incident"
+          }
+        },
+        {
+          "linkId": "zs-form-gbv-screening-3.6",
+          "text": "Perpetrator Information",
+          "type": "group",
+          "required": false,
+          "item": [
+            {
+              "linkId": "zs-form-gbv-screening-3.6.1",
+              "text": "Perpetrator Relationship",
+              "type": "choice",
+              "required": false,
+              "answerValueSet": {
+                "reference": "https://zarish.org/ValueSet/perpetrator-relationship"
+              }
+            },
+            {
+              "linkId": "zs-form-gbv-screening-3.6.2",
+              "text": "Perpetrator Name",
+              "type": "string",
+              "required": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-gbv-screening-4",
+      "text": "Risk Assessment",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-gbv-screening-4.1",
+          "text": "Immediate Danger",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/immediate-danger-indicators"
+          }
+        },
+        {
+          "linkId": "zs-form-gbv-screening-4.2",
+          "text": "Safety Planning Required",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/safety-planning-required"
+          }
+        },
+        {
+          "linkId": "zs-form-gbv-screening-4.3",
+          "text": "Child at Risk",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/child-at-risk-indicators"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-gbv-screening-5",
+      "text": "Service Preferences",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-gbv-screening-5.1",
+          "text": "Preferred Services",
+          "type": "choice",
+          "required": false,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/gbv-services"
+          },
+          "repeats": true
+        },
+        {
+          "linkId": "zs-form-gbv-screening-5.2",
+          "text": "Referral Preferences",
+          "type": "choice",
+          "required": false,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/referral-preferences"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-gbv-screening-6",
+      "text": "Provider Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-gbv-screening-6.1",
+          "text": "Screening Provider",
+          "type": "reference",
+          "required": true,
+          "targetType": "Practitioner"
+        },
+        {
+          "linkId": "zs-form-gbv-screening-6.2",
+          "text": "Facility",
+          "type": "reference",
+          "required": true,
+          "targetType": "Location"
+        },
+        {
+          "linkId": "zs-form-gbv-screening-6.3",
+          "text": "Screening Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

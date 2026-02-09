@@ -1,0 +1,372 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-anc-enrollment",
+  "url": "https://zarish.org/Questionnaire/zs-form-anc-enrollment",
+  "version": "1.0.0",
+  "name": "zs-form-anc-enrollment",
+  "title": "ANC Enrollment Form",
+  "status": "active",
+  "date": "2026-02-07T11:41:19.838396",
+  "publisher": "Zarish Sphere",
+  "description": "Antenatal Care enrollment and initial assessment form",
+  "purpose": "Antenatal Care enrollment and initial assessment form",
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Maternal-Child-Health"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "Enrollment"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "valueString": "Level-2-OPD,Level-3-IPD,Level-4-Tertiary"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-provider-type",
+      "valueString": "CHV,Nurse,Doctor,Lab Tech"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "anc-demographics",
+      "text": "Pregnancy Information",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "anc-lmp-date",
+          "text": "Last Menstrual Period (LMP)",
+          "type": "date",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "First day of last menstrual cycle"
+        },
+        {
+          "linkId": "anc-expected-delivery",
+          "text": "Expected Delivery Date",
+          "type": "date",
+          "required": false,
+          "repeats": false,
+          "readOnly": true,
+          "prefix": "Auto-calculated as LMP + 280 days"
+        },
+        {
+          "linkId": "anc-gestational-age",
+          "text": "Gestational Age (weeks)",
+          "type": "integer",
+          "required": false,
+          "repeats": false,
+          "readOnly": true,
+          "prefix": "Calculated from LMP"
+        },
+        {
+          "linkId": "anc-gravidity",
+          "text": "Gravidity (Total Pregnancies)",
+          "type": "integer",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "valueString": "{\"min\": 0, \"max\": 20}"
+            }
+          ]
+        },
+        {
+          "linkId": "anc-parity",
+          "text": "Parity (Live Births)",
+          "type": "integer",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "valueString": "{\"min\": 0, \"max\": 20}"
+            }
+          ]
+        },
+        {
+          "linkId": "anc-abortions",
+          "text": "Abortions/Miscarriages",
+          "type": "integer",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "valueString": "{\"min\": 0, \"max\": 20}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "anc-obstetric-history",
+      "text": "Obstetric History",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "anc-previous-pregnancies-uncomplicated",
+          "text": "Previous pregnancies uncomplicated?",
+          "type": "boolean",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "anc-previous-complications",
+          "text": "Previous Obstetric Complications",
+          "type": "choice",
+          "required": false,
+          "repeats": true,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Gestational Diabetes"
+            },
+            {
+              "valueString": "Preeclampsia"
+            },
+            {
+              "valueString": "Cesarean Section"
+            },
+            {
+              "valueString": "Postpartum Hemorrhage"
+            },
+            {
+              "valueString": "Placental Abruption"
+            },
+            {
+              "valueString": "Fetal Loss"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "anc-previous-delivery-method",
+          "text": "Previous Delivery Method",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Vaginal"
+            },
+            {
+              "valueString": "Cesarean Section"
+            },
+            {
+              "valueString": "Assisted (Forceps/Vacuum)"
+            },
+            {
+              "valueString": "Unknown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "anc-medical-history",
+      "text": "Medical and Social History",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "anc-chronic-conditions",
+          "text": "Chronic Medical Conditions",
+          "type": "choice",
+          "required": false,
+          "repeats": true,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Diabetes"
+            },
+            {
+              "valueString": "Hypertension"
+            },
+            {
+              "valueString": "HIV/AIDS"
+            },
+            {
+              "valueString": "Tuberculosis"
+            },
+            {
+              "valueString": "Asthma"
+            },
+            {
+              "valueString": "Cardiac Disease"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "anc-hiv-status",
+          "text": "HIV Status",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Positive"
+            },
+            {
+              "valueString": "Negative"
+            },
+            {
+              "valueString": "Unknown"
+            },
+            {
+              "valueString": "Declined"
+            }
+          ]
+        },
+        {
+          "linkId": "anc-on-antiretroviral",
+          "text": "Currently on Antiretroviral Therapy?",
+          "type": "boolean",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "enableWhen": [
+            {
+              "question": "anc-hiv-status",
+              "operator": "=",
+              "answerString": "Positive"
+            }
+          ],
+          "enableBehavior": "any"
+        },
+        {
+          "linkId": "anc-substance-use",
+          "text": "Substance Use",
+          "type": "choice",
+          "required": false,
+          "repeats": true,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Tobacco"
+            },
+            {
+              "valueString": "Alcohol"
+            },
+            {
+              "valueString": "Cannabis"
+            },
+            {
+              "valueString": "Other Drugs"
+            },
+            {
+              "valueString": "None"
+            }
+          ]
+        },
+        {
+          "linkId": "anc-domestic-violence",
+          "text": "History of Domestic Violence",
+          "type": "boolean",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "anc-current-symptoms",
+      "text": "Current Symptoms",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "anc-symptoms",
+          "text": "Present Symptoms",
+          "type": "choice",
+          "required": false,
+          "repeats": true,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Vaginal Bleeding"
+            },
+            {
+              "valueString": "Abdominal Pain"
+            },
+            {
+              "valueString": "Headache"
+            },
+            {
+              "valueString": "Visual Disturbances"
+            },
+            {
+              "valueString": "Swelling"
+            },
+            {
+              "valueString": "Nausea/Vomiting"
+            },
+            {
+              "valueString": "Dyspnea"
+            },
+            {
+              "valueString": "None"
+            }
+          ]
+        },
+        {
+          "linkId": "anc-vaginal-discharge",
+          "text": "Vaginal Discharge",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "None"
+            },
+            {
+              "valueString": "Normal"
+            },
+            {
+              "valueString": "Abnormal (specify)"
+            },
+            {
+              "valueString": "Purulent"
+            },
+            {
+              "valueString": "Bloody"
+            }
+          ]
+        },
+        {
+          "linkId": "anc-vaginal-discharge-description",
+          "text": "Discharge Description",
+          "type": "text",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "enableWhen": [
+            {
+              "question": "anc-vaginal-discharge",
+              "operator": "=",
+              "answerString": "Abnormal (specify)"
+            }
+          ],
+          "enableBehavior": "any"
+        }
+      ]
+    }
+  ]
+}

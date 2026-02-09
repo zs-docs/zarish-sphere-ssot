@@ -1,0 +1,81 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-dispensing",
+  "url": "https://zarish.org/Questionnaire/zs-form-dispensing",
+  "name": "ZarishDispensing",
+  "title": "Zarish Dispensing Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive dispensing form aligned with Gold Standard EMR requirements",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Cross-Domain"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "dispensing"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-4-Pharmacy"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "dispensing-details",
+      "text": "Dispensing Details",
+      "type": "group",
+      "repeats": true,
+      "required": true,
+      "item": [
+        {
+          "linkId": "quantity-dispensed",
+          "text": "Quantity Dispensed",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "qty <= prescribed"
+            }
+          ]
+        },
+        {
+          "linkId": "batch-number",
+          "text": "Batch Number",
+          "type": "string",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "inventory-update",
+      "text": "Inventory Update",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "update-inventory",
+          "text": "Update Inventory System",
+          "type": "boolean",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "sync_to_his_inventory_system"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

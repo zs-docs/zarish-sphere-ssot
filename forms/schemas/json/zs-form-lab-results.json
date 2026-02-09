@@ -1,0 +1,190 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-lab-results",
+  "url": "https://zarish.org/Questionnaire/zs-form-lab-results",
+  "name": "Zarish Lab Results Form",
+  "title": "Zarish Lab Results Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Laboratory results recording form for Zarish Sphere Platform",
+  "subjectType": [
+    {
+      "code": "Patient"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "zs-form-lab-results-1",
+      "text": "Patient Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-lab-results-1.1",
+          "text": "Patient Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-results-1.2",
+          "text": "Patient ID",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-results-1.3",
+          "text": "Date of Birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-results-1.4",
+          "text": "Age",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-results-1.5",
+          "text": "Gender",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/gender-values"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-lab-results-2",
+      "text": "Test Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-lab-results-2.1",
+          "text": "Test Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-results-2.2",
+          "text": "Test Code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-results-2.3",
+          "text": "Specimen Type",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/specimen-type-values"
+          }
+        },
+        {
+          "linkId": "zs-form-lab-results-2.4",
+          "text": "Collection Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-results-2.5",
+          "text": "Result Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-lab-results-3",
+      "text": "Test Results",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-lab-results-3.1",
+          "text": "Result Value",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-lab-results-3.2",
+          "text": "Result Unit",
+          "type": "string",
+          "required": false
+        },
+        {
+          "linkId": "zs-form-lab-results-3.3",
+          "text": "Reference Range",
+          "type": "string",
+          "required": false
+        },
+        {
+          "linkId": "zs-form-lab-results-3.4",
+          "text": "Abnormal Flag",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/abnormal-flag-values"
+          }
+        },
+        {
+          "linkId": "zs-form-lab-results-3.5",
+          "text": "Clinical Interpretation",
+          "type": "choice",
+          "required": false,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/clinical-interpretation-values"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-lab-results-4",
+      "text": "Quality Control",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-lab-results-4.1",
+          "text": "QC Status",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/qc-status-values"
+          }
+        },
+        {
+          "linkId": "zs-form-lab-results-4.2",
+          "text": "QC Comments",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-lab-results-5",
+      "text": "Provider Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-lab-results-5.1",
+          "text": "Reporting Provider",
+          "type": "reference",
+          "required": true,
+          "targetType": "Practitioner"
+        },
+        {
+          "linkId": "zs-form-lab-results-5.2",
+          "text": "Reporting Facility",
+          "type": "reference",
+          "required": true,
+          "targetType": "Location"
+        },
+        {
+          "linkId": "zs-form-lab-results-5.3",
+          "text": "Report Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

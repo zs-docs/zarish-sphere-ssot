@@ -1,0 +1,155 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-nursing-observation",
+  "url": "https://zarish.org/Questionnaire/zs-form-nursing-observation",
+  "name": "ZarishNursingObservation",
+  "title": "Zarish Nursing Observation Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive nursing observation form for IPD patients",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Cross-Domain"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "nursing"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-2-IPD"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "observation-time",
+      "text": "Observation Time",
+      "type": "dateTime",
+      "required": true,
+      "extension": [
+        {
+          "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+          "valueString": "mandatory"
+        }
+      ]
+    },
+    {
+      "linkId": "vitals-q4h",
+      "text": "Vital Signs (Every 4 Hours)",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "temperature",
+          "text": "Temperature (°C)",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "30-45"
+            }
+          ]
+        },
+        {
+          "linkId": "blood-pressure",
+          "text": "Blood Pressure",
+          "type": "group",
+          "required": true,
+          "item": [
+            {
+              "linkId": "systolic",
+              "text": "Systolic (mmHg)",
+              "type": "decimal",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "valueString": "40-300"
+                }
+              ]
+            },
+            {
+              "linkId": "diastolic",
+              "text": "Diastolic (mmHg)",
+              "type": "decimal",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "valueString": "40-300"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "heart-rate",
+          "text": "Heart Rate (bpm)",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "30-200"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "intake-output",
+      "text": "Intake/Output",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "fluid-intake",
+          "text": "Fluid Intake (ml)",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "valueString": "ml"
+            }
+          ]
+        },
+        {
+          "linkId": "fluid-output",
+          "text": "Fluid Output (ml)",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+              "valueString": "ml"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "alerts",
+      "text": "Alerts",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "vital-deterioration",
+          "text": "Vital Signs Deterioration",
+          "type": "boolean",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if true then alert_doctor_immediately"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

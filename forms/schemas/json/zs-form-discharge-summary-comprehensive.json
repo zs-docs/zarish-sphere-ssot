@@ -1,0 +1,241 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-discharge-summary-comprehensive",
+  "url": "https://zarish.org/Questionnaire/zs-form-discharge-summary-comprehensive",
+  "version": "1.0.0",
+  "name": "zs-form-discharge-summary-comprehensive",
+  "title": "Hospital Discharge Summary Form",
+  "status": "active",
+  "date": "2026-02-07T11:41:19.871552",
+  "publisher": "Zarish Sphere",
+  "description": "Comprehensive discharge planning and documentation",
+  "purpose": "Comprehensive discharge planning and documentation",
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Cross-Domain"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "Discharge"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "valueString": "Level-3-IPD,Level-4-Tertiary"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "discharge-patient-info",
+      "text": "Patient Discharge Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "admission-date",
+          "text": "Date of Admission",
+          "type": "date",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "discharge-date",
+          "text": "Date of Discharge",
+          "type": "date",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "length-of-stay",
+          "text": "Length of Stay (days)",
+          "type": "integer",
+          "required": false,
+          "readOnly": true
+        }
+      ]
+    },
+    {
+      "linkId": "discharge-diagnosis",
+      "text": "Discharge Diagnosis",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "primary-diagnosis",
+          "text": "Primary Diagnosis (ICD-10)",
+          "type": "text",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "secondary-diagnoses",
+          "text": "Secondary Diagnoses",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "procedures",
+          "text": "Procedures Performed",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "discharge-clinical-summary",
+      "text": "Clinical Summary",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "reason-for-admission",
+          "text": "Reason for Admission",
+          "type": "text",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "clinical-course",
+          "text": "Hospital Course/Clinical Course",
+          "type": "text",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "findings",
+          "text": "Key Clinical Findings",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "treatment-given",
+          "text": "Treatment Given",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "discharge-medications",
+      "text": "Discharge Medications",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "discharge-medications-list",
+          "text": "Medications at Discharge",
+          "type": "text",
+          "required": true,
+          "readOnly": false,
+          "prefix": "List all medications with doses and frequency"
+        },
+        {
+          "linkId": "medication-changes",
+          "text": "Changes from Admission Medications",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "discharge-instructions",
+      "text": "Discharge Instructions",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "activity-restrictions",
+          "text": "Activity Restrictions",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "diet-restrictions",
+          "text": "Diet/Nutritional Instructions",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "wound-care",
+          "text": "Wound Care Instructions",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "medications-adherence",
+          "text": "Medication Adherence Instructions",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "discharge-follow-up",
+      "text": "Follow-up Plan",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "follow-up-provider",
+          "text": "Follow-up Provider Name",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "follow-up-date",
+          "text": "Follow-up Appointment Date",
+          "type": "date",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "follow-up-instructions",
+          "text": "Follow-up Instructions",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "warning-signs",
+          "text": "Warning Signs to Watch For",
+          "type": "text",
+          "required": false,
+          "readOnly": false,
+          "prefix": "Red flags or symptoms requiring urgent care"
+        }
+      ]
+    },
+    {
+      "linkId": "discharge-patient-understanding",
+      "text": "Patient/Caregiver Understanding",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "discharge-instructions-understood",
+          "text": "Patient understands discharge instructions?",
+          "type": "boolean",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "questions-addressed",
+          "text": "All patient questions addressed?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "family-educated",
+          "text": "Family/caregiver educated?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    }
+  ]
+}

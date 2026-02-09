@@ -1,0 +1,268 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-patient-registration",
+  "url": "https://zarish.org/Questionnaire/zs-form-patient-registration",
+  "version": "1.0.0",
+  "name": "zs-form-patient-registration",
+  "title": "Patient Registration Form",
+  "status": "active",
+  "date": "2026-02-07T11:41:19.838322",
+  "publisher": "Zarish Sphere",
+  "description": "Comprehensive patient registration and demographic data collection",
+  "purpose": "Comprehensive patient registration and demographic data collection",
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Cross-Domain"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "Registration"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "valueString": "Level-1-CHC,Level-2-OPD,Level-3-IPD,Level-4-Tertiary"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-provider-type",
+      "valueString": "CHV,Nurse,Doctor,Lab Tech"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "patient-demographics",
+      "text": "Patient Demographics",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "patient-surname",
+          "text": "Surname",
+          "type": "string",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Family name"
+        },
+        {
+          "linkId": "patient-given-names",
+          "text": "Given Names",
+          "type": "string",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "First and middle names"
+        },
+        {
+          "linkId": "patient-dob",
+          "text": "Date of Birth",
+          "type": "date",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Patient's birth date"
+        },
+        {
+          "linkId": "patient-age",
+          "text": "Age",
+          "type": "integer",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Auto-calculated from DOB"
+        },
+        {
+          "linkId": "patient-gender",
+          "text": "Gender",
+          "type": "choice",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/ValueSet/administrative-gender",
+                "code": "male",
+                "display": "Male"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/ValueSet/administrative-gender",
+                "code": "female",
+                "display": "Female"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/ValueSet/administrative-gender",
+                "code": "other",
+                "display": "Other"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "patient-contact-phone",
+          "text": "Contact Phone",
+          "type": "string",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Mobile or landline number"
+        }
+      ]
+    },
+    {
+      "linkId": "patient-address",
+      "text": "Address Information",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "address-country",
+          "text": "Country",
+          "type": "string",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "initial": [
+            {
+              "valueString": "Bangladesh"
+            }
+          ]
+        },
+        {
+          "linkId": "address-division",
+          "text": "Division/State",
+          "type": "choice",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Dhaka"
+            },
+            {
+              "valueString": "Chittagong"
+            },
+            {
+              "valueString": "Sylhet"
+            },
+            {
+              "valueString": "Khulna"
+            },
+            {
+              "valueString": "Rajshahi"
+            },
+            {
+              "valueString": "Barisal"
+            },
+            {
+              "valueString": "Mymensingh"
+            }
+          ]
+        },
+        {
+          "linkId": "address-district",
+          "text": "District",
+          "type": "string",
+          "required": true,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "address-upazila",
+          "text": "Upazila",
+          "type": "string",
+          "required": true,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "address-union",
+          "text": "Union",
+          "type": "string",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "address-village",
+          "text": "Village",
+          "type": "string",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "patient-identifiers",
+      "text": "Patient Identifiers",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "identifier-nid",
+          "text": "National ID (NID)",
+          "type": "string",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "National Identity Document number"
+        },
+        {
+          "linkId": "identifier-bin",
+          "text": "Birth Registration Number",
+          "type": "string",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Birth Registration Number"
+        },
+        {
+          "linkId": "identifier-passport",
+          "text": "Passport Number",
+          "type": "string",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "International passport number"
+        }
+      ]
+    },
+    {
+      "linkId": "patient-emergency-contact",
+      "text": "Emergency Contact",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "emergency-contact-name",
+          "text": "Emergency Contact Name",
+          "type": "string",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "emergency-contact-relation",
+          "text": "Relationship",
+          "type": "string",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "emergency-contact-phone",
+          "text": "Emergency Contact Phone",
+          "type": "string",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        }
+      ]
+    }
+  ]
+}

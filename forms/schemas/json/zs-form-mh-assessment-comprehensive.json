@@ -1,0 +1,298 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-mh-assessment",
+  "url": "https://zarish.org/Questionnaire/zs-form-mh-assessment",
+  "version": "1.0.0",
+  "name": "zs-form-mh-assessment",
+  "title": "Mental Health Assessment Form",
+  "status": "active",
+  "date": "2026-02-07T11:41:19.871535",
+  "publisher": "Zarish Sphere",
+  "description": "Comprehensive mental health evaluation and risk assessment",
+  "purpose": "Comprehensive mental health evaluation and risk assessment",
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Mental-Health"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "Assessment"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "valueString": "Level-2-OPD,Level-3-IPD,Level-4-Tertiary"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "mh-presenting-problem",
+      "text": "Presenting Problem",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "chief-complaint",
+          "text": "Chief Complaint",
+          "type": "text",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "symptom-duration",
+          "text": "Duration of Symptoms",
+          "type": "string",
+          "required": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "< 2 weeks"
+            },
+            {
+              "valueString": "2-4 weeks"
+            },
+            {
+              "valueString": "1-3 months"
+            },
+            {
+              "valueString": "> 3 months"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "mh-mood-symptoms",
+      "text": "Mood and Affect",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "depression-symptoms",
+          "text": "Depressive Symptoms",
+          "type": "choice",
+          "required": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "None"
+            },
+            {
+              "valueString": "Mild"
+            },
+            {
+              "valueString": "Moderate"
+            },
+            {
+              "valueString": "Severe"
+            }
+          ]
+        },
+        {
+          "linkId": "anxiety-symptoms",
+          "text": "Anxiety Symptoms",
+          "type": "choice",
+          "required": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "None"
+            },
+            {
+              "valueString": "Mild"
+            },
+            {
+              "valueString": "Moderate"
+            },
+            {
+              "valueString": "Severe"
+            }
+          ]
+        },
+        {
+          "linkId": "suicidal-ideation",
+          "text": "Suicidal thoughts?",
+          "type": "boolean",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "plan-intent",
+          "text": "Specific plan or intent?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "self-harm-history",
+          "text": "History of self-harm?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "mh-psychotic-symptoms",
+      "text": "Psychotic Symptoms",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "hallucinations",
+          "text": "Hallucinations?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "delusions",
+          "text": "Delusions/fixed false beliefs?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "disorganized-thinking",
+          "text": "Disorganized thinking/speech?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "mh-substance-use",
+      "text": "Substance Use History",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "alcohol-use",
+          "text": "Alcohol use?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "drug-use",
+          "text": "Illicit drug use?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "substance-treatment",
+          "text": "Previous treatment for substance use?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "mh-social-functioning",
+      "text": "Social and Occupational Functioning",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "work-status",
+          "text": "Employment Status",
+          "type": "choice",
+          "required": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Employed"
+            },
+            {
+              "valueString": "Unemployed"
+            },
+            {
+              "valueString": "Student"
+            },
+            {
+              "valueString": "Retired"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "social-support",
+          "text": "Adequate social support?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "living-situation",
+          "text": "Living Situation",
+          "type": "choice",
+          "required": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Stable housing"
+            },
+            {
+              "valueString": "Unstable housing"
+            },
+            {
+              "valueString": "Homeless"
+            },
+            {
+              "valueString": "Institutional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "mh-assessment-summary",
+      "text": "Assessment Summary",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "diagnostic-impression",
+          "text": "Preliminary Diagnostic Impression",
+          "type": "text",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "risk-level",
+          "text": "Risk Level",
+          "type": "choice",
+          "required": true,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Low"
+            },
+            {
+              "valueString": "Moderate"
+            },
+            {
+              "valueString": "High"
+            },
+            {
+              "valueString": "Critical"
+            }
+          ]
+        },
+        {
+          "linkId": "admission-needed",
+          "text": "Admission to Mental Health Unit Needed?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "treatment-plan",
+          "text": "Proposed Treatment Plan",
+          "type": "text",
+          "required": true,
+          "readOnly": false
+        }
+      ]
+    }
+  ]
+}

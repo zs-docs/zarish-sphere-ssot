@@ -1,0 +1,376 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-hypertension-diagnosis",
+  "url": "https://zarish.org/Questionnaire/zs-form-hypertension-diagnosis",
+  "name": "ZarishHypertensionDiagnosis",
+  "title": "Zarish Hypertension Diagnosis & Management Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive hypertension diagnosis and management form based on Bangladesh National Protocol",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "NCD"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "diagnosis"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-3-Specialized"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-protocol-reference",
+      "valueString": "Bangladesh-National-HTN-Protocol"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "patient-info",
+      "text": "Patient Information",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient Name",
+          "type": "string",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        },
+        {
+          "linkId": "age",
+          "text": "Age",
+          "type": "integer",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "18-120"
+            }
+          ]
+        },
+        {
+          "linkId": "sex",
+          "text": "Sex",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-sex",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        },
+        {
+          "linkId": "patient-id",
+          "text": "Patient ID",
+          "type": "string",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "bp-measurements",
+      "text": "BP Measurements (Required: 2 visits, 1-2 weeks apart)",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "visit1",
+          "text": "Visit 1",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "visit1-date",
+              "text": "Date",
+              "type": "date",
+              "required": true
+            },
+            {
+              "linkId": "visit1-sbp",
+              "text": "SBP (mmHg)",
+              "type": "decimal",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "mmHg"
+                }
+              ]
+            },
+            {
+              "linkId": "visit1-dbp",
+              "text": "DBP (mmHg)",
+              "type": "decimal",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "mmHg"
+                }
+              ]
+            },
+            {
+              "linkId": "visit1-measured-by",
+              "text": "Measured By",
+              "type": "string",
+              "required": true
+            }
+          ]
+        },
+        {
+          "linkId": "visit2",
+          "text": "Visit 2",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "visit2-date",
+              "text": "Date",
+              "type": "date",
+              "required": true
+            },
+            {
+              "linkId": "visit2-sbp",
+              "text": "SBP (mmHg)",
+              "type": "decimal",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "mmHg"
+                }
+              ]
+            },
+            {
+              "linkId": "visit2-dbp",
+              "text": "DBP (mmHg)",
+              "type": "decimal",
+              "required": true,
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "mmHg"
+                }
+              ]
+            },
+            {
+              "linkId": "visit2-measured-by",
+              "text": "Measured By",
+              "type": "string",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "diagnostic-criteria",
+      "text": "Diagnostic Criteria",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "sbp-range",
+          "text": "SBP on both days 140-159 mmHg",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "dbp-range",
+          "text": "DBP on both days 90-99 mmHg",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "high-cvd-risk",
+          "text": "High CVD risk + above BP (diagnosis on single visit)",
+          "type": "boolean"
+        },
+        {
+          "linkId": "severe-bp",
+          "text": "SBP ≥160 or DBP ≥100 (diagnosis on single visit)",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "linkId": "risk-assessment",
+      "text": "Risk Assessment",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "cvd-risk-level",
+          "text": "CVD Risk Level",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-severity-values",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "risk_level_determines_treatment_intensity"
+            }
+          ]
+        },
+        {
+          "linkId": "comorbidities",
+          "text": "Comorbidities",
+          "type": "choice",
+          "repeats": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-ncd-conditions",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "comorbidities_affect_treatment_targets"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "pregnancy-screening",
+      "text": "Pregnancy Screening",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "pregnancy-status",
+          "text": "For women of childbearing age:",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if pregnant then refer_to_specialist"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "treatment-decision",
+      "text": "Treatment Decision",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "bp-range-treatment",
+          "text": "Based on BP and Risk Level:",
+          "type": "display",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "determine_protocol_based_on_bp_and_risk"
+            }
+          ]
+        },
+        {
+          "linkId": "first-line-medication",
+          "text": "First Line Medication",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-medications",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "start_amlodipine_2.5-5_mg_daily"
+            }
+          ]
+        },
+        {
+          "linkId": "review-date",
+          "text": "Review Date",
+          "type": "date",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "schedule_review_1_month_after_start"
+            }
+          ]
+        },
+        {
+          "linkId": "treatment-target-met",
+          "text": "Treatment Target Met",
+          "type": "boolean",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if false then escalate_dose_or_add_medication"
+            }
+          ]
+        },
+        {
+          "linkId": "treatment-target",
+          "text": "Treatment Target",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "based_on_risk_high_risk_130-80_standard_140-90"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "follow-up-schedule",
+      "text": "Follow-up Schedule",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "initial-review",
+          "text": "Initial review: 1 month",
+          "type": "display"
+        },
+        {
+          "linkId": "controlled-followup",
+          "text": "If controlled: Every 3-6 months",
+          "type": "display"
+        },
+        {
+          "linkId": "uncontrolled-followup",
+          "text": "If not controlled: Monthly until controlled",
+          "type": "display"
+        }
+      ]
+    },
+    {
+      "linkId": "clinician-signature",
+      "text": "Signature",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "clinician-name",
+          "text": "Clinician",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "signature-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

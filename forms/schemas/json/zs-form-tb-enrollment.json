@@ -1,0 +1,404 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-tb-enrollment",
+  "url": "https://zarish.org/Questionnaire/zs-form-tb-enrollment",
+  "version": "1.0.0",
+  "name": "zs-form-tb-enrollment",
+  "title": "TB Enrollment Form",
+  "status": "active",
+  "date": "2026-02-07T11:41:19.838429",
+  "publisher": "Zarish Sphere",
+  "description": "Tuberculosis case enrollment and treatment initiation form",
+  "purpose": "Tuberculosis case enrollment and treatment initiation form",
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Communicable-Diseases"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "Enrollment"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "valueString": "Level-2-OPD,Level-3-IPD,Level-4-Tertiary"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-provider-type",
+      "valueString": "CHV,Nurse,Doctor,Lab Tech"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "tb-diagnosis",
+      "text": "TB Diagnosis Information",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "tb-diagnosis-date",
+          "text": "Date of TB Diagnosis",
+          "type": "date",
+          "required": true,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "tb-type",
+          "text": "Type of TB",
+          "type": "choice",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Pulmonary TB"
+            },
+            {
+              "valueString": "Extra-Pulmonary TB"
+            },
+            {
+              "valueString": "Miliary TB"
+            },
+            {
+              "valueString": "TB Meningitis"
+            },
+            {
+              "valueString": "TB Lymphadenitis"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "tb-patient-category",
+          "text": "Patient Category",
+          "type": "choice",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "New Case"
+            },
+            {
+              "valueString": "Relapse"
+            },
+            {
+              "valueString": "Treatment After Default"
+            },
+            {
+              "valueString": "Treatment After Failure"
+            },
+            {
+              "valueString": "Other Previously Treated"
+            }
+          ]
+        },
+        {
+          "linkId": "tb-diagnosis-method",
+          "text": "Diagnostic Method",
+          "type": "choice",
+          "required": true,
+          "repeats": true,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Chest X-Ray"
+            },
+            {
+              "valueString": "Sputum Microscopy (AFB)"
+            },
+            {
+              "valueString": "GeneXpert MTB/RIF"
+            },
+            {
+              "valueString": "TB Culture"
+            },
+            {
+              "valueString": "Clinical Diagnosis"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "tb-drug-resistance",
+      "text": "Drug Resistance Status",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "tb-drug-susceptibility-test",
+          "text": "Drug Susceptibility Test (DST) Done?",
+          "type": "boolean",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "tb-drug-resistance-pattern",
+          "text": "Drug Resistance Pattern",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Drug Sensitive TB (DS-TB)"
+            },
+            {
+              "valueString": "MDR-TB (Isoniazid + Rifampicin Resistant)"
+            },
+            {
+              "valueString": "Pre-XDR-TB"
+            },
+            {
+              "valueString": "XDR-TB (Extensively Drug Resistant)"
+            },
+            {
+              "valueString": "RIF-Resistant"
+            }
+          ],
+          "enableWhen": [
+            {
+              "question": "tb-drug-susceptibility-test",
+              "operator": "=",
+              "answerBoolean": true
+            }
+          ],
+          "enableBehavior": "any"
+        }
+      ]
+    },
+    {
+      "linkId": "tb-comorbidities",
+      "text": "Comorbidities",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "tb-hiv-status",
+          "text": "HIV Status",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Positive"
+            },
+            {
+              "valueString": "Negative"
+            },
+            {
+              "valueString": "Unknown"
+            },
+            {
+              "valueString": "Not Tested"
+            }
+          ]
+        },
+        {
+          "linkId": "tb-diabetes",
+          "text": "Diabetes Status",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Yes"
+            },
+            {
+              "valueString": "No"
+            },
+            {
+              "valueString": "Unknown"
+            }
+          ]
+        },
+        {
+          "linkId": "tb-renal-disease",
+          "text": "Chronic Kidney Disease?",
+          "type": "boolean",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "tb-liver-disease",
+          "text": "Chronic Liver Disease?",
+          "type": "boolean",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "tb-pregnant",
+          "text": "Currently Pregnant?",
+          "type": "boolean",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "tb-treatment",
+      "text": "TB Treatment Plan",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "tb-treatment-regimen",
+          "text": "TB Treatment Regimen",
+          "type": "choice",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Standard DS-TB 6-Month Regimen"
+            },
+            {
+              "valueString": "MDR-TB 20-Month Regimen"
+            },
+            {
+              "valueString": "Short MDR-TB 9-Month Regimen"
+            },
+            {
+              "valueString": "XDR-TB Long Regimen"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "tb-treatment-setting",
+          "text": "Treatment Setting",
+          "type": "choice",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Intensive Home-Based"
+            },
+            {
+              "valueString": "Intensive Facility-Based"
+            },
+            {
+              "valueString": "Continuation Home-Based"
+            },
+            {
+              "valueString": "Continuation Facility-Based"
+            }
+          ]
+        },
+        {
+          "linkId": "tb-treatment-start-date",
+          "text": "TB Treatment Start Date",
+          "type": "date",
+          "required": true,
+          "repeats": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "tb-symptoms",
+      "text": "Baseline Symptoms",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "tb-cough",
+          "text": "Cough",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Yes, > 2 weeks"
+            },
+            {
+              "valueString": "Yes, < 2 weeks"
+            },
+            {
+              "valueString": "No"
+            }
+          ]
+        },
+        {
+          "linkId": "tb-sputum-production",
+          "text": "Sputum Production",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Purulent"
+            },
+            {
+              "valueString": "Hemoptysis"
+            },
+            {
+              "valueString": "Mucoid"
+            },
+            {
+              "valueString": "None"
+            }
+          ]
+        },
+        {
+          "linkId": "tb-fever",
+          "text": "Fever",
+          "type": "boolean",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "tb-night-sweats",
+          "text": "Night Sweats",
+          "type": "boolean",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "tb-weight-loss",
+          "text": "Unintentional Weight Loss",
+          "type": "boolean",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "tb-dyspnea",
+          "text": "Shortness of Breath",
+          "type": "boolean",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "tb-chest-pain",
+          "text": "Chest Pain",
+          "type": "boolean",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        }
+      ]
+    }
+  ]
+}

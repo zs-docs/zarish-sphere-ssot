@@ -1,0 +1,1010 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-cvd-treatment-protocol",
+  "url": "https://zarish.org/Questionnaire/zs-form-cvd-treatment-protocol",
+  "name": "ZarishCVDTreatmentProtocol",
+  "title": "Zarish CVD Risk Assessment: Tool 6 - TREAT Protocol",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive risk-based treatment protocol for CVD management",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "NCD"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "treatment"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-3-Specialized"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-protocol-reference",
+      "valueString": "WHO-CVD-Treatment-Protocol"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "treatment-targets",
+      "text": "Treatment Targets by Risk Level",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "blood-pressure-targets",
+          "text": "Blood Pressure Targets:",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "very-high-risk-target",
+              "text": "Very High (≥30%): ≤130/80 mmHg",
+              "type": "display"
+            },
+            {
+              "linkId": "high-risk-target",
+              "text": "High (20-30%): ≤140/90 mmHg",
+              "type": "display"
+            },
+            {
+              "linkId": "moderate-risk-target",
+              "text": "Moderate (10-20%): ≤140/90 mmHg",
+              "type": "display"
+            },
+            {
+              "linkId": "low-risk-target",
+              "text": "Low (<10%): ≤140/90 mmHg",
+              "type": "display"
+            },
+            {
+              "linkId": "if-treatment-needed",
+              "text": "If treatment needed:",
+              "type": "display"
+            }
+          ]
+        },
+        {
+          "linkId": "diabetes-targets",
+          "text": "Diabetes Targets:",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "hba1c-target",
+              "text": "HbA1c: <7.0%",
+              "type": "display"
+            },
+            {
+              "linkId": "fasting-glucose-target",
+              "text": "Fasting glucose: ≤7.0 mmol/L",
+              "type": "display"
+            },
+            {
+              "linkId": "postprandial-target",
+              "text": "Postprandial: ≤11.1 mmol/L",
+              "type": "display"
+            },
+            {
+              "linkId": "relaxed-targets-note",
+              "text": "Relaxed targets if: Frequent hypoglycemia, advanced complications, limited life expectancy → HbA1c <8.0%",
+              "type": "display"
+            }
+          ]
+        },
+        {
+          "linkId": "cholesterol-targets",
+          "text": "Cholesterol Targets:",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "no-specific-numeric-target",
+              "text": "No specific numeric target",
+              "type": "display"
+            },
+            {
+              "linkId": "treat-appropriate-statin",
+              "text": "Treat with appropriate statin dose",
+              "type": "display"
+            },
+            {
+              "linkId": "focus-risk-reduction",
+              "text": "Focus on risk reduction",
+              "type": "display"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "very-high-risk-treatment",
+      "text": "VERY HIGH RISK (≥30% CVD Risk)",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "lifestyle-intervention",
+          "text": "Intensive Lifestyle Counseling",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "bp-threshold",
+          "text": "BP ≥130/80?",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if_yes then start_antihypertensive_per_htn_protocol"
+            }
+          ]
+        },
+        {
+          "linkId": "bp-monitoring",
+          "text": "Monitor every 3 months",
+          "type": "display"
+        },
+        {
+          "linkId": "statin-therapy",
+          "text": "Statin Therapy",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "start-statin",
+              "text": "Start Statin",
+              "type": "boolean",
+              "required": true
+            },
+            {
+              "linkId": "statin-type",
+              "text": "Rosuvastatin 5-20 mg",
+              "type": "choice",
+              "required": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-medications"
+            }
+          ]
+        },
+        {
+          "linkId": "diabetes-management",
+          "text": "DM Management",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "manage_per_dm_protocol"
+            }
+          ]
+        },
+        {
+          "linkId": "aspirin-indication",
+          "text": "Aspirin Indicated?",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if_no_contraindications then add_aspirin_75_mg"
+            }
+          ]
+        },
+        {
+          "linkId": "aspirin-therapy",
+          "text": "Add Aspirin 75 mg OD",
+          "type": "boolean"
+        },
+        {
+          "linkId": "follow-up-frequency",
+          "text": "Follow-up every 3 months",
+          "type": "display"
+        }
+      ]
+    },
+    {
+      "linkId": "high-risk-treatment",
+      "text": "HIGH RISK (20-30% CVD Risk)",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "lifestyle-counseling",
+          "text": "Lifestyle Counseling",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "bp-threshold-high-risk",
+          "text": "BP ≥160/90 or End-organ Damage?",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if_yes then start_antihypertensive_per_htn_protocol"
+            }
+          ]
+        },
+        {
+          "linkId": "bp-monitoring-high-risk",
+          "text": "Monitor BP",
+          "type": "display"
+        },
+        {
+          "linkId": "sbp-140-159",
+          "text": "SBP 140-159?",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if_yes then lifestyle_trial_first_4-8_weeks"
+            }
+          ]
+        },
+        {
+          "linkId": "lifestyle-trial",
+          "text": "Lifestyle trial first (4-8 weeks)",
+          "type": "display"
+        },
+        {
+          "linkId": "lifestyle-review",
+          "text": "Review in 4-8 weeks",
+          "type": "display"
+        },
+        {
+          "linkId": "continue-lifestyle",
+          "text": "Continue lifestyle",
+          "type": "display"
+        },
+        {
+          "linkId": "start-antihypertensive",
+          "text": "Start Antihypertensive",
+          "type": "boolean"
+        },
+        {
+          "linkId": "cholesterol-check",
+          "text": "Cholesterol >5 mmol/L?",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if_yes then start_statin"
+            }
+          ]
+        },
+        {
+          "linkId": "start-statin",
+          "text": "Start Statin",
+          "type": "boolean"
+        },
+        {
+          "linkId": "no-statin",
+          "text": "NOT recommended",
+          "type": "display"
+        },
+        {
+          "linkId": "diabetes-management-high-risk",
+          "text": "DM Management",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "manage_per_dm_protocol"
+            }
+          ]
+        },
+        {
+          "linkId": "aspirin-high-risk",
+          "text": "Aspirin",
+          "type": "display"
+        },
+        {
+          "linkId": "follow-up-frequency-high-risk",
+          "text": "Follow-up every 3-6 months",
+          "type": "display"
+        }
+      ]
+    },
+    {
+      "linkId": "moderate-risk-treatment",
+      "text": "MODERATE RISK (10-20% CVD Risk)",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "lifestyle-counseling-moderate",
+          "text": "Lifestyle Counseling",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "bp-threshold-moderate",
+          "text": "BP ≥160/90 or End-organ Damage?",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if_yes then start_antihypertensive_per_htn_protocol"
+            }
+          ]
+        },
+        {
+          "linkId": "bp-monitoring-moderate",
+          "text": "Monitor BP",
+          "type": "display"
+        },
+        {
+          "linkId": "sbp-140-159-moderate",
+          "text": "SBP 140-159?",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if_yes then lifestyle_trial_first_4-8_weeks"
+            }
+          ]
+        },
+        {
+          "linkId": "lifestyle-trial-moderate",
+          "text": "Lifestyle trial first (4-8 weeks)",
+          "type": "display"
+        },
+        {
+          "linkId": "lifestyle-review-moderate",
+          "text": "Review in 4-8 weeks",
+          "type": "display"
+        },
+        {
+          "linkId": "continue-lifestyle-moderate",
+          "text": "Continue lifestyle",
+          "type": "display"
+        },
+        {
+          "linkId": "start-antihypertensive-moderate",
+          "text": "Start Antihypertensive",
+          "type": "boolean"
+        },
+        {
+          "linkId": "cholesterol-check-moderate",
+          "text": "Cholesterol >5 mmol/L?",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if_yes then start_statin"
+            }
+          ]
+        },
+        {
+          "linkId": "start-statin-moderate",
+          "text": "Start Statin",
+          "type": "boolean"
+        },
+        {
+          "linkId": "no-statin-moderate",
+          "text": "NOT recommended",
+          "type": "display"
+        },
+        {
+          "linkId": "diabetes-management-moderate",
+          "text": "DM Management",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "manage_per_dm_protocol"
+            }
+          ]
+        },
+        {
+          "linkId": "aspirin-moderate",
+          "text": "Aspirin",
+          "type": "display"
+        },
+        {
+          "linkId": "follow-up-frequency-moderate",
+          "text": "Follow-up every 3-6 months",
+          "type": "display"
+        }
+      ]
+    },
+    {
+      "linkId": "low-risk-treatment",
+      "text": "LOW RISK (<10% CVD Risk)",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "lifestyle-counseling-low-risk",
+          "text": "Lifestyle Counseling",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "bp-threshold-low-risk",
+          "text": "BP ≥160/90 or End-organ Damage?",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if_yes then start_antihypertensive_per_htn_protocol"
+            }
+          ]
+        },
+        {
+          "linkId": "bp-monitoring-low-risk",
+          "text": "Monitor BP",
+          "type": "display"
+        },
+        {
+          "linkId": "sbp-140-159-low-risk",
+          "text": "SBP 140-159?",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if_yes then lifestyle_trial_first_4-8_weeks"
+            }
+          ]
+        },
+        {
+          "linkId": "lifestyle-trial-low-risk",
+          "text": "Lifestyle trial first (4-8 weeks)",
+          "type": "display"
+        },
+        {
+          "linkId": "lifestyle-review-low-risk",
+          "text": "Review in 4-8 weeks",
+          "type": "display"
+        },
+        {
+          "linkId": "continue-lifestyle-low-risk",
+          "text": "Continue lifestyle",
+          "type": "display"
+        },
+        {
+          "linkId": "start-antihypertensive-low-risk",
+          "text": "Start Antihypertensive",
+          "type": "boolean"
+        },
+        {
+          "linkId": "cholesterol-check-low-risk",
+          "text": "Cholesterol >5 mmol/L?",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if_yes then start_statin"
+            }
+          ]
+        },
+        {
+          "linkId": "start-statin-low-risk",
+          "text": "Start Statin",
+          "type": "boolean"
+        },
+        {
+          "linkId": "no-statin-low-risk",
+          "text": "NOT recommended",
+          "type": "display"
+        },
+        {
+          "linkId": "diabetes-management-low-risk",
+          "text": "DM Management",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "manage_per_dm_protocol"
+            }
+          ]
+        },
+        {
+          "linkId": "aspirin-low-risk",
+          "text": "Aspirin",
+          "type": "display"
+        },
+        {
+          "linkId": "follow-up-frequency-low-risk",
+          "text": "Follow-up every 12 months",
+          "type": "display"
+        }
+      ]
+    },
+    {
+      "linkId": "core-medication-protocols",
+      "text": "Core Medication Protocols",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "hypertension-medications",
+          "text": "Hypertension Medications",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "first-line-phc",
+              "text": "First-line in PHC: Calcium Channel Blockers (CCB)",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "amlodipine-description",
+                  "text": "Drug: Amlodipine",
+                  "type": "display"
+                },
+                {
+                  "linkId": "amlodipine-start",
+                  "text": "Start: 2.5-5 mg once daily",
+                  "type": "display"
+                },
+                {
+                  "linkId": "amlodipine-max",
+                  "text": "Max: 10 mg once daily",
+                  "type": "display"
+                }
+              ]
+            },
+            {
+              "linkId": "add-on-therapy",
+              "text": "Add-on therapy (if needed):",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "arb-therapy",
+                  "text": "ARB: Losartan 50 mg → 100 mg once daily",
+                  "type": "display"
+                },
+                {
+                  "linkId": "diuretic-therapy",
+                  "text": "Diuretic: HCTZ 12.5 mg → 25 mg once daily",
+                  "type": "display"
+                }
+              ]
+            },
+            {
+              "linkId": "special-populations",
+              "text": "Special populations:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "pregnancy-considerations",
+                  "text": "Pregnancy: Avoid ACE-I/ARB, use methyldopa/labetalol",
+                  "type": "display"
+                },
+                {
+                  "linkId": "diabetes-considerations",
+                  "text": "Diabetes: Start treatment at BP ≥130/80 mmHg",
+                  "type": "display"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "diabetes-medications",
+          "text": "Diabetes Medications",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "stepwise-approach",
+              "text": "Stepwise approach:",
+              "type": "display"
+            },
+            {
+              "linkId": "metformin-therapy",
+              "text": "Metformin: 500 mg → 2000 mg daily",
+              "type": "display"
+            },
+            {
+              "linkId": "gliclazide-therapy",
+              "text": "Gliclazide: 40 mg → 160 mg daily",
+              "type": "display"
+            },
+            {
+              "linkId": "insulin-therapy",
+              "text": "Insulin: Refer to specialist",
+              "type": "display"
+            }
+          ]
+        },
+        {
+          "linkId": "statin-therapy",
+          "text": "Statin Therapy",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "statin-drug",
+              "text": "Drug: Rosuvastatin",
+              "type": "display"
+            },
+            {
+              "linkId": "statin-start",
+              "text": "Start: 5 mg at night",
+              "type": "display"
+            },
+            {
+              "linkId": "statin-max",
+              "text": "Max: 20 mg at night",
+              "type": "display"
+            },
+            {
+              "linkId": "statin-contraindications",
+              "text": "Contraindications: Pregnancy, active liver disease",
+              "type": "display"
+            }
+          ]
+        },
+        {
+          "linkId": "antiplatelet-therapy",
+          "text": "Antiplatelet Therapy",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "aspirin-drug",
+              "text": "Drug: Aspirin",
+              "type": "display"
+            },
+            {
+              "linkId": "aspirin-dose",
+              "text": "Dose: 75 mg daily",
+              "type": "display"
+            },
+            {
+              "linkId": "aspirin-indications",
+              "text": "Indications: Very high Risk (≥30%) with no contraindications",
+              "type": "display"
+            },
+            {
+              "linkId": "aspirin-contraindications",
+              "text": "Contraindications: History of major bleeding, uncontrolled hypertension",
+              "type": "display"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "medication-combinations",
+      "text": "Medication Combinations by Scenario",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "scenario-1-hypertension-only",
+          "text": "Scenario 1: Hypertension Only",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "bp-160-100-protocol",
+              "text": "BP ≥160/100: Amlodipine + Losartan",
+              "type": "display"
+            },
+            {
+              "linkId": "bp-140-159-90-99-protocol",
+              "text": "BP 140-159/90-99: Amlodipine alone first",
+              "type": "display"
+            }
+          ]
+        },
+        {
+          "linkId": "scenario-2-diabetes-only",
+          "text": "Scenario 2: Diabetes Only",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "diabetes-start-metformin",
+              "text": "Start: Metformin",
+              "type": "display"
+            },
+            {
+              "linkId": "diabetes-add-gliclazide",
+              "text": "Add: Gliclazide if not controlled",
+              "type": "display"
+            },
+            {
+              "linkId": "diabetes-add-insulin",
+              "text": "Add: Insulin if still not controlled",
+              "type": "display"
+            }
+          ]
+        },
+        {
+          "linkId": "scenario-3-hypertension-diabetes",
+          "text": "Scenario 3: Hypertension + Diabetes",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "htn-dm-start-amlodipine",
+              "text": "Start: Amlodipine for BP",
+              "type": "display"
+            },
+            {
+              "linkId": "htn-dm-start-metformin",
+              "text": "Start: Metformin for diabetes",
+              "type": "display"
+            },
+            {
+              "linkId": "htn-dm-bp-target",
+              "text": "BP target: ≤130/80 mmHg",
+              "type": "display"
+            },
+            {
+              "linkId": "htn-dm-add-statin",
+              "text": "Add: Statin if age >40 years",
+              "type": "display"
+            },
+            {
+              "linkId": "htn-dm-consider-aspirin",
+              "text": "Consider aspirin if high risk",
+              "type": "display"
+            }
+          ]
+        },
+        {
+          "linkId": "scenario-4-all-three",
+          "text": "Scenario 4: All Three (HTN + DM + High Cholesterol)",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "all-three-amlodipine",
+              "text": "1. Amlodipine for BP",
+              "type": "display"
+            },
+            {
+              "linkId": "all-three-metformin",
+              "text": "2. Metformin for diabetes",
+              "type": "display"
+            },
+            {
+              "linkId": "all-three-rosuvastatin",
+              "text": "3. Rosuvastatin for cholesterol",
+              "type": "display"
+            },
+            {
+              "linkId": "all-three-consider-aspirin",
+              "text": "4. Consider aspirin if very high risk",
+              "type": "display"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "treatment-documentation-template",
+      "text": "Treatment Documentation Template",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "risk-based-treatment-plan",
+          "text": "Risk-Based Treatment Plan",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "treatment-patient",
+              "text": "Patient",
+              "type": "string",
+              "required": true
+            },
+            {
+              "linkId": "treatment-cvd-risk-level",
+              "text": "CVD Risk Level",
+              "type": "choice",
+              "required": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-severity-values"
+            },
+            {
+              "linkId": "treatment-bp-target",
+              "text": "BP Target",
+              "type": "string",
+              "required": true
+            },
+            {
+              "linkId": "treatment-current-bp",
+              "text": "Current BP",
+              "type": "string",
+              "required": true
+            }
+          ]
+        },
+        {
+          "linkId": "treatment-plan",
+          "text": "Treatment Plan",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "lifestyle-interventions",
+              "text": "Lifestyle Interventions",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "linkId": "lifestyle-intervention-1",
+                  "text": "1.",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "linkId": "lifestyle-intervention-2",
+                  "text": "2.",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "linkId": "lifestyle-intervention-3",
+                  "text": "3.",
+                  "type": "string",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "linkId": "medications-prescribed",
+              "text": "Medications Prescribed",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "linkId": "medication-1",
+                  "text": "1.",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "linkId": "medication-1-dose",
+                  "text": "______ mg) ______ frequency",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "linkId": "medication-2",
+                  "text": "2.",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "linkId": "medication-2-dose",
+                  "text": "______ mg) ______ frequency",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "linkId": "medication-3",
+                  "text": "3.",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "linkId": "medication-3-dose",
+                  "text": "______ mg) ______ frequency",
+                  "type": "string",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "linkId": "special-instructions",
+              "text": "Special Instructions",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "avoid-in-pregnancy",
+                  "text": "Avoid in pregnancy: □ ACE-I/ARB □ Statins",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "monitor-potassium",
+                  "text": "Monitor: □ Potassium □ Renal function □ Glucose",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "side-effects-watch",
+                  "text": "Side effects to watch: ______",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "follow-up-schedule",
+              "text": "Follow-up Schedule",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "next-appointment",
+                  "text": "Next appointment",
+                  "type": "date",
+                  "required": true
+                },
+                {
+                  "linkId": "monitoring-frequency",
+                  "text": "Monitoring frequency",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "linkId": "tests-needed-next-visit",
+                  "text": "Tests needed before next visit",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "referral-needed",
+              "text": "Referral Needed",
+              "type": "choice",
+              "required": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "referral-reason",
+              "text": "Reason: ______",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "patient-education-provided",
+          "text": "Patient Education Provided",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "medication-instructions",
+              "text": "□ Medication instructions",
+              "type": "boolean"
+            },
+            {
+              "linkId": "lifestyle-changes",
+              "text": "□ Lifestyle changes",
+              "type": "boolean"
+            },
+            {
+              "linkId": "warning-signs",
+              "text": "□ Warning signs",
+              "type": "boolean"
+            },
+            {
+              "linkId": "follow-up-importance",
+              "text": "□ Follow-up importance",
+              "type": "boolean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "prescribed-by",
+      "text": "Prescribed by",
+      "type": "string",
+      "required": true
+    },
+    {
+      "linkId": "review-date",
+      "text": "Review Date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "linkId": "pharmacy-dispensed",
+      "text": "Pharmacy Dispensed",
+      "type": "choice",
+      "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+    },
+    {
+      "linkId": "patient-understanding-confirmed",
+      "text": "Patient Understanding Confirmed",
+      "type": "choice",
+      "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+    }
+  ]
+}

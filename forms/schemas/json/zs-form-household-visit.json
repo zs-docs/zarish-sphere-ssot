@@ -1,0 +1,132 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-household-visit",
+  "url": "https://zarish.org/Questionnaire/zs-form-household-visit",
+  "name": "ZarishHouseholdVisit",
+  "title": "Zarish Household Visit Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive household visit form for Community Health Outreach (Level 1)",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Cross-Domain"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "community-outreach"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-1-Community"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "household-info",
+      "text": "Household Information",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "hh-id",
+          "text": "Household ID",
+          "type": "string",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        },
+        {
+          "linkId": "visit-date",
+          "text": "Visit Date",
+          "type": "date",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "member-info",
+      "text": "Member Information",
+      "type": "group",
+      "repeats": true,
+      "item": [
+        {
+          "linkId": "member-name",
+          "text": "Member Name",
+          "type": "string",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        },
+        {
+          "linkId": "age",
+          "text": "Age",
+          "type": "integer",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "0-120"
+            }
+          ]
+        },
+        {
+          "linkId": "gender",
+          "text": "Gender",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-gender"
+        }
+      ]
+    },
+    {
+      "linkId": "screening-referral",
+      "text": "Screening & Referral",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "symptom-check",
+          "text": "Symptom Check",
+          "type": "choice",
+          "repeats": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if symptoms_present then trigger_referral_slip"
+            }
+          ]
+        },
+        {
+          "linkId": "referral-target",
+          "text": "Referral Target",
+          "type": "choice",
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-referral-type",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if danger_signs_found then mandatory"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

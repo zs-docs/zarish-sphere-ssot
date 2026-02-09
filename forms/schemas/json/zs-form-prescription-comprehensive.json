@@ -1,0 +1,204 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-prescription",
+  "url": "https://zarish.org/Questionnaire/zs-form-prescription",
+  "version": "1.0.0",
+  "name": "zs-form-prescription",
+  "title": "Prescription/Medication Order Form",
+  "status": "active",
+  "date": "2026-02-07T11:41:19.871543",
+  "publisher": "Zarish Sphere",
+  "description": "Record and communicate medication prescriptions",
+  "purpose": "Record and communicate medication prescriptions",
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Cross-Domain"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "Prescription"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "valueString": "Level-1-CHC,Level-2-OPD,Level-3-IPD,Level-4-Tertiary"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "prescription-medication",
+      "text": "Prescribed Medications",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "medication-name",
+          "text": "Medication Name",
+          "type": "text",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "medication-strength",
+          "text": "Strength/Dose",
+          "type": "text",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "medication-route",
+          "text": "Route",
+          "type": "choice",
+          "required": true,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Oral"
+            },
+            {
+              "valueString": "Intramuscular"
+            },
+            {
+              "valueString": "Intravenous"
+            },
+            {
+              "valueString": "Topical"
+            },
+            {
+              "valueString": "Intravenous"
+            },
+            {
+              "valueString": "Aerosol"
+            }
+          ]
+        },
+        {
+          "linkId": "medication-frequency",
+          "text": "Frequency",
+          "type": "choice",
+          "required": true,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Once daily"
+            },
+            {
+              "valueString": "Twice daily"
+            },
+            {
+              "valueString": "Three times daily"
+            },
+            {
+              "valueString": "Four times daily"
+            },
+            {
+              "valueString": "Every 6 hours"
+            },
+            {
+              "valueString": "As needed"
+            }
+          ]
+        },
+        {
+          "linkId": "medication-duration",
+          "text": "Duration",
+          "type": "text",
+          "required": true,
+          "readOnly": false,
+          "prefix": "e.g., 7 days, 1 month"
+        },
+        {
+          "linkId": "medication-refills",
+          "text": "Number of Refills",
+          "type": "integer",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "medication-instructions",
+          "text": "Special Instructions",
+          "type": "text",
+          "required": false,
+          "readOnly": false,
+          "prefix": "e.g., take with food, avoid alcohol"
+        },
+        {
+          "linkId": "medication-notes",
+          "text": "Notes/Warnings",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "prescription-indication",
+      "text": "Clinical Indication",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "indication",
+          "text": "Indication for Medication",
+          "type": "text",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "comorbidities",
+          "text": "Relevant Comorbidities",
+          "type": "text",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "drug-interactions",
+          "text": "Known Drug Interactions Checked?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "allergies-checked",
+          "text": "Known Allergies Reviewed?",
+          "type": "boolean",
+          "required": true,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "prescription-counseling",
+      "text": "Patient Counseling",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "counseling-given",
+          "text": "Counseling provided?",
+          "type": "boolean",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "side-effects-discussed",
+          "text": "Side effects discussed?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "adherence-counseling",
+          "text": "Adherence counseling given?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "written-instructions",
+          "text": "Written instructions provided?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    }
+  ]
+}

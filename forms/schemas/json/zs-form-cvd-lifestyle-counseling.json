@@ -1,0 +1,957 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-cvd-lifestyle-counseling",
+  "url": "https://zarish.org/Questionnaire/zs-form-cvd-lifestyle-counseling",
+  "name": "ZarishCVDLifestyleCounseling",
+  "title": "Zarish CVD Risk Assessment: Tool 5 - COUNSEL Lifestyle",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive lifestyle counseling form for CVD risk management",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "NCD"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "counseling"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-3-Specialized"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-protocol-reference",
+      "valueString": "WHO-Lifestyle-Counseling-Guidelines"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "universal-lifestyle-advice",
+      "text": "Universal Lifestyle Advice (All Patients)",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "quit-tobacco-use",
+          "text": "1. QUIT TOBACCO USE",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "advise-complete-cessation",
+              "text": "Advise complete cessation of all tobacco forms",
+              "type": "boolean"
+            },
+            {
+              "linkId": "provide-health-risks",
+              "text": "Provide information on health risks",
+              "type": "boolean"
+            },
+            {
+              "linkId": "offer-nicotine-replacement",
+              "text": "Offer nicotine replacement therapy if available",
+              "type": "boolean"
+            },
+            {
+              "linkId": "refer-cessation-programs",
+              "text": "Refer to cessation programs if available",
+              "type": "boolean"
+            },
+            {
+              "linkId": "follow-up-quit-attempts",
+              "text": "Follow up on quit attempts",
+              "type": "boolean"
+            },
+            {
+              "linkId": "specific-forms-bangladesh",
+              "text": "Specific forms in Bangladesh:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "cigarettes",
+                  "text": "Cigarettes",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "biri",
+                  "text": "Biri",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "chewing-tobacco",
+                  "text": "Chewing tobacco",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "zarda",
+                  "text": "Zarda",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "gul",
+                  "text": "Gul",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "sada-pata",
+                  "text": "Sada Pata",
+                  "type": "boolean"
+                }
+              ]
+            },
+            {
+              "linkId": "non-smokers-advise",
+              "text": "For non-smokers:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "advise-never-start",
+                  "text": "Advise never to start",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "avoid-secondhand-smoke",
+                  "text": "Avoid secondhand smoke exposure",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "healthy-diet",
+          "text": "2. HEALTHY DIET",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "reduce-sodium-target",
+              "text": "Target: <5 g salt (1 teaspoon) per day",
+              "type": "display"
+            },
+            {
+              "linkId": "practical-advice",
+              "text": "Practical advice:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "no-salt-table",
+                  "text": "Do not add salt at table",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "reduce-salt-cooking",
+                  "text": "Reduce salt in cooking by half",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "limit-processed-fast-foods",
+                  "text": "Limit processed/fast foods",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "avoid-salted-snacks",
+                  "text": "Avoid salted snacks, pickles, sauces",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "read-food-labels",
+                  "text": "Read food labels for sodium content",
+                  "type": "boolean"
+                }
+              ]
+            },
+            {
+              "linkId": "bangla-specific-advice",
+              "text": "Bangla-specific advice:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "bangla-salt-advice",
+                  "text": "কম লবণ নিবেন রান্না করুন (Reduce salt in food)",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "bangla-tobacco-advice",
+                  "text": "টেবিলে আলাদা লবণ নিবেন না (Avoid smoking)",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "bangla-vegetable-advice",
+                  "text": "প্রক্রিয়াজাত খাবার (Eat vegetables)",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "bangla-exercise-advice",
+                  "text": "প্রক্রিয়াজাত খাবার (Exercise regularly)",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "increase-fruits-vegetables",
+          "text": "3. INCREASE FRUITS & VEGETABLES",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "target-servings",
+              "text": "Target: ≥5 servings daily (≥400g)",
+              "type": "display"
+            },
+            {
+              "linkId": "serving-counts",
+              "text": "What counts as one serving:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "medium-fruit",
+                  "text": "1 medium fruit (apple, orange, banana, mango)",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "half-cup-cooked-vegetables",
+                  "text": "½ cup cooked vegetables",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "one-cup-raw-leafy",
+                  "text": "1 cup raw leafy vegetables",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "half-cup-fruit-juice",
+                  "text": "½ cup fruit juice (limit due to Sugar)",
+                  "type": "boolean"
+                }
+              ]
+            },
+            {
+              "linkId": "practical-advice-fruits-veg",
+              "text": "Practical advice:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "include-vegetables-every-meal",
+                  "text": "Include vegetables in every meal",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "eat-fruits-snacks",
+                  "text": "Eat fruits as snacks",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "choose-variety-colors",
+                  "text": "Choose variety of colors",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "fresh-frozen-cooked-count",
+                  "text": "Fresh, frozen, or cooked All count",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "reduce-sugar-intake",
+          "text": "4. REDUCE SUGAR INTAKE",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "target-teaspoons",
+              "text": "Target: <12 teaspoons free sugars daily",
+              "type": "display"
+            },
+            {
+              "linkId": "target-teaspoons-benefit",
+              "text": "For added benefit: <6 teaspoons daily",
+              "type": "display"
+            },
+            {
+              "linkId": "sources-to-reduce",
+              "text": "Sources to reduce:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "sugary-drinks",
+                  "text": "Sugary drinks (soda, juice, sweetened milk)",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "sweets-candies",
+                  "text": "Sweets, candies, chocolates",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "cakes-cookies-pastries",
+                  "text": "Cakes, cookies, pastries, mithai",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "sugar-tea-coffee",
+                  "text": "Sugar in tea/coffee",
+                  "type": "boolean"
+                }
+              ]
+            },
+            {
+              "linkId": "practical-alternatives",
+              "text": "Practical alternatives:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "drink-water-plain-milk",
+                  "text": "Drink water or plain milk",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "use-fresh-fruit-sweetness",
+                  "text": "Use fresh fruit for sweetness",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "choose-unsweetened-beverages",
+                  "text": "Choose unsweetened beverages",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "limit-traditional-sweets",
+                  "text": "Limit traditional sweets",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "healthy-fats-oils",
+          "text": "5. HEALTHY FATS & OILS",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "choose-oils",
+              "text": "Choose:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "sesame-oil",
+                  "text": "Sesame (Til) oil",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "olive-oil",
+                  "text": "Olive oil",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "safflower-sunflower-oil",
+                  "text": "Safflower/Sunflower oil",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "mustard-oil",
+                  "text": "Mustard oil",
+                  "type": "boolean"
+                }
+              ]
+            },
+            {
+              "linkId": "avoid-oils",
+              "text": "Avoid:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "vanaspati-ghee",
+                  "text": "Vanaspati ghee (hydrogenated oil)",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "vegetable-shortening",
+                  "text": "Vegetable shortening",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "repeatedly-heated-oil",
+                  "text": "Repeatedly heated oil",
+                  "type": "boolean"
+                }
+              ]
+            },
+            {
+              "linkId": "practical-advice-fats",
+              "text": "Practical advice:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "use-measured-amounts",
+                  "text": "Use measured amounts of oil",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "replace-deep-frying",
+                  "text": "Replace deep-frying with grilling/baking",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "eat-fish-2-times-weekly",
+                  "text": "Eat fish ≥2 times Weekly",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "limit-red-meat",
+                  "text": "Limit red meat to 1-2 times Weekly",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "include-nuts-seeds-legumes",
+                  "text": "Include nuts, seeds, legumes",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "regular-physical-activity",
+          "text": "6. REGULAR PHYSICAL ACTIVITY",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "target-minutes",
+              "text": "Target: ≥150 minutes moderate activity weekly OR ≥30 minutes 5 days/week",
+              "type": "display"
+            },
+            {
+              "linkId": "moderate-activity-examples",
+              "text": "What counts as moderate activity:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "brisk-walking",
+                  "text": "Brisk walking",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "cycling",
+                  "text": "Cycling",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "swimming",
+                  "text": "Swimming",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "dancing",
+                  "text": "Dancing",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "household-chores",
+                  "text": "Household chores",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "gardening",
+                  "text": "Gardening",
+                  "type": "boolean"
+                }
+              ]
+            },
+            {
+              "linkId": "practical-advice-activity",
+              "text": "Practical advice:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "start-slow-gradually-increase",
+                  "text": "Start slow, gradually increase",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "find-activities-enjoy",
+                  "text": "Find activities you enjoy",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "incorporate-daily-routine",
+                  "text": "Incorporate into daily routine",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "reduce-sitting-time",
+                  "text": "Reduce sitting time (>5 hours/day)",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "use-stairs-instead-elevator",
+                  "text": "Use stairs instead of elevator",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "alcohol-use",
+          "text": "7. ALCOHOL USE",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "non-drinkers-advice",
+              "text": "For non-drinkers: □ Do not Start for 'health reasons'",
+              "type": "boolean"
+            },
+            {
+              "linkId": "current-drinkers-advice",
+              "text": "For current drinkers:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "advise-quit-harmful-use",
+                  "text": "Advise to quit harmful use",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "limit-moderate-amounts",
+                  "text": "If continuing, limit to moderate amounts",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "avoid-binge-drinking",
+                  "text": "Avoid binge drinking",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "never-drink-drive",
+                  "text": "Never drink and drive",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "weight-management",
+          "text": "8. WEIGHT MANAGEMENT",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "overweight-obese-criteria",
+              "text": "If overweight/obese (BMI ≥23 kg/m²):",
+              "type": "display"
+            },
+            {
+              "linkId": "weight-loss-goals",
+              "text": "Aim for 5-10% weight loss",
+              "type": "display"
+            },
+            {
+              "linkId": "combine-diet-exercise",
+              "text": "Combine diet and exercise",
+              "type": "boolean"
+            },
+            {
+              "linkId": "set-realistic-goals",
+              "text": "Set realistic goals",
+              "type": "boolean"
+            },
+            {
+              "linkId": "monitor-progress",
+              "text": "Monitor progress",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "waist-circumference-targets",
+          "text": "Waist circumference targets:",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "men-target",
+              "text": "Men: <90 cm",
+              "type": "boolean"
+            },
+            {
+              "linkId": "women-target",
+              "text": "Women: <80 cm",
+              "type": "boolean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "risk-specific-emphasis",
+      "text": "Risk-Specific Emphasis",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "high-very-high-risk",
+          "text": "For High/Very High Risk (≥20%):",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "intensive-tobacco-cessation",
+              "text": "Intensive tobacco cessation support",
+              "type": "boolean"
+            },
+            {
+              "linkId": "strict-dietary-adherence",
+              "text": "Strict dietary adherence",
+              "type": "boolean"
+            },
+            {
+              "linkId": "regular-exercise-prescription",
+              "text": "Regular exercise prescription",
+              "type": "boolean"
+            },
+            {
+              "linkId": "frequent-follow-up-lifestyle",
+              "text": "Frequent follow-up on lifestyle changes",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "diabetes-patients",
+          "text": "For Diabetes Patients:",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "carbohydrate-education",
+              "text": "Carbohydrate education",
+              "type": "boolean"
+            },
+            {
+              "linkId": "regular-meal-timing",
+              "text": "Regular meal timing",
+              "type": "boolean"
+            },
+            {
+              "linkId": "sugar-avoidance",
+              "text": "Sugar avoidance",
+              "type": "boolean"
+            },
+            {
+              "linkId": "foot-care-education",
+              "text": "Foot care education",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "hypertension-patients",
+          "text": "For Hypertension Patients:",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "strict-salt-restriction",
+              "text": "Strict salt restriction",
+              "type": "boolean"
+            },
+            {
+              "linkId": "regular-bp-monitoring",
+              "text": "Regular BP monitoring",
+              "type": "boolean"
+            },
+            {
+              "linkId": "medication-adherence",
+              "text": "Medication adherence",
+              "type": "boolean"
+            },
+            {
+              "linkId": "stress-management",
+              "text": "Stress management",
+              "type": "boolean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "counseling-delivery-checklist",
+      "text": "Counseling Delivery Checklist",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "before-counseling",
+          "text": "Before Counseling:",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "assess-current-lifestyle",
+              "text": "Assess Current lifestyle habits",
+              "type": "boolean"
+            },
+            {
+              "linkId": "identify-barriers-change",
+              "text": "Identify barriers to change",
+              "type": "boolean"
+            },
+            {
+              "linkId": "understand-patient-readiness",
+              "text": "Understand patient's readiness",
+              "type": "boolean"
+            },
+            {
+              "linkId": "set-collaborative-goals",
+              "text": "Set collaborative goals",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "during-counseling",
+          "text": "During Counseling:",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "use-simple-clear-language",
+              "text": "Use simple, clear language",
+              "type": "boolean"
+            },
+            {
+              "linkId": "provide-written-materials",
+              "text": "Provide written materials (Bangla/English)",
+              "type": "boolean"
+            },
+            {
+              "linkId": "use-visual-aids",
+              "text": "Use visual aids if available",
+              "type": "boolean"
+            },
+            {
+              "linkId": "involve-family-if-possible",
+              "text": "Involve family if possible",
+              "type": "boolean"
+            },
+            {
+              "linkId": "address-cultural-preferences",
+              "text": "Address cultural preferences",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "practical-tips-bangladesh-context",
+          "text": "Practical Tips for Bangladesh Context:",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "use-local-food-examples",
+              "text": "Use local food examples",
+              "type": "boolean"
+            },
+            {
+              "linkId": "consider-economic-constraints",
+              "text": "Consider economic constraints",
+              "type": "boolean"
+            },
+            {
+              "linkId": "acknowledge-social-traditional-practices",
+              "text": "Acknowledge social/traditional practices",
+              "type": "boolean"
+            },
+            {
+              "linkId": "provide-seasonal-advice",
+              "text": "Provide seasonal advice",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "after-counseling",
+          "text": "After Counseling:",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "document-advice-given",
+              "text": "Document advice given",
+              "type": "boolean"
+            },
+            {
+              "linkId": "set-specific-measurable-goals",
+              "text": "Set specific, measurable goals",
+              "type": "boolean"
+            },
+            {
+              "linkId": "schedule-follow-up",
+              "text": "Schedule follow-up",
+              "type": "boolean"
+            },
+            {
+              "linkId": "provide-reminder-materials",
+              "text": "Provide reminder materials",
+              "type": "boolean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "documentation-template",
+      "text": "Documentation Template",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "lifestyle-counseling-record",
+          "text": "Lifestyle Counseling Record",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "counseling-date",
+              "text": "Date",
+              "type": "date",
+              "required": true
+            },
+            {
+              "linkId": "patient-name",
+              "text": "Patient Name",
+              "type": "string",
+              "required": true
+            },
+            {
+              "linkId": "areas-counseled",
+              "text": "Areas Counseled:",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "tobacco-cessation",
+                  "text": "Tobacco cessation",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "healthy-diet",
+                  "text": "Healthy diet",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "physical-activity",
+                  "text": "Physical activity",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "alcohol-moderation",
+                  "text": "Alcohol moderation",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "weight-management",
+                  "text": "Weight management",
+                  "type": "boolean"
+                }
+              ]
+            },
+            {
+              "linkId": "specific-advice-given",
+              "text": "Specific Advice Given:",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "linkId": "advice-1",
+                  "text": "Advice 1",
+                  "type": "string"
+                },
+                {
+                  "linkId": "advice-2",
+                  "text": "Advice 2",
+                  "type": "string"
+                },
+                {
+                  "linkId": "advice-3",
+                  "text": "Advice 3",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "patient-understanding",
+              "text": "Patient Understanding",
+              "type": "choice",
+              "required": true,
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "barriers-identified",
+              "text": "Barriers Identified",
+              "type": "string"
+            },
+            {
+              "linkId": "goals-set",
+              "text": "Goals Set",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "linkId": "goal-1",
+                  "text": "Goal 1",
+                  "type": "string"
+                },
+                {
+                  "linkId": "goal-2",
+                  "text": "Goal 2",
+                  "type": "string"
+                },
+                {
+                  "linkId": "goal-3",
+                  "text": "Goal 3",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "follow-up-plan",
+              "text": "Follow-up Plan",
+              "type": "string"
+            },
+            {
+              "linkId": "materials-provided",
+              "text": "Materials Provided",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "next-lifestyle-review",
+              "text": "Next Lifestyle Review",
+              "type": "date"
+            }
+          ]
+        },
+        {
+          "linkId": "counseled-by",
+          "text": "Counseled by",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "counseling-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "patient-response",
+          "text": "Patient Response",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+        },
+        {
+          "linkId": "next-step",
+          "text": "Next Step",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+        }
+      ]
+    }
+  ]
+}

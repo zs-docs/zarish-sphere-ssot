@@ -1,0 +1,158 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-lab-order",
+  "url": "https://zarish.org/Questionnaire/zs-form-lab-order",
+  "version": "1.0.0",
+  "name": "zs-form-lab-order",
+  "title": "Laboratory Order Form",
+  "status": "active",
+  "date": "2026-02-07T11:41:19.871491",
+  "publisher": "Zarish Sphere",
+  "description": "Request laboratory investigations and tests",
+  "purpose": "Request laboratory investigations and tests",
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Cross-Domain"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "Order"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "valueString": "Level-1-CHC,Level-2-OPD,Level-3-IPD"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "test-selection",
+      "text": "Laboratory Tests Requested",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "test-hematology",
+          "text": "Hematology Tests",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false,
+          "prefix": "FBC, hemoglobin, etc."
+        },
+        {
+          "linkId": "test-biochemistry",
+          "text": "Biochemistry Tests",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false,
+          "prefix": "Glucose, electrolytes, renal, liver function"
+        },
+        {
+          "linkId": "test-immunology",
+          "text": "Immunology Tests",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false,
+          "prefix": "HIV, Hepatitis, etc."
+        },
+        {
+          "linkId": "test-serology",
+          "text": "Serology Tests",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "test-microbiology",
+          "text": "Microbiology Culture",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false,
+          "prefix": "Blood, Urine, Sputum culture"
+        },
+        {
+          "linkId": "test-parasitology",
+          "text": "Parasitology",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false,
+          "prefix": "Stool, blood parasites"
+        },
+        {
+          "linkId": "test-urinalysis",
+          "text": "Urinalysis",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "test-imaging",
+          "text": "Imaging",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Chest X-Ray"
+            },
+            {
+              "valueString": "Ultrasound"
+            },
+            {
+              "valueString": "CT Scan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "specimen-collection",
+      "text": "Specimen Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "specimen-type",
+          "text": "Specimen Type",
+          "type": "text",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "collection-date",
+          "text": "Collection Date",
+          "type": "date",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "specimen-quality",
+          "text": "Specimen Quality OK?",
+          "type": "boolean",
+          "required": true,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "clinical-indication",
+      "text": "Clinical Indication",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "indication",
+          "text": "Clinical Indication for Tests",
+          "type": "text",
+          "required": true,
+          "readOnly": false,
+          "prefix": "Why are these tests needed?"
+        },
+        {
+          "linkId": "stat-urgent",
+          "text": "Stat/Urgent?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    }
+  ]
+}

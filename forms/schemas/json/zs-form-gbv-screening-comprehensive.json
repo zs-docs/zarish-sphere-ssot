@@ -1,0 +1,183 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-gbv-screening-comprehensive",
+  "url": "https://zarish.org/Questionnaire/zs-form-gbv-screening-comprehensive",
+  "version": "1.0.0",
+  "name": "zs-form-gbv-screening-comprehensive",
+  "title": "Gender-Based Violence Comprehensive Screening",
+  "status": "active",
+  "date": "2026-02-07T11:41:19.871500",
+  "publisher": "Zarish Sphere",
+  "description": "Detailed GBV screening, assessment, and safety planning",
+  "purpose": "Detailed GBV screening, assessment, and safety planning",
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Gender-Based-Violence"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "Screening"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "valueString": "Level-2-OPD,Level-3-IPD,Level-4-Tertiary"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "gbv-current-violence",
+      "text": "Current Violence Assessment",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "current-partner-violence",
+          "text": "Current intimate partner violence?",
+          "type": "boolean",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "physical-violence",
+          "text": "Physical violence (hitting, kicking)?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "sexual-violence",
+          "text": "Sexual harassment or coercion?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "emotional-violence",
+          "text": "Emotional abuse or intimidation?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "controlling-behavior",
+          "text": "Controlling behavior?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "gbv-pregnancy-violence",
+      "text": "Pregnancy-Related Violence",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "pregnancy-violence",
+          "text": "Violence during pregnancy?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "pregnancy-unsafe",
+          "text": "Pregnancy forced or unsafe?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "gbv-previous-violence",
+      "text": "Previous Violence History",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "childhood-abuse",
+          "text": "Childhood abuse?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "previous-partner-violence",
+          "text": "Previous partner violence?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "gbv-safety-plan",
+      "text": "Safety Planning",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "immediate-danger",
+          "text": "In immediate danger?",
+          "type": "boolean",
+          "required": true,
+          "readOnly": false
+        },
+        {
+          "linkId": "safe-place",
+          "text": "Has safe place to go?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "safety-plan-exists",
+          "text": "Safety plan in place?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "disclosure-willing",
+          "text": "Willing to disclose to family/friends?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "gbv-referral",
+      "text": "Referral Assessment",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "legal-support-needed",
+          "text": "Legal support needed?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "shelter-needed",
+          "text": "Shelter/safe house needed?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "counseling-offered",
+          "text": "Psychosocial counseling offered?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "police-report",
+          "text": "Police report filed/wanted?",
+          "type": "boolean",
+          "required": false,
+          "readOnly": false
+        }
+      ]
+    }
+  ]
+}

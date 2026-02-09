@@ -1,0 +1,668 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-cvd-risk-assessment",
+  "url": "https://zarish.org/Questionnaire/zs-form-cvd-risk-assessment",
+  "name": "ZarishCVDRiskAssessment",
+  "title": "Zarish CVD Risk Assessment Form (Tools 1-7)",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive CVD risk assessment form based on WHO/ISH risk prediction charts",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "NCD"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "assessment"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-3-Specialized"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-protocol-reference",
+      "valueString": "WHO-ISH-CVD-Risk-Assessment"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "tool-1-ask",
+      "text": "Tool 1: ASK - History Questionnaire",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "current-symptoms",
+          "text": "Current Symptoms",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "chest-pain-tightness",
+              "text": "Chest pain/tightness?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "breathlessness",
+              "text": "Breathlessness?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "irregular-heartbeat",
+              "text": "Irregular heartbeat?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "headache-dizziness-vision",
+              "text": "Headache, dizziness, vision problems?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "difficulty-talking",
+              "text": "Difficulty talking?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "weakness-numbness",
+              "text": "Weakness/numbness on one side?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "swelling-feet-legs",
+              "text": "Swelling of feet/legs?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "increased-thirst-urination",
+              "text": "Increased thirst/urination?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "unexplained-weight-loss",
+              "text": "Unexplained weight loss?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "coughing",
+              "text": "Coughing?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "fever",
+              "text": "Fever?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "sexual-problems",
+              "text": "Sexual problems?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "feeling-sad-unhappy",
+              "text": "Feeling sad/unhappy, loss of interest?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-mh-conditions"
+            }
+          ]
+        },
+        {
+          "linkId": "other-issues",
+          "text": "Other issues patient wants to discuss",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "linkId": "past-medical-history",
+      "text": "Past Medical History",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "previous-conditions",
+          "text": "Has patient ever been told they have:",
+          "type": "choice",
+          "repeats": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-ncd-conditions",
+          "item": [
+            {
+              "linkId": "heart-disease",
+              "text": "Heart attack/angina/other heart disease",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "heart-disease-yes",
+                  "text": "Yes/No",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "heart-disease-year",
+                  "text": "Year Diagnosed",
+                  "type": "date"
+                },
+                {
+                  "linkId": "heart-disease-treatment",
+                  "text": "Treatment",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "stroke-tia",
+              "text": "Stroke/transient ischemic attack (TIA)",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "stroke-yes",
+                  "text": "Yes/No",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "stroke-year",
+                  "text": "Year Diagnosed",
+                  "type": "date"
+                },
+                {
+                  "linkId": "stroke-treatment",
+                  "text": "Treatment",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "hypertension",
+              "text": "High blood pressure (hypertension)",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "htn-yes",
+                  "text": "Yes/No",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "htn-year",
+                  "text": "Year Diagnosed",
+                  "type": "date"
+                },
+                {
+                  "linkId": "htn-treatment",
+                  "text": "Treatment",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "diabetes",
+              "text": "High blood sugar (diabetes)",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "diabetes-yes",
+                  "text": "Yes/No",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "diabetes-year",
+                  "text": "Year Diagnosed",
+                  "type": "date"
+                },
+                {
+                  "linkId": "diabetes-treatment",
+                  "text": "Treatment",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "cholesterol",
+              "text": "High blood cholesterol/dyslipidemia",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "cholesterol-yes",
+                  "text": "Yes/No",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "cholesterol-year",
+                  "text": "Year Diagnosed",
+                  "type": "date"
+                },
+                {
+                  "linkId": "cholesterol-treatment",
+                  "text": "Treatment",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "kidney-disease",
+              "text": "Kidney disease",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "kidney-yes",
+                  "text": "Yes/No",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "kidney-year",
+                  "text": "Year Diagnosed",
+                  "type": "date"
+                },
+                {
+                  "linkId": "kidney-treatment",
+                  "text": "Treatment",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "tuberculosis",
+              "text": "Tuberculosis",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "tb-yes",
+                  "text": "Yes/No",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "tb-year",
+                  "text": "Year Diagnosed",
+                  "type": "date"
+                },
+                {
+                  "linkId": "tb-treatment",
+                  "text": "Treatment",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "hiv",
+              "text": "HIV (test per national protocol)",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "hiv-yes",
+                  "text": "Yes/No",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "hiv-year",
+                  "text": "Year Diagnosed",
+                  "type": "date"
+                },
+                {
+                  "linkId": "hiv-treatment",
+                  "text": "Treatment",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "hospitalizations-surgeries",
+              "text": "Hospitalizations/surgeries",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "hospitalization-yes",
+                  "text": "Yes/No",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "hospitalization-details",
+                  "text": "Details",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "allergies",
+              "text": "Allergies",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "allergies-yes",
+                  "text": "Yes/No",
+                  "type": "boolean"
+                },
+                {
+                  "linkId": "allergies-details",
+                  "text": "Details",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "family-history",
+      "text": "Family History",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "family-history-intro",
+          "text": "Father, mother, brother, sister with:",
+          "type": "display"
+        },
+        {
+          "linkId": "premature-cvd",
+          "text": "Premature* cardiovascular disease",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "premature-cvd-yes",
+              "text": "Yes/No",
+              "type": "boolean"
+            },
+            {
+              "linkId": "premature-cvd-relation",
+              "text": "Relation",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "premature-cvd-age",
+              "text": "Age at Diagnosis",
+              "type": "integer"
+            }
+          ]
+        },
+        {
+          "linkId": "diabetes",
+          "text": "Diabetes",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "diabetes-yes",
+              "text": "Yes/No",
+              "type": "boolean"
+            },
+            {
+              "linkId": "diabetes-relation",
+              "text": "Relation",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "diabetes-age",
+              "text": "Age at Diagnosis",
+              "type": "integer"
+            }
+          ]
+        },
+        {
+          "linkId": "chronic-kidney-disease",
+          "text": "Chronic kidney disease",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "ckd-yes",
+              "text": "Yes/No",
+              "type": "boolean"
+            },
+            {
+              "linkId": "ckd-relation",
+              "text": "Relation",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "ckd-age",
+              "text": "Age at Diagnosis",
+              "type": "integer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "current-medications",
+      "text": "Current Medications",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "medication-list",
+          "text": "List all current medications (including OTC/herbal/traditional):",
+          "type": "group",
+          "repeats": true,
+          "item": [
+            {
+              "linkId": "medication-name",
+              "text": "Medication",
+              "type": "string",
+              "required": true
+            },
+            {
+              "linkId": "medication-dose",
+              "text": "Dose",
+              "type": "string",
+              "required": true
+            },
+            {
+              "linkId": "medication-frequency",
+              "text": "Frequency",
+              "type": "string",
+              "required": true
+            },
+            {
+              "linkId": "medication-duration",
+              "text": "Duration",
+              "type": "string",
+              "required": true
+            }
+          ]
+        },
+        {
+          "linkId": "adherence-assessment",
+          "text": "Adherence Assessment",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "taking-exactly-as-prescribed",
+              "text": "Are you taking medications exactly as prescribed?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "problems-taking-medicines",
+              "text": "What problems have you had taking medicines?",
+              "type": "string"
+            },
+            {
+              "linkId": "side-effects",
+              "text": "Have you had any side effects?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "side-effects-details",
+              "text": "Details",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "lifestyle-assessment",
+      "text": "Lifestyle Assessment",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "tobacco-use",
+          "text": "Tobacco Use",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "used-tobacco-12-months",
+              "text": "Have you used tobacco in past 12 months?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "tobacco-type",
+              "text": "If yes, type",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "tobacco-frequency",
+              "text": "Frequency",
+              "type": "string"
+            },
+            {
+              "linkId": "tobacco-duration",
+              "text": "Duration",
+              "type": "string"
+            },
+            {
+              "linkId": "secondhand-smoke",
+              "text": "Regularly exposed to secondhand smoke?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            }
+          ]
+        },
+        {
+          "linkId": "alcohol-use",
+          "text": "Alcohol Use",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "drank-alcohol-30-days",
+              "text": "Did you drink alcohol in last 30 days?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "alcohol-frequency",
+              "text": "If yes: Frequency",
+              "type": "string"
+            },
+            {
+              "linkId": "alcohol-units-day",
+              "text": "Units per day",
+              "type": "integer"
+            },
+            {
+              "linkId": "alcohol-type",
+              "text": "Type of alcohol",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "diet-assessment",
+          "text": "Diet Assessment",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "fruits-vegetables-daily",
+              "text": "Eat ≥5 portions fruits/vegetables daily?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "red-meat-fried-foods",
+              "text": "Eat red meat/fried/processed foods most days?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "sugary-drinks",
+              "text": "Have sugary drinks (soda, juice, sweetened milk) most days?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "extra-salt-meals",
+              "text": "Add extra salt to meals?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            }
+          ]
+        },
+        {
+          "linkId": "physical-activity",
+          "text": "Physical Activity",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "moderate-activity-5-days",
+              "text": "Do ≥30 min moderate activity 5 days/week (150 min/week)?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "sitting-5-hours-daily",
+              "text": "Spend >5 hours sitting daily?",
+              "type": "choice",
+              "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts"
+            },
+            {
+              "linkId": "activity-type",
+              "text": "Type of Activity",
+              "type": "string"
+            },
+            {
+              "linkId": "activity-duration",
+              "text": "Duration per session",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "clinician-signature",
+      "text": "Clinician Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "clinician-name",
+          "text": "Clinician",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "next-step",
+          "text": "Next Step",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "proceed_to_tool_2_assess_or_tool_4_estimate"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

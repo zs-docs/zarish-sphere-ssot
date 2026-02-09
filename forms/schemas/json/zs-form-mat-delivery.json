@@ -1,0 +1,307 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-mat-delivery",
+  "url": "https://zarish.org/Questionnaire/zs-form-mat-delivery",
+  "name": "ZarishMATDeliveryForm",
+  "title": "Zarish MAT Delivery Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Maternal health delivery form for the Zarish Sphere Platform",
+  "subjectType": [
+    {
+      "code": "Patient"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "zs-form-mat-delivery-1",
+      "text": "Mother Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-mat-delivery-1.1",
+          "text": "Mother Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-mat-delivery-1.2",
+          "text": "Age",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-mat-delivery-1.3",
+          "text": "Gravida",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-mat-delivery-1.4",
+          "text": "Parity",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-mat-delivery-1.5",
+          "text": "ANC Number",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-mat-delivery-2",
+      "text": "Labor Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-mat-delivery-2.1",
+          "text": "Onset of Labor",
+          "type": "dateTime",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-mat-delivery-2.2",
+          "text": "Labor Duration",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "linkId": "zs-form-mat-delivery-2.3",
+          "text": "Membrane Rupture Time",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/membrane-rupture-time"
+          }
+        },
+        {
+          "linkId": "zs-form-mat-delivery-2.4",
+          "text": "Labor Augmentation",
+          "type": "choice",
+          "required": false,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/labor-augmentation"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-mat-delivery-3",
+      "text": "Delivery Details",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-mat-delivery-3.1",
+          "text": "Delivery Mode",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/delivery-mode-values"
+          },
+          "answerOption": [
+            {
+              "valueCoding": {
+                "system": "https://zarish.org/CodeSystem/delivery-mode",
+                "code": "NORMAL_VAGINAL",
+                "display": "Normal Vaginal Delivery"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "https://zarish.org/CodeSystem/delivery-mode",
+                "code": "ASSISTED_VAGINAL",
+                "display": "Assisted Vaginal Delivery"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "https://zarish.org/CodeSystem/delivery-mode",
+                "code": "CESAREAN_SECTION",
+                "display": "Cesarean Section"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "https://zarish.org/CodeSystem/delivery-mode",
+                "code": "VAGINAL_BREECH",
+                "display": "Vaginal Breech Delivery"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "zs-form-mat-delivery-3.2",
+          "text": "Delivery Date and Time",
+          "type": "dateTime",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-mat-delivery-3.3",
+          "text": "Birth Attendant",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-mat-delivery-3.4",
+          "text": "Place of Delivery",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/delivery-place-values"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-mat-delivery-4",
+      "text": "Birth Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-mat-delivery-4.1",
+          "text": "Birth Date and Time",
+          "type": "dateTime",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-mat-delivery-4.2",
+          "text": "Sex",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/sex-values"
+          }
+        },
+        {
+          "linkId": "zs-form-mat-delivery-4.3",
+          "text": "Birth Weight",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-mat-delivery-4.4",
+          "text": "Birth Length",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-mat-delivery-4.5",
+          "text": "APGAR Score at 1 Minute",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-mat-delivery-4.6",
+          "text": "APGAR Score at 5 Minutes",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-mat-delivery-4.7",
+          "text": "APGAR Score at 10 Minutes",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-mat-delivery-4.8",
+          "text": "Birth Condition",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/birth-condition-values"
+          }
+        },
+        {
+          "linkId": "zs-form-mat-delivery-4.9",
+          "text": "Complications",
+          "type": "choice",
+          "required": false,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/delivery-complications"
+          },
+          "repeats": true
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-mat-delivery-5",
+      "text": "Postpartum Care",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-mat-delivery-5.1",
+          "text": "Postpartum Hemorrhage",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/postpartum-hemorrhage-values"
+          }
+        },
+        {
+          "linkId": "zs-form-mat-delivery-5.2",
+          "text": "Postpartum Infection",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/postpartum-infection-values"
+          }
+        },
+        {
+          "linkId": "zs-form-mat-delivery-5.3",
+          "text": "Breastfeeding Initiation",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/breastfeeding-initiation-values"
+          }
+        },
+        {
+          "linkId": "zs-form-mat-delivery-5.4",
+          "text": "Contraception Counseling",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/contraception-counseling-values"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-mat-delivery-6",
+      "text": "Provider Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-mat-delivery-6.1",
+          "text": "Attending Provider",
+          "type": "reference",
+          "required": true,
+          "targetType": "Practitioner"
+        },
+        {
+          "linkId": "zs-form-mat-delivery-6.2",
+          "text": "Assisting Provider",
+          "type": "reference",
+          "required": true,
+          "targetType": "Practitioner"
+        },
+        {
+          "linkId": "zs-form-mat-delivery-6.3",
+          "text": "Facility",
+          "type": "reference",
+          "required": true,
+          "targetType": "Location"
+        },
+        {
+          "linkId": "zs-form-mat-delivery-6.4",
+          "text": "Delivery Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

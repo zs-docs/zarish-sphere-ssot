@@ -1,0 +1,105 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-ipd-admission",
+  "url": "https://zarish.org/Questionnaire/zs-form-ipd-admission",
+  "name": "ZarishIPDAdmission",
+  "title": "Zarish IPD Admission Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive IPD admission form aligned with Gold Standard EMR requirements",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Cross-Domain"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "admission"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-2-IPD"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "admission-info",
+      "text": "Admission Information",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "admission-date",
+          "text": "Admission Date",
+          "type": "dateTime",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        },
+        {
+          "linkId": "ward",
+          "text": "Ward",
+          "type": "string",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        },
+        {
+          "linkId": "bed-number",
+          "text": "Bed Number",
+          "type": "string",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        },
+        {
+          "linkId": "admission-reason",
+          "text": "Reason for Admission",
+          "type": "text",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "patient-status",
+      "text": "Patient Status",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "status-update",
+          "text": "Update Patient Status",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "change_patient_status_to_inpatient"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

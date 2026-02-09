@@ -1,0 +1,402 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-hiv-enrollment",
+  "url": "https://zarish.org/Questionnaire/zs-form-hiv-enrollment",
+  "version": "1.0.0",
+  "name": "zs-form-hiv-enrollment",
+  "title": "HIV Enrollment Form",
+  "status": "active",
+  "date": "2026-02-07T11:41:19.838413",
+  "publisher": "Zarish Sphere",
+  "description": "Comprehensive HIV care enrollment and initial assessment",
+  "purpose": "Comprehensive HIV care enrollment and initial assessment",
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Communicable-Diseases"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "Enrollment"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "valueString": "Level-3-IPD,Level-4-Tertiary"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-provider-type",
+      "valueString": "CHV,Nurse,Doctor,Lab Tech"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "hiv-diagnosis",
+      "text": "HIV Diagnosis Information",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "hiv-diagnosis-date",
+          "text": "Date of HIV Diagnosis",
+          "type": "date",
+          "required": true,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "hiv-diagnosis-method",
+          "text": "Diagnostic Method",
+          "type": "choice",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Rapid Test"
+            },
+            {
+              "valueString": "ELISA"
+            },
+            {
+              "valueString": "Western Blot"
+            },
+            {
+              "valueString": "Nucleic Acid Test (NAT)"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "hiv-previous-test-history",
+          "text": "Previous HIV Test History",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "No previous test"
+            },
+            {
+              "valueString": "Previous negative test"
+            },
+            {
+              "valueString": "Previous positive test"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "hiv-clinical-stage",
+      "text": "Clinical Staging",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "hiv-who-stage",
+          "text": "WHO Clinical Stage",
+          "type": "choice",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Stage 1"
+            },
+            {
+              "valueString": "Stage 2"
+            },
+            {
+              "valueString": "Stage 3"
+            },
+            {
+              "valueString": "Stage 4"
+            }
+          ]
+        },
+        {
+          "linkId": "hiv-opportunistic-infections",
+          "text": "Current Opportunistic Infections",
+          "type": "choice",
+          "required": false,
+          "repeats": true,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Tuberculosis"
+            },
+            {
+              "valueString": "Pneumocystis Pneumonia (PCP)"
+            },
+            {
+              "valueString": "Cryptococcosis"
+            },
+            {
+              "valueString": "Candidiasis"
+            },
+            {
+              "valueString": "CMV"
+            },
+            {
+              "valueString": "Toxoplasmosis"
+            },
+            {
+              "valueString": "Lymphoma"
+            },
+            {
+              "valueString": "None"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "hiv-immunological-status",
+      "text": "Immunological Status",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "hiv-cd4-count",
+          "text": "CD4+ Count (cells/mm³)",
+          "type": "integer",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Latest CD4 count",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "valueString": "{\"min\": 0, \"max\": 2000}"
+            }
+          ]
+        },
+        {
+          "linkId": "hiv-cd4-test-date",
+          "text": "CD4 Test Date",
+          "type": "date",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "hiv-viral-load",
+          "text": "Viral Load (copies/mL)",
+          "type": "integer",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Latest viral load"
+        },
+        {
+          "linkId": "hiv-viral-load-test-date",
+          "text": "Viral Load Test Date",
+          "type": "date",
+          "required": false,
+          "repeats": false,
+          "readOnly": false
+        }
+      ]
+    },
+    {
+      "linkId": "hiv-art-status",
+      "text": "Antiretroviral Therapy Status",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "hiv-art-eligible",
+          "text": "Eligible for ART?",
+          "type": "boolean",
+          "required": true,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "hiv-art-started",
+          "text": "Has ART been started?",
+          "type": "boolean",
+          "required": true,
+          "repeats": false,
+          "readOnly": false
+        },
+        {
+          "linkId": "hiv-art-start-date",
+          "text": "ART Start Date",
+          "type": "date",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "enableWhen": [
+            {
+              "question": "hiv-art-started",
+              "operator": "=",
+              "answerBoolean": true
+            }
+          ],
+          "enableBehavior": "any"
+        },
+        {
+          "linkId": "hiv-current-art-regimen",
+          "text": "Current ART Regimen",
+          "type": "text",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "enableWhen": [
+            {
+              "question": "hiv-art-started",
+              "operator": "=",
+              "answerBoolean": true
+            }
+          ],
+          "enableBehavior": "any"
+        }
+      ]
+    },
+    {
+      "linkId": "hiv-transmission-risk",
+      "text": "Transmission Risk Assessment",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "hiv-probable-mode",
+          "text": "Probable Mode of Transmission",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Heterosexual Contact"
+            },
+            {
+              "valueString": "MSM (Men who have Sex with Men)"
+            },
+            {
+              "valueString": "PWID (People Who Inject Drugs)"
+            },
+            {
+              "valueString": "Sex Work"
+            },
+            {
+              "valueString": "Mother-to-Child Transmission"
+            },
+            {
+              "valueString": "Healthcare Worker Exposure"
+            },
+            {
+              "valueString": "Unknown"
+            }
+          ]
+        },
+        {
+          "linkId": "hiv-key-population",
+          "text": "Key Population",
+          "type": "choice",
+          "required": false,
+          "repeats": true,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "MSM"
+            },
+            {
+              "valueString": "PWID"
+            },
+            {
+              "valueString": "Sex Worker"
+            },
+            {
+              "valueString": "Female Sex Worker"
+            },
+            {
+              "valueString": "Transgender"
+            },
+            {
+              "valueString": "Incarcerated"
+            },
+            {
+              "valueString": "None"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "hiv-comorbidities",
+      "text": "Comorbidities",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "hiv-tb-status",
+          "text": "TB Status",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "TB Disease"
+            },
+            {
+              "valueString": "TB Suspect"
+            },
+            {
+              "valueString": "TB Contacts"
+            },
+            {
+              "valueString": "TB Preventive Therapy"
+            },
+            {
+              "valueString": "No TB"
+            }
+          ]
+        },
+        {
+          "linkId": "hiv-hepatitis-b",
+          "text": "Hepatitis B Status",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Positive"
+            },
+            {
+              "valueString": "Negative"
+            },
+            {
+              "valueString": "Unknown"
+            }
+          ]
+        },
+        {
+          "linkId": "hiv-hepatitis-c",
+          "text": "Hepatitis C Status",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Positive"
+            },
+            {
+              "valueString": "Negative"
+            },
+            {
+              "valueString": "Unknown"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

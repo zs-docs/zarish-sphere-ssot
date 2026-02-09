@@ -1,0 +1,472 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-diabetes-diagnosis",
+  "url": "https://zarish.org/Questionnaire/zs-form-diabetes-diagnosis",
+  "name": "ZarishDiabetesDiagnosis",
+  "title": "Zarish Type 2 Diabetes Diagnosis & Management Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive diabetes diagnosis and management form based on WHO PEN protocol for primary care",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "NCD"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "diagnosis"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-3-Specialized"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-protocol-reference",
+      "valueString": "WHO-PEN-Diabetes-Protocol"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "patient-info",
+      "text": "Patient Information",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "age",
+          "text": "Age",
+          "type": "integer",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "≥30 years screening recommended"
+            }
+          ]
+        },
+        {
+          "linkId": "sex",
+          "text": "Sex",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-sex"
+        },
+        {
+          "linkId": "patient-id",
+          "text": "Patient ID",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    {
+      "linkId": "screening-criteria",
+      "text": "Screening Criteria",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "whom-to-test",
+          "text": "Whom to Test",
+          "type": "choice",
+          "repeats": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "item": [
+            {
+              "linkId": "age-40-plus",
+              "text": "Age ≥40 years (annual screening)",
+              "type": "boolean"
+            },
+            {
+              "linkId": "symptoms-present",
+              "text": "Symptoms present (polyuria, polydipsia, weight loss)",
+              "type": "boolean"
+            },
+            {
+              "linkId": "overweight-obese",
+              "text": "Overweight/obese (BMI ≥23 kg/m²)",
+              "type": "boolean"
+            },
+            {
+              "linkId": "family-history",
+              "text": "First-degree relative with diabetes",
+              "type": "boolean"
+            },
+            {
+              "linkId": "gestational-diabetes",
+              "text": "History of gestational diabetes",
+              "type": "boolean"
+            },
+            {
+              "linkId": "cvd-history",
+              "text": "History of CVD, hypertension, dyslipidemia",
+              "type": "boolean"
+            },
+            {
+              "linkId": "pcos",
+              "text": "Women with PCOS",
+              "type": "boolean"
+            },
+            {
+              "linkId": "prediabetes",
+              "text": "Pre-diabetes",
+              "type": "boolean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "diagnostic-tests",
+      "text": "Diagnostic Tests",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "test-performed",
+          "text": "Select test performed:",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-lab-test",
+          "item": [
+            {
+              "linkId": "fasting-glucose",
+              "text": "Fasting Plasma Glucose",
+              "type": "decimal",
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "mmol/L"
+                },
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "valueString": "≥7.0 mmol/L"
+                }
+              ]
+            },
+            {
+              "linkId": "2h-glucose",
+              "text": "2h Post-Glucose Load",
+              "type": "decimal",
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "mmol/L"
+                },
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "valueString": "≥11.1 mmol/L"
+                }
+              ]
+            },
+            {
+              "linkId": "random-glucose",
+              "text": "Random Plasma Glucose",
+              "type": "decimal",
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "mmol/L"
+                },
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "valueString": "≥11.1 mmol/L (with symptoms)"
+                }
+              ]
+            },
+            {
+              "linkId": "hba1c",
+              "text": "HbA1c",
+              "type": "decimal",
+              "extension": [
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-unit",
+                  "valueString": "%"
+                },
+                {
+                  "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+                  "valueString": "≥6.5%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "diagnosis-confirmation",
+          "text": "Diagnosis requires:",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "two-abnormal-tests",
+              "text": "Two abnormal tests on different days",
+              "type": "boolean"
+            },
+            {
+              "linkId": "one-abnormal-with-symptoms",
+              "text": "One abnormal test with symptoms",
+              "type": "boolean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "symptoms-assessment",
+      "text": "Symptoms Assessment",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "polyuria",
+          "text": "Polyuria (excessive urination)",
+          "type": "boolean"
+        },
+        {
+          "linkId": "polydipsia",
+          "text": "Polydipsia (excessive thirst)",
+          "type": "boolean"
+        },
+        {
+          "linkId": "weight-loss",
+          "text": "Unexplained weight loss",
+          "type": "boolean"
+        },
+        {
+          "linkId": "polyphagia",
+          "text": "Polyphagia (excessive hunger)",
+          "type": "boolean"
+        },
+        {
+          "linkId": "vision-changes",
+          "text": "Vision changes/blurred vision",
+          "type": "boolean"
+        },
+        {
+          "linkId": "fatigue",
+          "text": "Fatigue/tiredness",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "linkId": "risk-factors",
+      "text": "Risk Factors",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "modifiable-risk-factors",
+          "text": "Modifiable",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "physical-inactivity",
+              "text": "Physical inactivity",
+              "type": "boolean"
+            },
+            {
+              "linkId": "unhealthy-diet",
+              "text": "Unhealthy diet",
+              "type": "boolean"
+            },
+            {
+              "linkId": "overweight-obesity",
+              "text": "Overweight/obesity",
+              "type": "boolean"
+            },
+            {
+              "linkId": "tobacco-use",
+              "text": "Tobacco use",
+              "type": "boolean"
+            },
+            {
+              "linkId": "alcohol-use",
+              "text": "Alcohol use",
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "linkId": "non-modifiable-risk-factors",
+          "text": "Non-modifiable",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "family-history",
+              "text": "Family history",
+              "type": "boolean"
+            },
+            {
+              "linkId": "age-30-plus",
+              "text": "Age ≥30",
+              "type": "boolean"
+            },
+            {
+              "linkId": "previous-gestational",
+              "text": "Previous gestational diabetes",
+              "type": "boolean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "initial-management",
+      "text": "Initial Management Plan",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "lifestyle-counseling",
+          "text": "Lifestyle Counseling",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "first-line-medication",
+          "text": "First-line Medication",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-medications",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "start_metformin_500_mg_daily_after_meal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "education-provided",
+      "text": "Education Provided",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "diabetes-explanation",
+          "text": "Diabetes explanation",
+          "type": "boolean"
+        },
+        {
+          "linkId": "complications-discussion",
+          "text": "Complications discussion",
+          "type": "boolean"
+        },
+        {
+          "linkId": "medication-instructions",
+          "text": "Medication instructions",
+          "type": "boolean"
+        },
+        {
+          "linkId": "self-monitoring-guidance",
+          "text": "Self-monitoring guidance",
+          "type": "boolean"
+        },
+        {
+          "linkId": "foot-care-education",
+          "text": "Foot care education",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "linkId": "glycemic-targets",
+      "text": "Glycemic Targets",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "fasting-plasma-glucose-target",
+          "text": "Fasting plasma glucose: ≤7.0 mmol/L",
+          "type": "boolean"
+        },
+        {
+          "linkId": "postprandial-glucose-target",
+          "text": "Postprandial glucose: ≤11.1 mmol/L",
+          "type": "boolean"
+        },
+        {
+          "linkId": "hba1c-target",
+          "text": "HbA1c: <7.0%",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "linkId": "relaxed-targets",
+      "text": "Relaxed targets if:",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "frequent-hypoglycemia",
+          "text": "Frequent severe hypoglycemia",
+          "type": "boolean"
+        },
+        {
+          "linkId": "severe-complications",
+          "text": "Severe complications",
+          "type": "boolean"
+        },
+        {
+          "linkId": "low-life-expectancy",
+          "text": "Low life expectancy",
+          "type": "boolean"
+        },
+        {
+          "linkId": "advanced-age",
+          "text": "Advanced age",
+          "type": "boolean"
+        },
+        {
+          "linkId": "relaxed-hba1c-target",
+          "text": "Target: HbA1c <8.0%",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "linkId": "follow-up-schedule",
+      "text": "Follow-up Schedule",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "initial-followup",
+          "text": "Initial: Monthly until controlled",
+          "type": "display"
+        },
+        {
+          "linkId": "controlled-followup",
+          "text": "Once controlled: Every 3 months",
+          "type": "display"
+        },
+        {
+          "linkId": "annual-assessments",
+          "text": "Annual assessments: Foot exam, urine microalbumin, eye screening",
+          "type": "display"
+        }
+      ]
+    },
+    {
+      "linkId": "clinician-signature",
+      "text": "Signature",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "clinician-name",
+          "text": "Clinician",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "signature-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-mh-assessment",
+  "url": "https://zarish.org/Questionnaire/zs-form-mh-assessment",
+  "name": "ZarishMHAssessment",
+  "title": "Zarish Mental Health Assessment Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Comprehensive mental health assessment form for MHPSS services (Level 3.03)",
+  "version": "1.0.0",
+  "subjectType": ["Patient"],
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "MHPSS"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "assessment"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-level",
+      "valueString": "Level-3-Specialized"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "screening-scores",
+      "text": "Screening Scores",
+      "type": "group",
+      "required": true,
+      "item": [
+        {
+          "linkId": "phq9-score",
+          "text": "PHQ-9 Score",
+          "type": "integer",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "0-27"
+            }
+          ]
+        },
+        {
+          "linkId": "gad7-score",
+          "text": "GAD-7 Score",
+          "type": "integer",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "0-21"
+            }
+          ]
+        },
+        {
+          "linkId": "risk-level",
+          "text": "Risk Level",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-severity-values",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "if risk_level = high then trigger_immediate_referral"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "mhsap-consultation",
+      "text": "mhGAP Consultation",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "condition",
+          "text": "Condition",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": "https://zarish.org/ValueSet/zs-valueset-concepts",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-field-validation",
+              "valueString": "mandatory"
+            }
+          ]
+        },
+        {
+          "linkId": "intervention-plan",
+          "text": "Intervention Plan",
+          "type": "text",
+          "required": true,
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-workflow-logic",
+              "valueString": "follow_who_mhgap_intervention_guide"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

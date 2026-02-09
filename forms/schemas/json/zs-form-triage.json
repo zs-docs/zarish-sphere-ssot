@@ -1,0 +1,253 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-triage",
+  "url": "https://zarish.org/Questionnaire/zs-form-triage",
+  "name": "Zarish Triage Form",
+  "title": "Zarish Triage Form",
+  "status": "active",
+  "date": "2026-02-05",
+  "publisher": "Zarish Sphere Platform",
+  "description": "Triage form for Zarish Sphere Platform",
+  "subjectType": [
+    {
+      "code": "Patient"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "zs-form-triage-1",
+      "text": "Patient Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-triage-1.1",
+          "text": "Patient Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-triage-1.2",
+          "text": "Patient ID",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-triage-1.3",
+          "text": "Date of Birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-triage-1.4",
+          "text": "Age",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-triage-1.5",
+          "text": "Gender",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/gender-values"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-triage-2",
+      "text": "Chief Complaint",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-triage-2.1",
+          "text": "Presenting Complaint",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "zs-form-triage-2.2",
+          "text": "Duration of Complaint",
+          "type": "string",
+          "required": false
+        },
+        {
+          "linkId": "zs-form-triage-2.3",
+          "text": "Severity",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/severity-values"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-triage-3",
+      "text": "Vital Signs",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-triage-3.1",
+          "text": "Temperature (°C)",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/quantity",
+              "valueQuantity": {
+                "system": "http://unitsofmeasure.org",
+                "code": "Cel"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "zs-form-triage-3.2",
+          "text": "Blood Pressure - Systolic",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/quantity",
+              "valueQuantity": {
+                "system": "http://unitsofmeasure.org",
+                "code": "mmHg"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "zs-form-triage-3.3",
+          "text": "Blood Pressure - Diastolic",
+          "type": "decimal",
+          "required": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/quantity",
+              "valueQuantity": {
+                "system": "http://unitsofmeasure.org",
+                "code": "mmHg"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "zs-form-triage-3.4",
+          "text": "Heart Rate",
+          "type": "integer",
+          "required": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/quantity",
+              "valueQuantity": {
+                "system": "http://unitsofmeasure.org",
+                "code": "/min"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "zs-form-triage-3.5",
+          "text": "Respiratory Rate",
+          "type": "integer",
+          "required": true,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/quantity",
+              "valueQuantity": {
+                "system": "http://unitsofmeasure.org",
+                "code": "/min"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "zs-form-triage-3.6",
+          "text": "Oxygen Saturation",
+          "type": "decimal",
+          "required": false,
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/quantity",
+              "valueQuantity": {
+                "system": "http://unitsofmeasure.org",
+                "code": "%"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-triage-4",
+      "text": "Triage Assessment",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-triage-4.1",
+          "text": "Emergency Level",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/emergency-level-values"
+          }
+        },
+        {
+          "linkId": "zs-form-triage-4.2",
+          "text": "Triage Category",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/triage-category-values"
+          }
+        },
+        {
+          "linkId": "zs-form-triage-4.3",
+          "text": "Immediate Action Required",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/immediate-action-values"
+          }
+        },
+        {
+          "linkId": "zs-form-triage-4.4",
+          "text": "Referral Needed",
+          "type": "choice",
+          "required": true,
+          "answerValueSet": {
+            "reference": "https://zarish.org/ValueSet/referral-needed-values"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "zs-form-triage-5",
+      "text": "Provider Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "zs-form-triage-5.1",
+          "text": "Triage Provider",
+          "type": "reference",
+          "required": true,
+          "targetType": "Practitioner"
+        },
+        {
+          "linkId": "zs-form-triage-5.2",
+          "text": "Facility",
+          "type": "reference",
+          "required": true,
+          "targetType": "Location"
+        },
+        {
+          "linkId": "zs-form-triage-5.3",
+          "text": "Triage Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

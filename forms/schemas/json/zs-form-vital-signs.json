@@ -1,0 +1,253 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "zs-form-vital-signs",
+  "url": "https://zarish.org/Questionnaire/zs-form-vital-signs",
+  "version": "1.0.0",
+  "name": "zs-form-vital-signs",
+  "title": "Vital Signs Assessment Form",
+  "status": "active",
+  "date": "2026-02-07T11:41:19.838373",
+  "publisher": "Zarish Sphere",
+  "description": "Record patient vital signs and basic clinical measurements",
+  "purpose": "Record patient vital signs and basic clinical measurements",
+  "extension": [
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-clinical-domain",
+      "valueString": "Cross-Domain"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-form-category",
+      "valueString": "Assessment"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-service-levels",
+      "valueString": "Level-1-CHC,Level-2-OPD,Level-3-IPD,Level-4-Tertiary"
+    },
+    {
+      "url": "https://zarish.org/StructureDefinition/zs-ext-provider-type",
+      "valueString": "CHV,Nurse,Doctor,Lab Tech"
+    }
+  ],
+  "item": [
+    {
+      "linkId": "vital-signs-measurements",
+      "text": "Vital Signs Measurements",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "vitals-temperature",
+          "text": "Temperature (°C)",
+          "type": "decimal",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Body temperature in Celsius",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "valueString": "{\"min\": 35.0, \"max\": 42.0}"
+            }
+          ]
+        },
+        {
+          "linkId": "vitals-temperature-site",
+          "text": "Temperature Site",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Oral"
+            },
+            {
+              "valueString": "Axillary"
+            },
+            {
+              "valueString": "Rectal"
+            },
+            {
+              "valueString": "Temporal"
+            }
+          ]
+        },
+        {
+          "linkId": "vitals-systolic-bp",
+          "text": "Systolic Blood Pressure (mmHg)",
+          "type": "integer",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Upper number",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "valueString": "{\"min\": 50, \"max\": 250}"
+            }
+          ]
+        },
+        {
+          "linkId": "vitals-diastolic-bp",
+          "text": "Diastolic Blood Pressure (mmHg)",
+          "type": "integer",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Lower number",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "valueString": "{\"min\": 30, \"max\": 150}"
+            }
+          ]
+        },
+        {
+          "linkId": "vitals-heart-rate",
+          "text": "Heart Rate (beats/min)",
+          "type": "integer",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Pulse rate",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "valueString": "{\"min\": 30, \"max\": 200}"
+            }
+          ]
+        },
+        {
+          "linkId": "vitals-respiratory-rate",
+          "text": "Respiratory Rate (breaths/min)",
+          "type": "integer",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Breathing rate",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "valueString": "{\"min\": 6, \"max\": 60}"
+            }
+          ]
+        },
+        {
+          "linkId": "vitals-oxygen-saturation",
+          "text": "Oxygen Saturation (SpO2 %)",
+          "type": "decimal",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Blood oxygen level",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "valueString": "{\"min\": 50.0, \"max\": 100.0}"
+            }
+          ]
+        },
+        {
+          "linkId": "vitals-weight",
+          "text": "Weight (kg)",
+          "type": "decimal",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Patient weight in kilograms",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "valueString": "{\"min\": 2.0, \"max\": 300.0}"
+            }
+          ]
+        },
+        {
+          "linkId": "vitals-height",
+          "text": "Height (cm)",
+          "type": "decimal",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Patient height in centimeters",
+          "extension": [
+            {
+              "url": "https://zarish.org/StructureDefinition/zs-ext-validation",
+              "valueString": "{\"min\": 30.0, \"max\": 250.0}"
+            }
+          ]
+        },
+        {
+          "linkId": "vitals-bmi",
+          "text": "BMI (kg/m²)",
+          "type": "decimal",
+          "required": false,
+          "repeats": false,
+          "readOnly": true,
+          "prefix": "Auto-calculated from weight and height"
+        }
+      ]
+    },
+    {
+      "linkId": "vital-signs-assessment",
+      "text": "Clinical Assessment",
+      "type": "group",
+      "required": false,
+      "item": [
+        {
+          "linkId": "vitals-general-condition",
+          "text": "General Condition",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Good"
+            },
+            {
+              "valueString": "Fair"
+            },
+            {
+              "valueString": "Poor"
+            },
+            {
+              "valueString": "Critical"
+            }
+          ]
+        },
+        {
+          "linkId": "vitals-level-of-consciousness",
+          "text": "Level of Consciousness",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "answerOption": [
+            {
+              "valueString": "Alert"
+            },
+            {
+              "valueString": "Confused"
+            },
+            {
+              "valueString": "Lethargic"
+            },
+            {
+              "valueString": "Unresponsive"
+            }
+          ]
+        },
+        {
+          "linkId": "vitals-notes",
+          "text": "Clinical Notes",
+          "type": "text",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "prefix": "Additional observations"
+        }
+      ]
+    }
+  ]
+}
