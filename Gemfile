@@ -18,7 +18,3 @@ gem 'minima', '~> 2.5'
 # Web server
 gem 'webrick', '~> 1.8'
 
-# Additional utilities for production
-group :development do
-  gem 'bundler', '~> 2.5'
-end
